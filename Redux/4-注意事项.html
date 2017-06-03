@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>helloReact · GitBook</title>
+        <title>小结:redux注意事项 · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.2">
@@ -57,6 +57,8 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
+    
+    <link rel="prev" href="3-connect.html" />
     
 
     </head>
@@ -215,9 +217,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter active" data-level="1.4.1" data-path="1-react.html">
+        <li class="chapter " data-level="1.4.1" data-path="../React/1-react.html">
             
-                <a href="1-react.html">
+                <a href="../React/1-react.html">
             
                     
                     helloReact
@@ -247,9 +249,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.5.1" data-path="../Redux/1-hello.html">
+        <li class="chapter " data-level="1.5.1" data-path="1-hello.html">
             
-                <a href="../Redux/1-hello.html">
+                <a href="1-hello.html">
             
                     
                     hello redux
@@ -260,9 +262,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.5.2" data-path="../Redux/2-三大核心.html">
+        <li class="chapter " data-level="1.5.2" data-path="2-三大核心.html">
             
-                <a href="../Redux/2-三大核心.html">
+                <a href="2-三大核心.html">
             
                     
                     redux三大概念
@@ -273,9 +275,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.5.3" data-path="../Redux/3-connect.html">
+        <li class="chapter " data-level="1.5.3" data-path="3-connect.html">
             
-                <a href="../Redux/3-connect.html">
+                <a href="3-connect.html">
             
                     
                     connect:react-redux
@@ -286,9 +288,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.5.4" data-path="../Redux/4-注意事项.html">
+        <li class="chapter active" data-level="1.5.4" data-path="4-注意事项.html">
             
-                <a href="../Redux/4-注意事项.html">
+                <a href="4-注意事项.html">
             
                     
                     小结:redux注意事项
@@ -313,9 +315,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.5.5.1" data-path="../Redux/thunk/1-thunk.html">
+        <li class="chapter " data-level="1.5.5.1" data-path="thunk/1-thunk.html">
             
-                <a href="../Redux/thunk/1-thunk.html">
+                <a href="thunk/1-thunk.html">
             
                     
                     thunk的初步介绍
@@ -326,9 +328,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.5.5.2" data-path="../Redux/thunk/2-thunk.html">
+        <li class="chapter " data-level="1.5.5.2" data-path="thunk/2-thunk.html">
             
-                <a href="../Redux/thunk/2-thunk.html">
+                <a href="thunk/2-thunk.html">
             
                     
                     为什么使用thunk
@@ -411,7 +413,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >helloReact</a>
+        <a href=".." >小结:redux注意事项</a>
     </h1>
 </div>
 
@@ -426,8 +428,57 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="helloreact">helloReact</h1>
+                                <h1 id="redux&#x4F7F;&#x7528;&#x6CE8;&#x610F;&#x4E8B;&#x9879;">redux&#x4F7F;&#x7528;&#x6CE8;&#x610F;&#x4E8B;&#x9879;</h1>
+<h2 id="&#x6CE8;&#xFF11;-storejs">[&#x6CE8;:&#xFF11;] store..js</h2>
+<pre><code>&#x72B6;&#x6001;&#x6811;&#x6700;&#x597D;&#x53EA;&#x5199;&#x4E00;&#x4E2A;(&#x5BF9;&#x8C61;)&#xFF0C;&#x6BD4;&#x8F83;&#x65B9;&#x4FBF;
+&#x6700;&#x7EC8;createStore&#x53EA;&#x6709;&#x4E00;&#x4E2A;reducer
+return&#x3000;&#x540E;&#x4E00;&#x5B9A;&#x4E3A;&#x4E00;&#x4E2A;&#x5BF9;&#x8C61;&#xFF0C;&#x56E0;&#x4E3A;&#x5B83;&#x4F1A;&#x8986;&#x76D6;&#x6389;&#x4E4B;&#x524D;&#x7684;&#x5168;&#x90E8;state
+</code></pre><h2 id="&#x6CE8;2-&#x5B50;&#x7EC4;&#x4EF6;">[&#x6CE8;:2] &#x5B50;&#x7EC4;&#x4EF6;</h2>
+<pre><code>mapStateToProps&#x65F6;&#x8FD4;&#x56DE;&#x7684;&#x4E5F;&#x5FC5;&#x987B;&#x4E3A;&#x4E00;&#x4E2A;&#x5BF9;&#x8C61;&#xFF0C;&#x8FD9;&#x6837;&#x5C31;&#x53EF;&#x4EE5;&#x7528;store&#x91CC;&#x7684;&#x4EFB;&#x4F55;&#x503C;
+</code></pre><h2 id="&#x6CE8;3-&#x4FEE;&#x6539;state">[&#x6CE8;:3] &#x4FEE;&#x6539;state</h2>
+<h3 id="1-&#x4E00;&#x4E2A;&#x539F;&#x5219;&#x4E0D;&#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x4FEE;&#x6539;state">1. &#x4E00;&#x4E2A;&#x539F;&#x5219;:&#x4E0D;&#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x4FEE;&#x6539;state</h3>
+<p><a href="http://redux.js.org/docs/basics/Reducers.html" target="_blank">handle action</a></p>
+<p>&#x5728;reducer&#x53EA;&#x80FD;&#x4FEE;&#x6539;state&#x7684;&#x62F7;&#x8D1D;&#xFF0C;state&#x672C;&#x8EAB;&#x4E0D;&#x53EF;&#x4EE5;&#x6539;&#x53D8;</p>
+<p>&#x6240;&#x4EE5;&#x65B9;&#x6CD5;&#x6709;&#x51E0;&#x79CD;&#xFF1A;</p>
+<h4 id="&#x5BF9;&#x4E8E;&#x5BF9;&#x8C61;object">&#x5BF9;&#x4E8E;&#x5BF9;&#x8C61;Object</h4>
+<pre><code>1.Object.assign({},state)
+    let aa=Object.assign({},state)
+    &#x4FEE;&#x6539;aa,&#x4E0D;&#x4F1A;&#x4F7F;state&#x53D1;&#x751F;&#x6539;&#x53D8;
 
+&#xFF12;&#xFF0E;&#x4F7F;&#x7528;&#x5BF9;&#x8C61;&#x5C55;&#x5F00;&#x7B26;...(Es7&#x5C5E;&#x6027; babel&#x6D4B;&#x8BD5;)
+    let bb={...state}
+</code></pre><h4 id="&#x5BF9;&#x4E8E;&#x6570;&#x7EC4;array">&#x5BF9;&#x4E8E;&#x6570;&#x7EC4;array</h4>
+<pre><code>1.arr.slice()
+
+slice() &#x65B9;&#x6CD5;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x4ECE;&#x5F00;&#x59CB;&#x5230;&#x7ED3;&#x675F;&#xFF08;&#x4E0D;&#x5305;&#x62EC;&#x7ED3;&#x675F;&#xFF09;&#x9009;&#x62E9;&#x7684;&#x6570;&#x7EC4;&#x7684;&#x4E00;&#x90E8;&#x5206;&#x6D45;&#x62F7;&#x8D1D;&#x5230;&#x4E00;&#x4E2A;&#x65B0;&#x6570;&#x7EC4;&#x5BF9;&#x8C61;&#x3002;
+
+.slice(begin) &#x4ECE;&#x5F53;&#x524D;&#x7D22;&#x5F15;&#x5230;&#x6700;&#x540E;&#x4E00;&#x4E2A;(&#x5305;&#x62EC;&#x6700;&#x540E;&#x4E00;&#x4E2A;)
+.slice(begin,end)&#x3000;&#x4ECE;begin&#x5230;end,&#x4E0D;&#x5305;&#x62EC;end
+
+
+2.&#x5C55;&#x5F00;&#x7B26;...
+</code></pre><h3 id="2&#x64CD;&#x4F5C;">2.&#x64CD;&#x4F5C;</h3>
+<pre><code>&#x6240;&#x6709;&#x4F7F;state&#x6539;&#x53D8;&#x7684;&#x64CD;&#x4F5C;&#x90FD;&#x662F;&#x5728;reducer&#x91CC;&#x6267;&#x884C;&#x7684;&#xFF0C;&#x53EA;&#x6709;&#x8FD9;&#x6837;&#x624D;&#x53EF;&#x4EE5;&#x5F15;&#x8D77;&#x5B50;&#x7EC4;&#x4EF6;&#x4E2D;props&#x7684;&#x6539;&#x53D8;&#xFF0C;&#x9020;&#x6210;&#x91CD;&#x65B0;render,&#x800C;action&#x7684;&#x4F5C;&#x7528;&#x4EC5;&#x662F;&#x8C03;&#x7528;reducer
+action&#x53EF;&#x4EE5;&#x53EA;&#x6709;&#x4E00;&#x4E2A;type&#x503C;
+</code></pre><h2 id="&#x6CE8;4-combinereducer">[&#x6CE8;:4] combineReducer</h2>
+<p>&#x968F;&#x7740;state&#x7684;&#x589E;&#x52A0;&#x72B6;&#x6001;&#x6811;&#x4E5F;&#x4F1A;&#x53D8;&#x5927;&#xFF0C;&#x8FD9;&#x6837;&#x5BF9;&#x4E8E;&#x6BCF;&#x6B21;&#x5728;&#x4E00;&#x4E2A;reducer&#x91CC;&#x4FEE;&#x6539;&#x7684;&#x884C;&#x4E3A;&#x662F;&#x5341;&#x5206;&#x9EBB;&#x70E6;&#x7684;&#x3002;</p>
+<p>&#x89E3;&#x51B3;&#x65B9;&#x6848;&#xFF1A;&#x62C6;&#x5206;reducer</p>
+<p>&#x5B9E;&#x73B0;:
+1.&#x6BCF;&#x4E2A;reducer&#x8D1F;&#x8D23;&#x4E00;&#x7C7B;&#x6570;&#x636E;&#xFF0C;&#x6240;&#x4EE5;&#x6BCF;&#x4E2A;reducer&#x4E0D;&#x4F1A;&#x5F88;&#x5927;
+2.&#x4FEE;&#x6539;&#x6570;&#x636E;&#x53EA;&#x9700;&#x8981;&#x5728;&#x5BF9;&#x5E94;&#x7684;reducer&#x91CC;&#x4FEE;&#x6539;&#x67D0;&#x4E2A;&#x5C5E;&#x6027;</p>
+<p>&#x6B65;&#x9AA4;:
+1.&#x62C6;&#x5206;state
+2.&#x7ED9;&#x6BCF;&#x4E2A;state&#x65B0;&#x5EFA;&#x4E00;&#x4E2A;reducer</p>
+<pre><code>import {combineReducers} from &apos;redux&apos;
+
+function aReducer()
+function bReducer()
+
+const rootReducer&#x3000;= combineReducers({
+    a:aReducer,
+    b:bReducer
+    })
+</code></pre>
                                 
                                 </section>
                             
@@ -454,6 +505,10 @@
 
             
                 
+                <a href="3-connect.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: connect:react-redux">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
                 
             
         
@@ -462,7 +517,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"helloReact","level":"1.4.1","depth":2,"next":{"title":"Redux","level":"1.5","depth":1,"ref":"","articles":[{"title":"hello redux","level":"1.5.1","depth":2,"path":"Redux/1-hello.md","ref":"./Redux/1-hello.md","articles":[]},{"title":"redux三大概念","level":"1.5.2","depth":2,"path":"Redux/2-三大核心.md","ref":"./Redux/2-三大核心.md","articles":[]},{"title":"connect:react-redux","level":"1.5.3","depth":2,"path":"Redux/3-connect.md","ref":"./Redux/3-connect.md","articles":[]},{"title":"小结:redux注意事项","level":"1.5.4","depth":2,"path":"Redux/4-注意事项.md","ref":"./Redux/4-注意事项.md","articles":[]},{"title":"thunk","level":"1.5.5","depth":2,"ref":"","articles":[{"title":"thunk的初步介绍","level":"1.5.5.1","depth":3,"path":"Redux/thunk/1-thunk.md","ref":"./Redux/thunk/1-thunk.md","articles":[]},{"title":"为什么使用thunk","level":"1.5.5.2","depth":3,"path":"Redux/thunk/2-thunk.md","ref":"./Redux/thunk/2-thunk.md","articles":[]}]}]},"previous":{"title":"React","level":"1.4","depth":1,"ref":"","articles":[{"title":"helloReact","level":"1.4.1","depth":2,"path":"React/1-react.md","ref":"./React/1-react.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"React/1-react.md","mtime":"2017-06-02T09:16:03.414Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-06-03T17:54:23.198Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"小结:redux注意事项","level":"1.5.4","depth":2,"next":{"title":"thunk","level":"1.5.5","depth":2,"ref":"","articles":[{"title":"thunk的初步介绍","level":"1.5.5.1","depth":3,"path":"Redux/thunk/1-thunk.md","ref":"./Redux/thunk/1-thunk.md","articles":[]},{"title":"为什么使用thunk","level":"1.5.5.2","depth":3,"path":"Redux/thunk/2-thunk.md","ref":"./Redux/thunk/2-thunk.md","articles":[]}]},"previous":{"title":"connect:react-redux","level":"1.5.3","depth":2,"path":"Redux/3-connect.md","ref":"./Redux/3-connect.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Redux/4-注意事项.md","mtime":"2017-06-03T17:53:21.151Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-06-03T17:54:23.198Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

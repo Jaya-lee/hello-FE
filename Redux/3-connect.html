@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>helloReact · GitBook</title>
+        <title>connect:react-redux · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.2">
@@ -57,6 +57,10 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
+    <link rel="next" href="4-注意事项.html" />
+    
+    
+    <link rel="prev" href="2-三大核心.html" />
     
 
     </head>
@@ -215,9 +219,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter active" data-level="1.4.1" data-path="1-react.html">
+        <li class="chapter " data-level="1.4.1" data-path="../React/1-react.html">
             
-                <a href="1-react.html">
+                <a href="../React/1-react.html">
             
                     
                     helloReact
@@ -247,9 +251,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.5.1" data-path="../Redux/1-hello.html">
+        <li class="chapter " data-level="1.5.1" data-path="1-hello.html">
             
-                <a href="../Redux/1-hello.html">
+                <a href="1-hello.html">
             
                     
                     hello redux
@@ -260,9 +264,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.5.2" data-path="../Redux/2-三大核心.html">
+        <li class="chapter " data-level="1.5.2" data-path="2-三大核心.html">
             
-                <a href="../Redux/2-三大核心.html">
+                <a href="2-三大核心.html">
             
                     
                     redux三大概念
@@ -273,9 +277,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.5.3" data-path="../Redux/3-connect.html">
+        <li class="chapter active" data-level="1.5.3" data-path="3-connect.html">
             
-                <a href="../Redux/3-connect.html">
+                <a href="3-connect.html">
             
                     
                     connect:react-redux
@@ -286,9 +290,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.5.4" data-path="../Redux/4-注意事项.html">
+        <li class="chapter " data-level="1.5.4" data-path="4-注意事项.html">
             
-                <a href="../Redux/4-注意事项.html">
+                <a href="4-注意事项.html">
             
                     
                     小结:redux注意事项
@@ -313,9 +317,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.5.5.1" data-path="../Redux/thunk/1-thunk.html">
+        <li class="chapter " data-level="1.5.5.1" data-path="thunk/1-thunk.html">
             
-                <a href="../Redux/thunk/1-thunk.html">
+                <a href="thunk/1-thunk.html">
             
                     
                     thunk的初步介绍
@@ -326,9 +330,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.5.5.2" data-path="../Redux/thunk/2-thunk.html">
+        <li class="chapter " data-level="1.5.5.2" data-path="thunk/2-thunk.html">
             
-                <a href="../Redux/thunk/2-thunk.html">
+                <a href="thunk/2-thunk.html">
             
                     
                     为什么使用thunk
@@ -411,7 +415,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >helloReact</a>
+        <a href=".." >connect:react-redux</a>
     </h1>
 </div>
 
@@ -426,7 +430,58 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="helloreact">helloReact</h1>
+                                <h2 id="react-redux">react-redux</h2>
+<p>redux&#x53EF;&#x4EE5;&#x914D;&#x5408;&#x591A;&#x79CD;&#x6846;&#x67B6;&#x4F7F;&#x7528;&#xFF0C;&#x5E76;&#x4E0D;&#x4EC5;&#x662F;&#x9488;&#x5BF9;react&#xFF0C;store&#x4E0E;react&#x7EC4;&#x4EF6;&#x662F;&#x6CA1;&#x6709;&#x8054;&#x7CFB;&#x7684;&#x3002;&#x9700;&#x8981;react-redux&#x7ED1;&#x5B9A;</p>
+<pre><code>npm i --save  react-redux
+</code></pre><p>&#x5177;&#x4F53;&#x4F7F;&#x7528;&#x7684;&#x4E24;&#x4E2A;&#x63A5;&#x53E3;&#xFF1A;Provider connect</p>
+<ul>
+<li><p>Provider</p>
+<pre><code class="lang-js"><span class="hljs-keyword">import</span> {Provider} <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;react-redux&apos;</span>
+</code></pre>
+<p>Provider&#x5199;&#x5728;&#x9876;&#x5C42;&#x3000;store&#x5C5E;&#x6027;&#x7684;&#x503C;&#x4E3A;&#x5BFC;&#x51FA;&#x7684;&#x72B6;&#x6001;&#x6811;</p>
+<pre><code class="lang-js">&lt;Provider store={store}&gt;<span class="xml"><span class="hljs-tag">&lt;/<span class="hljs-name">Provider</span>&gt;</span></span>
+</code></pre>
+<p>&#x88AB; Provider &#x5305;&#x62EC;&#x8D77;&#x6765;&#x7684;&#x7EC4;&#x4EF6;&#x4E2D;&#x624D;&#x80FD;&#x627E;&#x5F97;&#x7740; store</p>
+</li>
+<li><p>connect</p>
+<pre><code class="lang-js"><span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> connect(mapStateToProps)(PostBody)
+</code></pre>
+<p>connect &#x8FDE;&#x63A5; store &#x548C;&#x7EC4;&#x4EF6;</p>
+</li>
+</ul>
+<h3 id="1mapstatetoprops">1.mapStateToProps</h3>
+<h4 id="&#x628A;-store-&#x4E2D;&#x7684;&#x6570;&#x636E;&#xFF08;&#x4E00;&#x90E8;&#x5206;&#xFF09;&#x6620;&#x5C04;&#x4E3A;&#x5F53;&#x524D;&#x7EC4;&#x4EF6;&#x7684;-props">&#x628A; store &#x4E2D;&#x7684;&#x6570;&#x636E;&#xFF08;&#x4E00;&#x90E8;&#x5206;&#xFF09;&#x6620;&#x5C04;&#x4E3A;&#x5F53;&#x524D;&#x7EC4;&#x4EF6;&#x7684; props</h4>
+<p>map &#x7684;&#x610F;&#x601D;&#x662F;&#x201C;&#x6620;&#x5C04;&#x201D;
+State &#x6307;&#x7684;&#x662F; store &#x72B6;&#x6001;&#x6811;&#xFF08; State Tree &#xFF09;&#xFF0C;&#x4E5F;&#x5C31;&#x662F; store &#x7684;&#x5B9E;&#x9645;&#x6570;&#x636E;
+Porps &#x5C31;&#x662F;&#x5C5E;&#x6027;</p>
+<p>Store &#x4E2D;&#x6570;&#x636E;&#x5F88;&#x591A;&#xFF0C;&#x5F53;&#x524D;&#x7EC4;&#x4EF6;&#x9700;&#x8981;&#x7684;&#x53EA;&#x662F;&#x4E00;&#x90E8;&#x5206;&#xFF0C;&#x90A3;&#x4E48;&#x9009;&#x53D6;&#x5DE5;&#x4F5C;&#x662F;&#x5728; mapStateToProps &#x4E2D;&#x5B8C;&#x6210;&#x7684;</p>
+<pre><code class="lang-js"><span class="hljs-keyword">const</span> mapStateToProps = (state) =&gt; ({
+  comments: state
+})
+</code></pre>
+<p>&#x4E0A;&#x9762;&#x7684; (state) &#x6307;&#x7684;&#x5C31;&#x662F; Store &#x4E2D;&#x7684;&#x5168;&#x90E8;&#x72B6;&#x6001;&#xFF0C;&#x4E5F;&#x5373;&#x662F; store.getState() &#x53EF;&#x4EE5;&#x8BFB;&#x5230;&#x7684;&#x5185;&#x5BB9;&#x3002;</p>
+<p>&#x4F7F;&#x7528;&#x65F6;&#x53EF;&#x4EE5;&#x662F;this.props.&#xD7;&#xD7;&#xD7;</p>
+<p>&#x8FD9;&#x6837;state&#x6539;&#x53D8;&#x5C31;&#x662F;&#x9020;&#x6210;props&#x6539;&#x53D8;&#xFF0C;&#x4F1A;&#x91CD;&#x65B0;render</p>
+<h3 id="2mapdispathtoprops">2.mapDispathToProps</h3>
+<h4 id="&#x628A;dispath&#x65B9;&#x6CD5;&#x6620;&#x5C04;&#x4E3A;&#x5F53;&#x524D;&#x7EC4;&#x4EF6;&#x7684;-props">&#x628A;dispath&#x65B9;&#x6CD5;&#x6620;&#x5C04;&#x4E3A;&#x5F53;&#x524D;&#x7EC4;&#x4EF6;&#x7684; props</h4>
+<pre><code class="lang-js"><span class="hljs-keyword">const</span> mapDispathToProps = (dispath) =&gt; ({
+    add: ()=&gt;dispath({type:<span class="hljs-string">&apos;ADD&apos;</span>,value:<span class="hljs-number">100</span>})
+})
+</code></pre>
+<p>&#x5BFC;&#x51FA;&#x65F6;&#xFF1A;</p>
+<pre><code class="lang-js">
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> connect(mapStateToProps,mapDispathToProps)(PostBody)
+</code></pre>
+<p>&#x4F7F;&#x7528;&#x7684;&#x65F6;&#x5019;&#x5C31;&#x53EF;&#x4EE5;&#x4F5C;&#x4E3A;props&#x6765;&#x7528;</p>
+<pre><code class="lang-js">handleSubmit(){
+    <span class="hljs-keyword">this</span>.props.add()
+    <span class="hljs-comment">//add() &#x65B9;&#x6CD5;&#x6267;&#x884C;&#xFF0C;&#x53D1;&#x51FA;action</span>
+}
+</code></pre>
+<p>[&#x6CE8;]:</p>
+<p>1.&#x8FD9;&#x91CC;&#x4E5F;&#x662F;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x5BF9;&#x8C61;&#xFF0C;add&#x662F;&#x4E00;&#x4E2A;&#x65B9;&#x6CD5;</p>
+<p>2.&#x591A;&#x6B21;&#x53D1;action&#x65F6;&#x6BD4;&#x8F83;&#x65B9;&#x4FBF;</p>
+<p>3.&#x4E0D;&#x9700;&#x8981;&#x5728;&#x7EC4;&#x4EF6;&#x4E2D;&#x5BFC;&#x5165;store,&#x53EA;&#x9700;&#x5728;&#x5165;&#x53E3;&#x4E2D;&#x5BFC;&#x5165;&#x5C31;&#x53EF;&#x4EE5;&#x4E86;</p>
 
                                 
                                 </section>
@@ -454,6 +509,14 @@
 
             
                 
+                <a href="2-三大核心.html" class="navigation navigation-prev " aria-label="Previous page: redux三大概念">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="4-注意事项.html" class="navigation navigation-next " aria-label="Next page: 小结:redux注意事项">
+                    <i class="fa fa-angle-right"></i>
+                </a>
                 
             
         
@@ -462,7 +525,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"helloReact","level":"1.4.1","depth":2,"next":{"title":"Redux","level":"1.5","depth":1,"ref":"","articles":[{"title":"hello redux","level":"1.5.1","depth":2,"path":"Redux/1-hello.md","ref":"./Redux/1-hello.md","articles":[]},{"title":"redux三大概念","level":"1.5.2","depth":2,"path":"Redux/2-三大核心.md","ref":"./Redux/2-三大核心.md","articles":[]},{"title":"connect:react-redux","level":"1.5.3","depth":2,"path":"Redux/3-connect.md","ref":"./Redux/3-connect.md","articles":[]},{"title":"小结:redux注意事项","level":"1.5.4","depth":2,"path":"Redux/4-注意事项.md","ref":"./Redux/4-注意事项.md","articles":[]},{"title":"thunk","level":"1.5.5","depth":2,"ref":"","articles":[{"title":"thunk的初步介绍","level":"1.5.5.1","depth":3,"path":"Redux/thunk/1-thunk.md","ref":"./Redux/thunk/1-thunk.md","articles":[]},{"title":"为什么使用thunk","level":"1.5.5.2","depth":3,"path":"Redux/thunk/2-thunk.md","ref":"./Redux/thunk/2-thunk.md","articles":[]}]}]},"previous":{"title":"React","level":"1.4","depth":1,"ref":"","articles":[{"title":"helloReact","level":"1.4.1","depth":2,"path":"React/1-react.md","ref":"./React/1-react.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"React/1-react.md","mtime":"2017-06-02T09:16:03.414Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-06-03T17:54:23.198Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"connect:react-redux","level":"1.5.3","depth":2,"next":{"title":"小结:redux注意事项","level":"1.5.4","depth":2,"path":"Redux/4-注意事项.md","ref":"./Redux/4-注意事项.md","articles":[]},"previous":{"title":"redux三大概念","level":"1.5.2","depth":2,"path":"Redux/2-三大核心.md","ref":"./Redux/2-三大核心.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Redux/3-connect.md","mtime":"2017-06-03T17:51:08.294Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-06-03T17:54:23.198Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
