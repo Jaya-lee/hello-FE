@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>mongoDB · GitBook</title>
+        <title>Mongoose · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.2">
@@ -57,6 +57,8 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
+    
+    <link rel="prev" href="2-mongodb.html" />
     
 
     </head>
@@ -354,7 +356,7 @@
                 <span>
             
                     
-                    数据库
+                    Node.js
             
                 </span>
             
@@ -363,12 +365,38 @@
             <ul class="articles">
                 
     
-        <li class="chapter active" data-level="1.6.1" data-path="1-mongodb.html">
+        <li class="chapter " data-level="1.6.1" data-path="1-expess.html">
             
-                <a href="1-mongodb.html">
+                <a href="1-expess.html">
             
                     
-                    mongoDB
+                    Express
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="2-mongodb.html">
+            
+                <a href="2-mongodb.html">
+            
+                    
+                    MongoDB
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.6.3" data-path="3-ex-mdb.html">
+            
+                <a href="3-ex-mdb.html">
+            
+                    
+                    Mongoose
             
                 </a>
             
@@ -411,7 +439,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >mongoDB</a>
+        <a href=".." >Mongoose</a>
     </h1>
 </div>
 
@@ -426,28 +454,54 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <p>&#x7F51;&#x7AD9;&#x8FD0;&#x884C;&#x9700;&#x8981;&#x6709;&#x5927;&#x91CF;&#x7684;&#x6570;&#x636E;&#x7684;&#x8BFB;&#x53D6;&#xFF0C;&#x540C;&#x65F6;&#x7528;&#x6237;&#x4E5F;&#x9700;&#x8981;&#x628A;&#x81EA;&#x5DF1;&#x7684;&#x6570;&#x636E;&#x5B58;&#x50A8;&#x5230;&#x670D;&#x52A1;&#x5668;&#xFF0C;&#x5BF9;&#x4E8E;&#x6D77;&#x91CF;&#x6570;&#x636E;&#x7684;&#x64CD;&#x4F5C;&#x3002; &#x5C31;&#x9700;&#x8981;&#x6709;&#x4E13;&#x95E8;&#x7684;&#x8F6F;&#x4EF6;&#x914D;&#x5408;&#xFF0C;&#x8FD9;&#x4E2A;&#x8F6F;&#x4EF6;&#x5C31;&#x662F;&#x6570;&#x636E;&#x5E93;&#x3002;</p>
-<p>&#x5F53;&#x524D;&#x6BD4;&#x8F83;&#x6D41;&#x884C;&#x7684;&#x6570;&#x636E;&#x5E93;&#xFF0C;Oracle &#x7532;&#x9AA8;&#x6587;&#xFF0C;SQL server &#xFF0C;&#x8FD9;&#x4E9B;&#x90FD;&#x662F;&#x5546;&#x4E1A;&#x6570;&#x636E;&#x5E93;&#x3002;&#x4F46;&#x662F;&#xFF0C;&#x5F00;&#x6E90;&#x6570;&#x636E;&#x5E93;&#x76EE;&#x524D;&#x66F4;&#x53D7;&#x9752;&#x7750;&#x3002;&#x4E00;&#x4E2A;&#x662F; Mysql , &#x53E6;&#x4E00;&#x4E2A;&#x662F; MongoDB &#x3002;</p>
-<h2 id="mongodb">MongoDB</h2>
-<p> MongoDB &#x7684;&#x5B98;&#x7F51;: <a href="https://www.mongodb.com/" target="_blank">https://www.mongodb.com/</a></p>
-<p> MongoDB &#x4E2D;&#x6587;&#x793E;&#x533A;: <a href="http://www.mongoing.com/" target="_blank">http://www.mongoing.com/</a></p>
-<p>MongoDB &#x4E2D;&#x6587;&#x7F51;:  <a href="http://www.mongodb.org.cn/" target="_blank">http://www.mongodb.org.cn/</a></p>
-<h3 id="&#x5B89;&#x88C5;mongodb">&#x5B89;&#x88C5;<a href="http://docs.mongoing.com/manual-zh/tutorial/install-mongodb-on-ubuntu.html" target="_blank">mongodb</a></h3>
-<h3 id="&#x57FA;&#x672C;&#x547D;&#x4EE4;">&#x57FA;&#x672C;&#x547D;&#x4EE4;</h3>
-<p>&#x67E5;&#x770B;&#x5E93; show dbs
-&#x4F7F;&#x7528;&#x67D0;&#x5E93; use test
-&#x73B0;&#x5728;&#x6240;&#x5904;&#x7684;&#x5E93; db
-&#x5207;&#x6362;&#x5230;&#x8FD9;&#x4E2A;&#x5E93;&#xFF0C;&#x5220;&#x9664; db.dropDatabase()</p>
-<p>&#x67E5;&#x770B;&#x5F53;&#x524D;&#x6570;&#x636E;&#x5E93;&#x4E0B;&#x7684;&#x6240;&#x6709;&#x96C6;&#x5408;  show tables/show collections
-users&#x4E3A;&#x96C6;&#x5408;&#x540D;&#x79F0;
-&#x63D2;&#x5165;&#x6570;&#x636E;  db.users.insert({name:&apos;jaya&apos;,age:21})
-&#x67E5;&#x770B;&#x6570;&#x636E;    db.users.find() &#x6709;&#x4E00;&#x4E2A;id find&#x91CC;&#x9762;&#x53EF;&#x4EE5;&#x52A0;&#x5BF9;&#x8C61;
-&#x5220;&#x9664;&#x6570;&#x636E;    db.users.remove({query})
-&#x82E5;&#x60F3;&#x5168;&#x90E8;&#x5220;&#x9664; &#xFF0C;&#x5219;db.remove({}) {}&#x8868;&#x793A;&#x7A7A;&#x7684;&#x6761;&#x4EF6;</p>
-<p>&#x66F4;&#x65B0;&#x6570;&#x636E;    db.users.update({name:&quot;jaya&quot;},{$set: {hobby:&quot;sing&quot;}})
-save() &#x65B9;&#x6CD5;&#x901A;&#x8FC7;&#x4F20;&#x5165;&#x7684;&#x6587;&#x6863;&#x6765;&#x66FF;&#x6362;&#x5DF2;&#x6709;&#x6587;&#x6863;&#x3002;
-db.users.save({_id: ObjectId(&quot;592e71029d63f20494441735&quot;),age:24})
-db.users.drop() &#x96C6;&#x5408;&#x5220;&#x9664;</p>
+                                <p>Mongoose &#x662F;&#x4E00;&#x4E2A; JS &#x5E93;&#xFF0C;&#x4F5C;&#x7528;&#x662F;&#x628A; MongoDB &#x7684;&#x6570;&#x636E;&#xFF0C;&#x5C01;&#x88C5;&#x6210; JS &#x5BF9;&#x8C61;&#x3002;&#x4FBF;&#x4E8E;
+&#x6211;&#x4EEC;&#x7528; JS &#x4EE3;&#x7801;&#x6765;&#x64CD;&#x4F5C; Mongodb &#x3002;</p>
+<p>&#x6709;&#x4E86; Mongoose &#x4E4B;&#x540E;&#xFF0C;&#x6211;&#x4EEC;&#x5C31;&#x53EF;&#x4EE5;&#x7528; JS &#x4EE3;&#x7801;&#x6765;&#x8FDB;&#x884C;&#x589E;&#x5220;&#x6539;&#x67E5;&#x4E86;&#x3002;</p>
+<p>&#x53C2;&#x8003;&#xFF1A;</p>
+<ul>
+<li>&#x4E2D;&#x6587;&#x53C2;&#x8003;&#xFF1A;<a href="http://ourjs.com/detail/53ad24edb984bb4659000013" target="_blank">http://ourjs.com/detail/53ad24edb984bb4659000013</a></li>
+<li>&#x5B98;&#x7F51;&#xFF1A;<a href="http://mongoosejs.com/" target="_blank">http://mongoosejs.com/</a></li>
+<li>nodeclass: <a href="http://www.nodeclass.com/api/mongoose.html#quick_start" target="_blank">http://www.nodeclass.com/api/mongoose.html#quick_start</a></li>
+<li>&#x64CD;&#x4F5C;&#x6B65;&#x9AA4;&#xFF1A;<a href="http://haoqicat.com/react-express-api/3-mongoose" target="_blank">http://haoqicat.com/react-express-api/3-mongoose</a></li>
+</ul>
+<h3 id="&#x88C5;&#x5305;">&#x88C5;&#x5305;</h3>
+<p>&#x5B89;&#x88C5;&#x5230;&#x540E;&#x53F0; express &#x4EE3;&#x7801;&#x4E2D;&#xFF0C;&#x88C5;&#x5305;&#x547D;&#x4EE4;&#xFF1A;</p>
+<pre><code>npm install --save mongoose
+</code></pre><p>&#x88C5;&#x5305;&#x6210;&#x529F;&#x540E;&#xFF0C;&#x4E00;&#x822C;&#x7684;&#x6B65;&#x9AA4;&#x5C31;&#x662F;&#x5148;&#x5BFC;&#x5165;&#xFF0C;&#x540E;&#x8C03;&#x7528;&#x3002;</p>
+<p>&#x5728;index.js &#x6587;&#x4EF6;&#xFF0C;&#x5BFC;&#x5165; mongoose</p>
+<pre><code>const mongoose = require(&apos;mongoose&apos;);
+</code></pre><h3 id="&#x8FDE;&#x63A5;&#x6570;&#x636E;&#x5E93;">&#x8FDE;&#x63A5;&#x6570;&#x636E;&#x5E93;</h3>
+<p>&#x7136;&#x540E;&#x8FDB;&#x884C;&#x8FDE;&#x63A5;</p>
+<pre><code class="lang-js">mongoose.connect(<span class="hljs-string">&apos;mongodb://192.168.1.105:27017/express&apos;</span>);
+
+<span class="hljs-comment">// &#x6267;&#x884C;&#x6B64;&#x884C;&#x4EE3;&#x7801;&#x4E4B;&#x524D;&#xFF0C;&#x8981;&#x4FDD;&#x8BC1; mongodb &#x6570;&#x636E;&#x5E93;&#x5DF2;&#x7ECF;&#x8FD0;&#x884C;&#x4E86;&#xFF0C;&#x800C;&#x4E14;&#x8FD0;&#x884C;&#x5728; 27017 &#x7AEF;&#x53E3;</span>
+</code></pre>
+<p>&#x542F;&#x52A8;&#x6570;&#x636E;&#x5E93;&#xFF0C;&#x4FDD;&#x8BC1;&#x6709;&#x4E00;&#x4E2A; database &#x53EB;&#x505A; express</p>
+<p>&#x7136;&#x540E;&#x6DFB;&#x52A0;&#x4E0B;&#x9762;&#x4EE3;&#x7801;</p>
+<pre><code class="lang-js"><span class="hljs-keyword">let</span> db = mongoose.connection;
+db.on(<span class="hljs-string">&apos;error&apos;</span>, <span class="hljs-built_in">console</span>.log);
+db.once(<span class="hljs-string">&apos;open&apos;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;success!&apos;</span>)
+});
+</code></pre>
+<p>&#x5982;&#x679C;&#x8FDE;&#x63A5;&#x6570;&#x636E;&#x5E93;&#x6210;&#x529F;&#xFF0C;&#x5C31;&#x6253;&#x5370; <code>success</code> &#x3002;<code>once(&apos;open&apos;)</code> &#x7684;&#x610F;&#x601D;&#x5C31;&#x662F;
+&quot;&#x4E00;&#x65E6;&#x6253;&#x5F00;&#x6210;&#x529F;&quot; &#x3002;&#x5982;&#x679C;&#x6570;&#x636E;&#x5E93;&#x6CA1;&#x6709;&#x542F;&#x52A8;&#xFF0C;&#x662F;&#x770B;&#x4E0D;&#x5230; <code>success</code> &#x7684;&#x3002;</p>
+<h3 id="&#x521B;&#x5EFA;&#x6570;&#x636E;-model">&#x521B;&#x5EFA;&#x6570;&#x636E; model</h3>
+<p>&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x4E13;&#x95E8;&#x7684;&#x3000;models/user.js &#xFF0C;&#x91CC;&#x9762;&#x4EE3;&#x7801;&#x7684;&#x4F5C;&#x7528;&#x662F;&#xFF0C;&#x5B9E;&#x73B0;&#x4E00;&#x4E2A;&#x5BF9;&#x8C61;&#x8DDF;&#x4E00;&#x4E2A;&#x6570;&#x636E;&#x96C6;&#x5408;&#x4E4B;&#x95F4;&#x6620;&#x5C04;&#x5173;&#x7CFB;&#x3002;</p>
+<pre><code class="lang-js"><span class="hljs-keyword">var</span> mongoose = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;mongoose&apos;</span>);
+<span class="hljs-keyword">var</span> Schema = mongoose.Schema;
+
+<span class="hljs-keyword">const</span> UserSchema = <span class="hljs-keyword">new</span> Schema(
+  {
+    username: { type: <span class="hljs-built_in">String</span> },
+    email: { type: <span class="hljs-built_in">String</span> }
+  }
+);
+<span class="hljs-built_in">module</span>.exports = mongoose.model(<span class="hljs-string">&apos;User&apos;</span>, UserSchema);
+<span class="hljs-comment">// `User` &#x4F1A;&#x81EA;&#x52A8;&#x5BF9;&#x5E94;&#x6570;&#x636E;&#x5E93;&#x4E2D;&#x7684;&#x3000;users &#x8FD9;&#x4E2A;&#x96C6;&#x5408;</span>
+<span class="hljs-comment">// &#x5982;&#x679C;&#x8FD9;&#x91CC;&#x662F;&#x3000;Apple &#x90A3;&#x4E48;&#x5C31;&#x4F1A;&#x5BF9;&#x5E94;&#x3000;apples &#x96C6;&#x5408;</span>
+<span class="hljs-comment">// &#x5982;&#x679C;&#x8FD9;&#x91CC;&#x662F;&#x3000;Person &#x90A3;&#x4E48;&#x5C31;&#x4F1A;&#x5BF9;&#x5E94;&#x3000;people &#x96C6;&#x5408;</span>
+</code></pre>
 
                                 
                                 </section>
@@ -475,6 +529,10 @@ db.users.drop() &#x96C6;&#x5408;&#x5220;&#x9664;</p>
 
             
                 
+                <a href="2-mongodb.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: MongoDB">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
                 
             
         
@@ -483,7 +541,7 @@ db.users.drop() &#x96C6;&#x5408;&#x5220;&#x9664;</p>
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"mongoDB","level":"1.6.1","depth":2,"previous":{"title":"数据库","level":"1.6","depth":1,"ref":"","articles":[{"title":"mongoDB","level":"1.6.1","depth":2,"path":"数据库/1-mongodb.md","ref":"./数据库/1-mongodb.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"数据库/1-mongodb.md","mtime":"2017-06-03T17:13:09.718Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-06-03T17:54:23.198Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Mongoose","level":"1.6.3","depth":2,"previous":{"title":"MongoDB","level":"1.6.2","depth":2,"path":"nodejs/2-mongodb.md","ref":"./nodejs/2-mongodb.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"nodejs/3-ex-mdb.md","mtime":"2017-06-05T07:08:42.807Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-06-05T15:52:22.964Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
