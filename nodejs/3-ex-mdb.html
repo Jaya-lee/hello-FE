@@ -502,6 +502,95 @@ db.once(<span class="hljs-string">&apos;open&apos;</span>, <span class="hljs-fun
 <span class="hljs-comment">// &#x5982;&#x679C;&#x8FD9;&#x91CC;&#x662F;&#x3000;Apple &#x90A3;&#x4E48;&#x5C31;&#x4F1A;&#x5BF9;&#x5E94;&#x3000;apples &#x96C6;&#x5408;</span>
 <span class="hljs-comment">// &#x5982;&#x679C;&#x8FD9;&#x91CC;&#x662F;&#x3000;Person &#x90A3;&#x4E48;&#x5C31;&#x4F1A;&#x5BF9;&#x5E94;&#x3000;people &#x96C6;&#x5408;</span>
 </code></pre>
+<p>&#x9996;&#x5148;&#x521B;&#x5EFA;&#x4E86;&#x4E00;&#x4E2A;&#x3000;Schema &#xFF08;&#x6982;&#x8981;&#xFF09;&#xFF0C;Schema &#x5C31;&#x662F;&#x7528;&#x6765;&#x63CF;&#x8FF0;&#x8FD9;&#x4E2A;&#x96C6;&#x5408;&#x4E2D;&#x6BCF;&#x4E2A;&#x6587;&#x6863;
+&#x7684;&#x6570;&#x636E;&#x7ED3;&#x6784;&#xFF0C;&#x5177;&#x4F53;&#x6765;&#x8BB2;&#x5C31;&#x662F;</p>
+<ul>
+<li>&#x6709;&#x90A3;&#x51E0;&#x4E2A;&#x5B57;&#x6BB5; ( field &#xFF09;&#xFF1F;&#x6211;&#x4EEC;&#x8FD9;&#x91CC;&#x6709;&#x4E24;&#x4E2A;&#x3000;<code>username</code> &#x548C;&#x3000;<code>email</code></li>
+<li>&#x6BCF;&#x4E2A;&#x5B57;&#x6BB5;&#x7684;&#x7C7B;&#x578B;</li>
+</ul>
+<p>&#x8FD9;&#x6837;&#xFF0C;&#x6620;&#x5C04;&#x5173;&#x7CFB;&#x5C31;&#x5EFA;&#x7ACB;&#x5B8C;&#x6BD5;&#x3002;&#x6700;&#x7EC8;&#x7528; <code>module.exports</code> &#x5BFC;&#x51FA;&#x7684;&#x5C31;&#x662F;&#x4E00;&#x4E2A; model &#xFF08;&#x6A21;&#x578B;&#xFF09;&#x3002;</p>
+<h3 id="&#x4FDD;&#x5B58;&#x4E00;&#x4E2A;&#x6587;&#x6863;">&#x4FDD;&#x5B58;&#x4E00;&#x4E2A;&#x6587;&#x6863;</h3>
+<p>&#x628A;&#x3000;db.once &#x90E8;&#x5206;&#x7684;&#x4EE3;&#x7801;&#xFF0C;&#x6539;&#x6210;&#x4E0B;&#x9762;&#x8FD9;&#x4E2A;&#x6837;&#x5B50;</p>
+<pre><code class="lang-js"><span class="hljs-keyword">let</span> User = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;./models/user&apos;</span>);
+...
+db.once(<span class="hljs-string">&apos;open&apos;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+   <span class="hljs-keyword">let</span> user = <span class="hljs-keyword">new</span> User({username: <span class="hljs-string">&apos;inCode&apos;</span>, email: <span class="hljs-string">&apos;inCode@incode.com&apos;</span>});
+   user.save(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">err</span>)</span>{
+     <span class="hljs-keyword">if</span>(err) <span class="hljs-built_in">console</span>.log(err);
+   })
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;success!&apos;</span>)
+});
+</code></pre>
+<p>&#x7136;&#x540E;&#xFF0C;&#x540E;&#x53F0;&#x91CD;&#x542F;&#x3000;<code>node index.js</code> &#x770B;&#x770B;&#x6570;&#x636E;&#x5E93;&#x4E2D;&#xFF0C;&#x7684;&#x786E;&#x6DFB;&#x52A0;&#x4E86;&#x4E00;&#x4E2A;&#x6587;&#x6863;&#x3002;</p>
+<p>&#x5F3A;&#x8C03;&#xFF1A;&#xFF40;User&#xFF40; &#x5BF9;&#x5E94;&#x3000;users &#x96C6;&#x5408;&#xFF0C;&#x5979;&#x672C;&#x8EAB;&#x662F;&#x3000;models/user.js &#x4E2D;&#x5BFC;&#x51FA;&#x7684;&#x4E00;&#x4E2A; model &#x3002;&#x6240;&#x4EE5;&#x8BF4;&#x3000;User &#x5C31;&#x662F;&#x4E00;&#x4E2A;&#x7A7A;&#x76D2;&#x5B50;&#x3002;&#x800C;&#x5C0F;&#x5199;&#x7684; user &#x662F;&#x3000;<code>new User</code> &#x5F97;&#x5230;&#x7684;&#x4E00;&#x4E2A;&#x5BF9;&#x8C61;&#xFF0C;&#x5BF9;&#x5E94;&#x4E00;&#x4E2A;&#x5B9E;&#x9645;&#x7684;&#x6587;&#x6863;&#xFF0C;&#x6240;&#x4EE5;&#x5176;&#x4E2D;&#x4F1A;&#x771F;&#x6B63;&#x4FDD;&#x5B58;&#x4E00;&#x4E2A;&#x7528;&#x6237;&#x7684;&#x5B9E;&#x9645;&#x3000;username &#x548C; email &#x6570;&#x636E;&#x3002;</p>
+<p><code>user.save</code> &#x5C31;&#x662F;&#x628A;&#x3000;<code>user</code> &#x4E2D;&#x5DF2;&#x7ECF;&#x6709;&#x7684;&#x6570;&#x636E;&#xFF08;&#x5728;&#x5185;&#x5B58;&#x4E2D;&#xFF09;&#xFF0C;&#x771F;&#x6B63;&#x4FDD;&#x5B58;&#x5230;&#x3000;MongoDB &#x6570;&#x636E;&#x5E93;&#x4E2D;&#xFF08;&#x4FDD;&#x5B58;&#x5230;&#x786C;&#x76D8;&#x4E0A;&#xFF09;&#x3002;</p>
+<h3 id="&#x4EE3;&#x7801;">&#x4EE3;&#x7801;</h3>
+<p>index.js &#x5982;&#x4E0B;</p>
+<pre><code class="lang-js"><span class="hljs-keyword">const</span> express =  <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;express&apos;</span>);
+<span class="hljs-keyword">const</span> app = express();
+<span class="hljs-keyword">const</span> cors = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;cors&apos;</span>);
+app.use(cors());
+<span class="hljs-keyword">const</span> mongoose = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;mongoose&apos;</span>);
+<span class="hljs-keyword">const</span> User = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;./models/user&apos;</span>);
+
+
+mongoose.connect(<span class="hljs-string">&apos;mongodb://localhost:27017/digicity&apos;</span>);
+<span class="hljs-comment">// &#x6267;&#x884C;&#x6B64;&#x884C;&#x4EE3;&#x7801;&#x4E4B;&#x524D;&#xFF0C;&#x8981;&#x4FDD;&#x8BC1; mongodb &#x6570;&#x636E;&#x5E93;&#x5DF2;&#x7ECF;&#x8FD0;&#x884C;&#x4E86;&#xFF0C;&#x800C;&#x4E14;&#x8FD0;&#x884C;&#x5728; 27017 &#x7AEF;&#x53E3;</span>
+
+<span class="hljs-keyword">var</span> db = mongoose.connection;
+db.on(<span class="hljs-string">&apos;error&apos;</span>, <span class="hljs-built_in">console</span>.log);
+db.once(<span class="hljs-string">&apos;open&apos;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+   <span class="hljs-keyword">let</span> user = <span class="hljs-keyword">new</span> User({username: <span class="hljs-string">&apos;inCode&apos;</span>, email: <span class="hljs-string">&apos;inCode@incode.com&apos;</span>});
+   user.save(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">err</span>)</span>{
+     <span class="hljs-keyword">if</span>(err) <span class="hljs-built_in">console</span>.log(err);
+   })
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;success!&apos;</span>)
+});
+
+
+<span class="hljs-comment">// &#x4E0B;&#x9762;&#x4E09;&#x884C;&#x5C31;&#x662F;&#x6211;&#x4EEC;&#x5B9E;&#x73B0;&#x7684;&#x4E00;&#x4E2A; API</span>
+app.get(<span class="hljs-string">&apos;/username&apos;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">req, res</span>)</span>{
+  res.json({<span class="hljs-string">&quot;username&quot;</span>: <span class="hljs-string">&quot;happypeter&quot;</span>});
+})
+
+app.listen(<span class="hljs-number">3000</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>{
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;running on port 3000...&apos;</span>);
+});
+</code></pre>
+<p>models/user.js</p>
+<pre><code class="lang-js"><span class="hljs-keyword">var</span> mongoose = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;mongoose&apos;</span>);
+<span class="hljs-keyword">var</span> Schema = mongoose.Schema;
+
+<span class="hljs-keyword">const</span> UserSchema = <span class="hljs-keyword">new</span> Schema(
+  {
+    username: { type: <span class="hljs-built_in">String</span> },
+    email: { type: <span class="hljs-built_in">String</span> }
+  }
+);
+<span class="hljs-built_in">module</span>.exports = mongoose.model(<span class="hljs-string">&apos;User&apos;</span>, UserSchema);
+<span class="hljs-comment">// `User` &#x4F1A;&#x81EA;&#x52A8;&#x5BF9;&#x5E94;&#x6570;&#x636E;&#x5E93;&#x4E2D;&#x7684;&#x3000;users &#x8FD9;&#x4E2A;&#x96C6;&#x5408;</span>
+<span class="hljs-comment">// &#x5982;&#x679C;&#x8FD9;&#x91CC;&#x662F;&#x3000;Apple &#x90A3;&#x4E48;&#x5C31;&#x4F1A;&#x5BF9;&#x5E94;&#x3000;apples &#x96C6;&#x5408;</span>
+<span class="hljs-comment">// &#x5982;&#x679C;&#x8FD9;&#x91CC;&#x662F;&#x3000;Person &#x90A3;&#x4E48;&#x5C31;&#x4F1A;&#x5BF9;&#x5E94;&#x3000;people &#x96C6;&#x5408;</span>
+</code></pre>
+<p>package.json &#x5982;&#x4E0B;</p>
+<pre><code class="lang-json">{
+  <span class="hljs-string">&quot;name&quot;</span>: <span class="hljs-string">&quot;express-backend&quot;</span>,
+  <span class="hljs-string">&quot;version&quot;</span>: <span class="hljs-string">&quot;1.0.0&quot;</span>,
+  <span class="hljs-string">&quot;description&quot;</span>: <span class="hljs-string">&quot;&quot;</span>,
+  <span class="hljs-string">&quot;main&quot;</span>: <span class="hljs-string">&quot;index.js&quot;</span>,
+  <span class="hljs-string">&quot;scripts&quot;</span>: {
+    <span class="hljs-string">&quot;start&quot;</span>: <span class="hljs-string">&quot;nodemon index.js&quot;</span>
+  },
+  <span class="hljs-string">&quot;keywords&quot;</span>: [],
+  <span class="hljs-string">&quot;author&quot;</span>: <span class="hljs-string">&quot;&quot;</span>,
+  <span class="hljs-string">&quot;license&quot;</span>: <span class="hljs-string">&quot;ISC&quot;</span>,
+  <span class="hljs-string">&quot;dependencies&quot;</span>: {
+    <span class="hljs-string">&quot;cors&quot;</span>: <span class="hljs-string">&quot;^2.8.1&quot;</span>,
+    <span class="hljs-string">&quot;express&quot;</span>: <span class="hljs-string">&quot;^4.14.0&quot;</span>,
+    <span class="hljs-string">&quot;mongoose&quot;</span>: <span class="hljs-string">&quot;^4.7.2&quot;</span>
+  }
+}
+</code></pre>
 
                                 
                                 </section>
@@ -541,7 +630,7 @@ db.once(<span class="hljs-string">&apos;open&apos;</span>, <span class="hljs-fun
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Mongoose","level":"1.6.3","depth":2,"previous":{"title":"MongoDB","level":"1.6.2","depth":2,"path":"nodejs/2-mongodb.md","ref":"./nodejs/2-mongodb.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"nodejs/3-ex-mdb.md","mtime":"2017-06-05T07:08:42.807Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-06-05T15:52:22.964Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Mongoose","level":"1.6.3","depth":2,"previous":{"title":"MongoDB","level":"1.6.2","depth":2,"path":"nodejs/2-mongodb.md","ref":"./nodejs/2-mongodb.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"nodejs/3-ex-mdb.md","mtime":"2017-06-05T16:33:18.717Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-06-05T16:38:00.487Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
