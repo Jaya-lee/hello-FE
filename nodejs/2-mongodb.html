@@ -406,35 +406,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.6.4" data-path="4-客户端读写.md">
+        <li class="chapter " data-level="1.6.4" data-path="４-封装API.md">
             
                 <span>
-            
-                    
-                    客户端读写数据库
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.6.5" data-path="5-前台传后台.html">
-            
-                <a href="5-前台传后台.html">
-            
-                    
-                    前台传递参数给后台
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.6.6" data-path="6-封装API.html">
-            
-                <a href="6-封装API.html">
             
                     
                     实现一整套API
@@ -509,7 +483,7 @@
 </ul>
 <p>&#x4E3E;&#x4F8B;&#x5B50;&#x6765;&#x8BF4;&#xFF0C;&#x4E00;&#x4E2A;&#x9879;&#x76EE;&#x53EB; facebook &#xFF0C;&#x90A3;&#x4E48;&#x6211;&#x4EEC;&#x5C31;&#x5EFA;&#x7ACB;&#x4E00;&#x4E2A; database &#x6765;&#x5B58;&#x50A8;&#x8FD9;&#x4E2A;&#x9879;&#x76EE;&#x7684;&#x6240;&#x6709;&#x6570;&#x636E;&#x3002;
 &#x4E00;&#x4E2A;&#x6570;&#x636E;&#x5E93;&#x4E2D;&#xFF0C;&#x53EF;&#x4EE5;&#x521B;&#x5EFA;&#x591A;&#x4E2A;&#x96C6;&#x5408;&#xFF0C;&#x6BD4;&#x5982; users &#x3002;&#x4E00;&#x4E2A; users &#x96C6;&#x5408;&#x4E2D;&#xFF0C;&#x53EF;&#x4EE5;&#x5305;&#x542B;&#x591A;&#x4E2A;&#x6587;&#x6863;&#xFF0C;&#x6BCF;&#x4E2A;&#x6587;&#x6863;&#x4E2D;&#x5B58;&#x50A8;&#x4E00;&#x4E2A; user &#x7684;&#x4FE1;&#x606F;&#xFF08;&#x4FE1;&#x606F;&#x53EF;&#x4EE5;&#x6709;&#x591A;&#x9879;&#xFF1A;email, name, brithday ...&#xFF09;&#x3002;</p>
-<h3 id="&#x5B89;&#x88C5;mongodb">&#x5B89;&#x88C5;MongoDB</h3>
+<h2 id="&#x3000;&#x5B89;&#x88C5;mongodb">&#x3000;&#x5B89;&#x88C5;MongoDB</h2>
 <p>linux&#x6309;&#x7167;<a href="http://docs.mongoing.com/manual-zh/tutorial/install-mongodb-on-ubuntu.html" target="_blank">&#x8FD9;&#x91CC;</a>
 &#x53EF;&#x4EE5;&#x5B89;&#x88C5;&#x65B0;&#x7684;&#x7248;&#x672C;</p>
 <pre><code>1.$ sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 0C49F3730359A14518585931BC711F9BA15703C6
@@ -522,12 +496,12 @@
 </code></pre><p>&#x82F9;&#x679C;&#x7CFB;&#x7EDF;&#x4E0A;&#xFF0C;&#x7528; HomeBrew &#x5B89;&#x88C5;</p>
 <pre><code>brew install mongodb
 </code></pre><p>&#x5B89;&#x88C5;&#x597D;&#x540E;&#xFF0C;&#x73B0;&#x5728;&#x5F00;&#x59CB;&#x4F7F;&#x7528;</p>
-<h3 id="&#x901A;&#x8FC7;&#x547D;&#x4EE4;&#x884C;&#x64CD;&#x4F5C;-mongodb">&#x901A;&#x8FC7;&#x547D;&#x4EE4;&#x884C;&#x64CD;&#x4F5C; MongoDB</h3>
+<h2 id="&#x901A;&#x8FC7;&#x547D;&#x4EE4;&#x884C;&#x64CD;&#x4F5C;-mongodb">&#x901A;&#x8FC7;&#x547D;&#x4EE4;&#x884C;&#x64CD;&#x4F5C; MongoDB</h2>
 <p>1.&#x9996;&#x5148;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x6587;&#x4EF6;&#x6765;&#x5B58;&#x50A8;&#x6570;&#x636E;</p>
 <pre><code>mkdir data/db
 </code></pre><p>2.&#x542F;&#x52A8;mongodb</p>
 <pre><code>mongod --dbpath=./data/db
-</code></pre><p>&#x540E;&#x9762;&#x4F20;&#x9012;&#x7684;&#x9009;&#x9879;&#x5C31;&#x662F;&#x7ED9;&#x51FA;&#x5B58;&#x50A8;&#x7684;&#x4F4D;&#x7F6E;&#x3002;</p>
+</code></pre><p>&#x547D;&#x4EE4;&#x5C31;&#x662F; <code>mongod</code>,&#x540E;&#x9762;&#x4F20;&#x9012;&#x7684;&#x9009;&#x9879;&#x5C31;&#x662F;&#x7ED9;&#x51FA;&#x5B58;&#x50A8;&#x7684;&#x4F4D;&#x7F6E;&#x3002;</p>
 <p>tip:&#x4F7F;&#x7528;&#x8FC7;&#x7A0B;&#x4E2D;&#x4E00;&#x5B9A;&#x8981;&#x4FDD;&#x8BC1;mongodb&#x7684;&#x542F;&#x52A8;</p>
 <p>3.&#x8FDB;&#x884C;&#x6570;&#x636E;&#x5E93;&#x64CD;&#x4F5C;&#xFF0C;&#x5F00;&#x542F;Mongo Shell</p>
 <pre><code>mongo
@@ -535,11 +509,10 @@
 <p>&#x53C2;&#x8003;&#xFF1A;</p>
 <ul>
 <li><a href="http://haoqicat.com/react-express-api/2-mongodb" target="_blank">&#x597D;&#x5947;&#x732B;&#x8BFE;&#x7A0B;</a></li>
-<li><a href="http://newming.coding.me/myidoc/html/%E6%95%B0%E6%8D%AE%E5%BA%93/mongodb.html" target="_blank">Newming</a></li>
 </ul>
-<p>&#x73B0;&#x5728;&#x601D;&#x8003;&#x4E00;&#x4E0B;&#xFF0C;&#x4E00;&#x6761;&#x6570;&#x636E;&#xFF0C;&#x5E94;&#x8BE5;&#x4FDD;&#x5B58;&#x6210;&#x4E00;&#x4E2A;&#x4EC0;&#x4E48;&#x5355;&#x4F4D;&#xFF1F;&#x7ED9;&#x51FA;&#x4E09;&#x4E2A;&#x9009;&#x9879;&#xFF1A;&#x6570;&#x636E;&#x5E93;&#xFF0C;&#x96C6;&#x5408;&#xFF0C;&#x6587;&#x6863;&#xFF1F;</p>
+<p>&#x4E00;&#x6761;&#x6570;&#x636E;&#xFF0C;&#x5E94;&#x8BE5;&#x4FDD;&#x5B58;&#x6210;&#x4E00;&#x4E2A;&#x4EC0;&#x4E48;&#x5355;&#x4F4D;&#xFF1F;&#x6570;&#x636E;&#x5E93;&#xFF1F;&#x96C6;&#x5408;&#xFF1F;&#x6587;&#x6863;&#xFF1F;</p>
 <p>&#x7B54;&#x6848;&#xFF1A;&#x4E00;&#x4E2A;&#x6587;&#x6863;&#x3002;&#x90A3;&#x4E48;&#x8981;&#x4FDD;&#x5B58;&#x4E00;&#x4E2A;&#x6587;&#x6863;&#xFF0C;&#x5148;&#x8981;&#x6709;&#x4E00;&#x4E2A;&#x6570;&#x636E;&#x5E93;&#xFF0C;&#x518D;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x96C6;&#x5408;&#xFF0C;&#x7136;&#x540E;&#x96C6;&#x5408;&#x4E2D;
-&#x624D;&#x80FD;&#x63D2;&#x5165;&#x8FD9;&#x4E2A;&#x6587;&#x6863;&#x3002;&#x8FD9;&#x4E2A;&#x662F;&#x603B;&#x4F53;&#x601D;&#x8DEF;&#x3002;</p>
+&#x624D;&#x80FD;&#x63D2;&#x5165;&#x8FD9;&#x4E2A;&#x6587;&#x6863;&#x3002;&#x8FD9;&#x4E2A;&#x662F;<strong>&#x603B;&#x4F53;&#x601D;&#x8DEF;</strong>&#x3002;</p>
 <p>&#x5177;&#x4F53;&#x64CD;&#x4F5C;&#x6B65;&#x9AA4;&#x5982;&#x4E0B;&#xFF1A;</p>
 <p>&#x7B2C;&#x4E00;&#x6B65;&#xFF0C;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x6570;&#x636E;&#x5E93;</p>
 <pre><code>$ use express
@@ -549,13 +522,13 @@ switched to db express
 <pre><code>show dbs
 </code></pre><p>&#x6682;&#x65F6;&#xFF0C;&#x6CA1;&#x6709;&#x4FDD;&#x5B58;&#x6570;&#x636E;&#x5230;&#x8BE5;&#x6570;&#x636E;&#x5E93;&#xFF0C;&#x6240;&#x4EE5;&#xFF0C;&#x8F93;&#x51FA;&#x4E2D;&#x6CA1;&#x6709; express &#x3002;</p>
 <p>&#x7B2C;&#x4E8C;&#x6B65;&#xFF0C;&#x521B;&#x5EFA;&#x96C6;&#x5408;</p>
-<p>&#x521B;&#x5EFA;&#x96C6;&#x5408;&#xFF0C;&#x96C6;&#x5408;&#x540D;&#x79F0;&#x53EB; users  &#x3002;</p>
+<p>&#x521B;&#x5EFA;&#x96C6;&#x5408;&#xFF0C;&#x96C6;&#x5408;&#x540D;&#x79F0;&#x53EB; users</p>
 <pre><code>&gt; db.createCollection(&apos;users&apos;)
 { &quot;ok&quot; : 1 }
 </code></pre><p>&#x7B2C;&#x4E09;&#x6B65;&#xFF0C;&#x628A;&#x4E00;&#x6761;&#x6570;&#x636E;&#xFF0C;&#x4FDD;&#x5B58;&#x6210;&#x4E00;&#x6761;&#x6587;&#x6863;&#xFF08; Document &#xFF09;</p>
 <pre><code>&gt; db.users.insert({username: &apos;peter&apos;, email: &apos;peter@peter.com&apos; })
 WriteResult({ &quot;nInserted&quot; : 1 })
-</code></pre><p>&#x8F93;&#x51FA;&#x7ED3;&#x679C; <code>WriteResult({ &quot;nInserted&quot; : 1 })</code> &#x8868;&#x8FF0;&#x6210;&#x529F;&#x5199;&#x5165;&#x4E00;&#x6761;&#x6570;&#x636E;&#x3002;</p>
+</code></pre><p>&#x8F93;&#x51FA;&#x7ED3;&#x679C; <code>WriteResult({ &quot;nInserted&quot; : 1 })</code> &#x8868;&#x793A;&#x6210;&#x529F;&#x5199;&#x5165;&#x4E00;&#x6761;&#x6570;&#x636E;&#x3002;</p>
 <p>&#x7B2C;&#x56DB;&#x6B65;&#xFF0C;&#x5217;&#x51FA;&#x4E00;&#x4E2A;&#x96C6;&#x5408;&#x4E2D;&#x7684;&#x6240;&#x6709;&#x6587;&#x6863;&#xFF1A;</p>
 <pre><code>db.users.find()
 </code></pre><h3 id="&#x5BF9;&#x6570;&#x636E;&#x8BB0;&#x5F55;&#x8FDB;&#x884C;&#x589E;&#x5220;&#x6539;&#x67E5;">&#x5BF9;&#x6570;&#x636E;&#x8BB0;&#x5F55;&#x8FDB;&#x884C;&#x589E;&#x5220;&#x6539;&#x67E5;</h3>
@@ -567,7 +540,7 @@ WriteResult({ &quot;nInserted&quot; : 1 })
 <pre><code> db.users.update({_id: ObjectId(&quot;584b62b830a2a2cbf4c4c3f6&quot;)}, {username: &quot;billie66&quot;, email:&quot;billie@billie.com&quot;})
 </code></pre><p>update &#x63A5;&#x53E3;&#x4E2D;&#x6709;&#x4E24;&#x4E2A;&#x53C2;&#x8003;&#xFF0C;&#x7B2C;&#x4E00;&#x4E2A;&#x662F;&#x67E5;&#x8BE2;&#x6761;&#x4EF6;&#xFF0C;&#x7528;&#x6765;&#x5B9A;&#x4F4D;&#x8981;&#x66F4;&#x65B0;&#x7684;&#x662F;&#x54EA;&#x4E00;&#x4E2A;&#x6587;&#x6863;&#xFF0C;&#x540E;&#x9762;&#x662F;&#x66F4;&#x65B0;&#x540E;&#x7684;&#x6570;&#x636E;&#x3002;</p>
 <p>&#x7B2C;&#x4E09;&#x6B65;&#xFF0C;&#x67E5;&#x3002;</p>
-<p>&#x4F7F;&#x7528; update() &#x63A5;&#x53E3;&#x3002;</p>
+<p>&#x4F7F;&#x7528; find() &#x63A5;&#x53E3;&#x3002;</p>
 <pre><code>db.users.find({})
 </code></pre><p>&#x53EF;&#x4EE5;&#x5217;&#x51FA;&#x6240;&#x6709;&#x7684; users &#x96C6;&#x5408;&#x4E2D;&#x7684;&#x6587;&#x6863;&#x3002;</p>
 <p>&#x7B2C;&#x56DB;&#x6B65;&#xFF0C;&#x5220;&#x3002;</p>
@@ -577,11 +550,11 @@ WriteResult({ &quot;nInserted&quot; : 1 })
 WriteResult({ &quot;nRemoved&quot; : 1 })
 </code></pre><p>&#x5220;&#x9664;&#x96C6;&#x5408;&#x4E2D;&#x6240;&#x6709;&#x6587;&#x6863;&#xFF1A;</p>
 <pre><code>&gt; db.users.remove({})
-</code></pre><p>&#x6211;&#x4EEC;&#x53D1;&#x73B0;&#x6572;&#x547D;&#x4EE4;&#x6BD4;&#x8F83;&#x9EBB;&#x70E6;&#xFF0C;&#x6240;&#x4EE5;&#xFF0C;&#x53EF;&#x4EE5;&#x8003;&#x8651;&#x4F7F;&#x7528;&#x56FE;&#x5F62;&#x5316;&#x7684;&#x754C;&#x9762;&#x6765;&#x64CD;&#x4F5C; MongoDB &#x3002;</p>
-<h3 id="&#x56FE;&#x5F62;&#x5316;&#x7684;&#x64CD;&#x4F5C;&#x754C;&#x9762;-mongo-express">&#x56FE;&#x5F62;&#x5316;&#x7684;&#x64CD;&#x4F5C;&#x754C;&#x9762; mongo-express</h3>
+</code></pre><p>&#x57FA;&#x672C;&#x547D;&#x4EE4;&#x5C31;&#x5217;&#x4E3E;&#x8FD9;&#x4E9B;&#x3002;&#x6211;&#x4EEC;&#x53D1;&#x73B0;&#x6572;&#x547D;&#x4EE4;&#x6BD4;&#x8F83;&#x9EBB;&#x70E6;&#xFF0C;&#x6240;&#x4EE5;&#xFF0C;&#x53EF;&#x4EE5;&#x8003;&#x8651;&#x4F7F;&#x7528;&#x56FE;&#x5F62;&#x5316;&#x7684;&#x754C;&#x9762;&#x6765;&#x64CD;&#x4F5C; MongoDB &#x3002;</p>
+<h2 id="&#x56FE;&#x5F62;&#x5316;&#x7684;&#x64CD;&#x4F5C;&#x754C;&#x9762;-mongo-express">&#x56FE;&#x5F62;&#x5316;&#x7684;&#x64CD;&#x4F5C;&#x754C;&#x9762; mongo-express</h2>
 <p>Mongo-express &#x662F;&#x4E00;&#x4E2A;&#x7528; express &#x6280;&#x672F;&#x5F00;&#x53D1;&#x7684;&#xFF0C;MongoDB &#x7684; GUI (&#x56FE;&#x5F62;&#x754C;&#x9762;)&#x3002;&#x53EF;&#x4EE5;&#x65B9;&#x4FBF;&#x7F8E;&#x89C2;&#x7684; &#x64CD;&#x4F5C; MongoDB &#x4E2D;&#x7684;&#x6570;&#x636E;&#x3002;</p>
 <p>&#x53C2;&#x8003;&#xFF1A;<a href="http://haoqicat.com/hand-in-hand-react/4-mongo-express" target="_blank">http://haoqicat.com/hand-in-hand-react/4-mongo-express</a></p>
-<p>&#x4E00;&#x822C;&#x53EF;&#x4EE5;&#x5171;&#x7528;&#x7684;&#x5DE5;&#x5177;&#xFF0C;&#x6211;&#x4EEC;&#x7528;&#x5168;&#x5C40;&#x5B89;&#x88C5;&#x5C31;&#x53EF;&#x4EE5;</p>
+<p>&#x5168;&#x5C40;&#x5B89;&#x88C5;&#xFF1A;</p>
 <pre><code>npm install -g mongo-express
 </code></pre><p>mongo-express &#x88C5;&#x597D;&#x4E4B;&#x540E;&#xFF0C;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x901A;&#x77E5;&#x5B83;&#x5230;&#x5E95;&#x8981;&#x8FDE;&#x63A5;&#x5230;&#x54EA;&#x4E2A;&#x6570;&#x636E;&#x5E93;&#xFF0C;&#x901A;&#x8FC7;&#x4FEE;&#x6539; mongo-express &#x7684;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x6765;&#x641E;&#x5B9A;&#x3002;</p>
 <p>&#x6240;&#x4EE5;&#x9996;&#x5148;&#x7B2C;&#x4E00;&#x6B65;&#xFF0C;&#x6211;&#x4EEC;&#x5148;&#x8981;&#x627E;&#x5230;&#x3000;mongo-express &#x7684;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x3002;&#x4E0B;&#x9762;&#x7684;&#x8FD9;&#x4E2A;&#x547D;&#x4EE4;&#x53EF;&#x4EE5;&#x5E2E;&#x6211;&#x4EEC;&#x627E;&#x5230; mongo-express &#x7684;&#x5B89;&#x88C5;&#x4F4D;&#x7F6E;&#xFF1A;</p>
@@ -609,9 +582,7 @@ cp config.default.js config.js
   ...
   url:      &apos;mongodb://localhost:27017/express&apos;,
 };
-</code></pre><p>&#x4E0A;&#x9762;&#x7684;&#x3000;<code>express</code> &#x5C31;&#x662F;&#x6211;&#x4EEC;&#x8981;&#x64CD;&#x4F5C;&#x7684;&#x6570;&#x636E;&#x5E93;&#x7684;&#x540D;&#x5B57;&#xFF0C;&#x8FD9;&#x4E2A;&#x662F;&#x901A;&#x8FC7;&#x3000;mongo shell &#x4E2D;&#xFF0C;&#x6267;&#x884C;</p>
-<pre><code>show dbs
-</code></pre><p>&#x770B;&#x5230;&#x7684;&#x3002;&#x7531;&#x4E8E;&#x6211;&#x4EEC;&#x7684; express &#x8FD9;&#x4E2A;&#x6570;&#x636E;&#x5E93;&#x672C;&#x8EAB;&#x6CA1;&#x6709;&#x8BBE;&#x7F6E;&#x5BC6;&#x7801;&#xFF0C;&#x6240;&#x4EE5;&#x4E0A;&#x9762; username &#x548C; password &#x4E24;&#x9879;&#x90FD;&#x6539;&#x6210;&#x7A7A;&#x5B57;&#x7B26;&#x4E32;&#x5C31;&#x53EF;&#x4EE5;&#x4E86;&#x3002;</p>
+</code></pre><p>&#x4E0A;&#x9762;&#x7684;&#x3000;<code>express</code> &#x5C31;&#x662F;&#x6211;&#x4EEC;&#x8981;&#x64CD;&#x4F5C;&#x7684;&#x6570;&#x636E;&#x5E93;&#x7684;&#x540D;&#x5B57;&#xFF0C;&#x8FD9;&#x4E2A;&#x662F;&#x901A;&#x8FC7;&#x3000;mongo shell &#x4E2D;&#xFF0C;&#x6267;&#x884C;<code>show dbs</code>&#x770B;&#x5230;&#x7684;&#x3002;&#x7531;&#x4E8E;&#x6211;&#x4EEC;&#x7684; <code>express</code> &#x8FD9;&#x4E2A;&#x6570;&#x636E;&#x5E93;&#x672C;&#x8EAB;&#x6CA1;&#x6709;&#x8BBE;&#x7F6E;&#x5BC6;&#x7801;&#xFF0C;&#x6240;&#x4EE5;&#x4E0A;&#x9762; <code>username</code> &#x548C; <code>password</code> &#x4E24;&#x9879;&#x90FD;&#x6539;&#x6210;&#x7A7A;&#x5B57;&#x7B26;&#x4E32;&#x5C31;&#x53EF;&#x4EE5;&#x4E86;&#x3002;</p>
 <p>&#x540C;&#x65F6;&#xFF0C;mongo-express &#x8FD9;&#x4E2A;&#x8F6F;&#x4EF6;&#x81EA;&#x5DF1;&#x8FD8;&#x6709;&#x81EA;&#x5DF1;&#x767B;&#x9646;&#x7684;&#x7528;&#x6237;&#x540D;&#x548C;&#x5BC6;&#x7801;&#xFF0C;&#x5E76;&#x4E14;&#x6709;&#x9ED8;&#x8BA4;&#x503C;&#xFF0C;&#x901A;&#x8FC7;&#x3000;config.js &#x4E2D;&#x8FD9;&#x51E0;&#x884C;&#xFF1A;</p>
 <pre><code>basicAuth: {
   username: process.env.ME_CONFIG_BASICAUTH_USERNAME || &apos;admin&apos;,
@@ -625,8 +596,8 @@ cp config.default.js config.js
 basicAuth credentials are &quot;admin:pass&quot;, it is recommended you change this in your config.js!
 Connecting to express...
 </code></pre><p>&#x6D4F;&#x89C8;&#x5668;&#x4E2D;&#x6253;&#x5F00; <a href="http://localhost:8081" target="_blank">http://localhost:8081</a> &#x53EF;&#x4EE5;&#x5F00;&#x59CB;&#x4F7F;&#x7528; mongo-express &#x4E86;&#x3002;</p>
-<h3 id="&#x603B;&#x7ED3;">&#x603B;&#x7ED3;</h3>
-<p>&#x6211;&#x4EEC;&#x5206;&#x522B;&#x7528; Mongo Shell &#x548C; mongo-express &#x4E24;&#x79CD;&#x65B9;&#x5F0F;&#xFF0C;&#x5BF9; mongodb &#x6570;&#x636E;&#x5E93;&#x8FDB;&#x884C;&#x4E86;&#x64CD;&#x4F5C;&#x3002;&#x4F46;&#x662F;&#xFF0C;&#x6700;&#x91CD;&#x8981;&#x7684;&#x4E00;&#x79CD;&#x64CD;&#x4F5C;&#x3000;mongodb&#x3000;&#x7684;&#x5F62;&#x5F0F;&#x6211;&#x4EEC;&#x8FD8;&#x6CA1;&#x6709;&#x4ECB;&#x7ECD;&#x3002;&#x8FD9;&#x5C31;&#x662F;&#x5982;&#x4F55;&#x5728; JS &#x4EE3;&#x7801;&#x4E2D;&#x6765;&#x64CD;&#x4F5C; mongodb &#x3002;</p>
+<h1 id="&#x603B;&#x7ED3;">&#x603B;&#x7ED3;</h1>
+<p>&#x8FD9;&#x8282;&#x4E2D;&#x6211;&#x4EEC;&#x5206;&#x522B;&#x7528; Mongo Shell &#x548C; mongo-express &#x4E24;&#x79CD;&#x65B9;&#x5F0F;&#xFF0C;&#x5BF9; mongodb &#x6570;&#x636E;&#x5E93;&#x8FDB;&#x884C;&#x4E86;&#x64CD;&#x4F5C;&#x3002;&#x4F46;&#x662F;&#xFF0C;&#x6700;&#x91CD;&#x8981;&#x7684;&#x662F;&#x4E0B;&#x8282;&#x4ECB;&#x7ECD;&#x7684;&#x5982;&#x4F55;&#x5728; JS &#x4EE3;&#x7801;&#x4E2D;&#x6765;&#x64CD;&#x4F5C; mongodb &#x3002;</p>
 
                                 
                                 </section>
@@ -670,7 +641,7 @@ Connecting to express...
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"MongoDB","level":"1.6.2","depth":2,"next":{"title":"Mongoose","level":"1.6.3","depth":2,"path":"nodejs/3-ex-mdb.md","ref":"./nodejs/3-ex-mdb.md","articles":[]},"previous":{"title":"Express","level":"1.6.1","depth":2,"path":"nodejs/1-expess.md","ref":"./nodejs/1-expess.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"nodejs/2-mongodb.md","mtime":"2017-06-05T16:32:03.452Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-06-06T10:19:09.092Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"MongoDB","level":"1.6.2","depth":2,"next":{"title":"Mongoose","level":"1.6.3","depth":2,"path":"nodejs/3-ex-mdb.md","ref":"./nodejs/3-ex-mdb.md","articles":[]},"previous":{"title":"Express","level":"1.6.1","depth":2,"path":"nodejs/1-expess.md","ref":"./nodejs/1-expess.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"nodejs/2-mongodb.md","mtime":"2017-06-06T11:02:03.293Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-06-06T11:17:14.216Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

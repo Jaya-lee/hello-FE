@@ -404,35 +404,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.6.4" data-path="4-客户端读写.md">
+        <li class="chapter " data-level="1.6.4" data-path="４-封装API.md">
             
                 <span>
-            
-                    
-                    客户端读写数据库
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.6.5" data-path="5-前台传后台.html">
-            
-                <a href="5-前台传后台.html">
-            
-                    
-                    前台传递参数给后台
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.6.6" data-path="6-封装API.html">
-            
-                <a href="6-封装API.html">
             
                     
                     实现一整套API
@@ -506,7 +480,7 @@
 <p>tips:UI/API &#x90FD;&#x662F;&#x63A5;&#x53E3;&#xFF0C;&#x540C;&#x65F6;&#x90FD;&#x662F;&#x7ED9;&#x4EBA;&#x7528;&#x7684;&#xFF0C;&#x4F46;&#x662F;&#x4ED6;&#x4EEC;&#x6709;&#x4EC0;&#x4E48;&#x533A;&#x522B;&#x5462;&#x3002;</p>
 <pre><code>UI:&#x7A0B;&#x5E8F;&#x8DDF;&#x7528;&#x6237;&#xFF08; User &#xFF09;&#x7684;&#x63A5;&#x53E3;
 API:&#x7A0B;&#x5E8F;&#x8DDF;&#x7A0B;&#x5E8F;&#x6216;&#x8005;&#x8BF4;&#x7A0B;&#x5E8F;&#x5458;&#x7684;&#x63A5;&#x53E3;,API &#x5206;&#x591A;&#x79CD;&#xFF0C;&#x6211;&#x4EEC;&#x4E0B;&#x9762;&#x4E13;&#x95E8;&#x7784;&#x51C6;&#x7684;&#x662F; Web API &#x6216;&#x8005;&#x53EB; HTTP API
-</code></pre><h2 id="express&#x5B9E;&#x73B0;hello-world">express&#x5B9E;&#x73B0;hello world</h2>
+</code></pre><h2 id="&#x7528;express&#x5B9E;&#x73B0;hello-world">&#x7528;express&#x5B9E;&#x73B0;hello World</h2>
 <p>&#x5BF9;express&#x6709;&#x4E86;&#x57FA;&#x672C;&#x7684;&#x8BA4;&#x8BC6;&#x540E;&#xFF0C;&#x73B0;&#x5728;&#x5199;&#x4E00;&#x4E2A;&#x5C0F;&#x7A0B;&#x5E8F;</p>
 <p>1.&#x65B0;&#x5EFA;&#x6587;&#x4EF6;&#x5939;&#xFF0C;&#x521D;&#x59CB;&#x5316;&#x4E3A;&#x4E00;&#x4E2A; nodejs&#x9879;&#x76EE;</p>
 <pre><code>mkdir express
@@ -530,22 +504,37 @@ npm init -y
 <pre><code class="lang-js"><span class="hljs-keyword">const</span> express =  <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;express&apos;</span>);
 <span class="hljs-keyword">const</span> app = express();
 
-app.listen(<span class="hljs-number">3000</span>);
+app.listen(<span class="hljs-number">3000</span>, () =&gt; <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;running on port 3000...&apos;</span>))
 </code></pre>
 <p>&#x4E0A;&#x9762;&#x4E09;&#x53E5;&#x4EE3;&#x7801;&#xFF0C;&#x6211;&#x4EEC;&#x5C31;&#x81EA;&#x5DF1;&#x52A8;&#x624B;&#x5B9E;&#x73B0;&#x4E86;&#x4E00;&#x4E2A;<strong>&#x670D;&#x52A1;&#x5668;</strong>( server ) &#x3002;&#x670D;&#x52A1;&#x5668;&#xFF08;&#x8FD9;&#x91CC;&#x6307;&#x7684;&#x662F;&#x8F6F;&#x4EF6;&#xFF09;&#x7684;&#x4F5C;&#x7528;&#x662F;&#xFF0C;&#x59CB;&#x7EC8;&#x76D1;&#x542C;&#x5BA2;&#x6237;&#x7AEF;&#x7684;&#x8BF7;&#x6C42;&#xFF0C;&#x6216;&#x8005;&#x8BF4;&#x524D;&#x7AEF;&#x4E0D;&#x7ED9;&#x670D;&#x52A1;&#x5668;&#x53D1;&#x4FE1;&#x53F7;&#xFF0C;&#x670D;&#x52A1;&#x5668;
 &#x5C31;&#x4EC0;&#x4E48;&#x90FD;&#x4E0D;&#x505A;&#xFF0C;&#x4F46;&#x662F;&#x4E5F;&#x4E0D;&#x6B7B;&#xFF0C;&#x53EA;&#x662F;&#x53BB;&#x5FAA;&#x73AF;&#x6267;&#x884C;&#xFF0C;&#x6216;&#x8005;&#x5C31;&#x53EB;<strong>&#x59CB;&#x7EC8;&#x5728;&#x76D1;&#x542C;</strong>&#xFF08;listen&#xFF09;&#x3002;</p>
-<p>&#x4E0A;&#x9762;&#x7684; <code>3000</code> &#x6307;&#x7684;&#x662F; <strong>3000&#x7AEF;&#x53E3;</strong> &#xFF0C;&#x7AEF;&#x53E3;&#x7684;&#x82F1;&#x6587;&#x662F; port &#xFF0C;&#x4E00;&#x4E2A;&#x670D;&#x52A1;&#x5668;&#x597D;&#x6BD4;&#x4E00;&#x5EA7;&#x5927;&#x53A6;&#xFF0C;&#x6709;&#x5F88;&#x591A;&#x4E2A;&#x95E8;&#xFF0C;3000 &#x662F;&#x5176;&#x4E2D;&#x4E00;&#x4E2A;&#x95E8;&#x7684;&#x95E8;&#x724C;&#x53F7;&#x3002;</p>
-<p>&#x4E0A;&#x9762;&#x7684;&#x7A0B;&#x5E8F;&#x6267;&#x884C;&#xFF0C;&#x5C31;&#x5230;&#x540E;&#x53F0;&#x8FD0;&#x884C;</p>
+<p>&#x4E0A;&#x9762;&#x7684; <code>3000</code> &#x6307;&#x7684;&#x662F; <strong>3000&#x7AEF;&#x53E3;</strong> port &#xFF0C;&#x4E00;&#x4E2A;&#x670D;&#x52A1;&#x5668;&#x597D;&#x6BD4;&#x4E00;&#x5EA7;&#x5927;&#x53A6;&#xFF0C;&#x6709;&#x5F88;&#x591A;&#x4E2A;&#x95E8;&#xFF0C;3000 &#x662F;&#x5176;&#x4E2D;&#x4E00;&#x4E2A;&#x95E8;&#x7684;&#x95E8;&#x724C;&#x53F7;&#x3002;</p>
+<p>&#x8FD9;&#x91CC;&#x4F7F;&#x7528;&#x4E86;&#x56DE;&#x8C03;&#x51FD;&#x6570;&#xFF0C;&#x65B9;&#x4FBF;&#x6211;&#x4EEC;&#x770B;&#x51FA;&#x8F93;&#x51FA;&#x3002;&#x4E00;&#x822C;&#x56DE;&#x8C03;&#x51FD;&#x6570;&#x7684;&#x4F7F;&#x7528;&#x573A;&#x5408;&#x5C31;&#x662F;&#xFF0C;&#x4E4B;&#x524D;&#x7684;&#x4E00;&#x4E2A;&#x64CD;&#x4F5C;&#x8017;&#x65F6;&#x6BD4;&#x8F83;&#x957F;&#xFF08;&#x6216;&#x8005;&#x662F;&#x4E00;&#x76F4;&#x76D1;&#x542C;&#x4E8B;&#x4EF6;&#xFF0C;&#x4F8B;&#x5982; onClick()&#xFF09;&#x8FD9;&#x6837;&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#x624D;&#x4F7F;&#x7528;&#x56DE;&#x8C03;&#x51FD;&#x6570;&#x3002;</p>
+<p>4.&#x4E0A;&#x9762;&#x7684;&#x7A0B;&#x5E8F;&#x6267;&#x884C;&#xFF0C;&#x5C31;&#x5230;&#x540E;&#x53F0;&#x8FD0;&#x884C;</p>
 <pre><code>node index.js
-</code></pre><h3 id="&#x73B0;&#x5728;&#x6765;&#x53D1;&#x5BA2;&#x6237;&#x7AEF;&#x8BF7;&#x6C42;">&#x73B0;&#x5728;&#x6765;&#x53D1;&#x5BA2;&#x6237;&#x7AEF;&#x8BF7;&#x6C42;</h3>
+</code></pre><p>&#x56E0;&#x4E3A;&#x6211;&#x4EEC;&#x5199;&#x7684; index.js &#x662F;&#x4E00;&#x4E2A; nodejs &#x7A0B;&#x5E8F;&#xFF0C;&#x6240;&#x4EE5;&#x7528; node &#x547D;&#x4EE4;&#x53BB;&#x6267;&#x884C;&#xFF0C;&#x8FD9;&#x4E2A;&#x6267;&#x884C;&#x8FC7;&#x7A0B;&#x8DDF;&#x6D4F;&#x89C8;&#x5668;&#x5DF2;&#x7ECF;&#x8131;&#x79BB;&#x4E86;&#x3002;&#x8FD9;&#x4E2A; &#x4E5F;&#x57FA;&#x672C;&#x4E0A;&#x662F;&#x6211;&#x4EEC;&#x5230;&#x76EE;&#x524D;&#x4E3A;&#x6B62;&#xFF0C;&#x552F;&#x4E00;&#x4E00;&#x4E2A;&#x53EF;&#x4EE5;&#x8131;&#x79BB;&#x6D4F;&#x89C8;&#x5668;&#x6267;&#x884C;&#x7684; JS &#x7A0B;&#x5E8F;&#x3002;</p>
+<p>&#x8FD0;&#x884C;&#x7ED3;&#x679C;:</p>
+<pre><code>$ node index.js
+running on port 3000...
+</code></pre><p>OK,&#x73B0;&#x5728;&#x6211;&#x4EEC;&#x7684;&#x670D;&#x52A1;&#x5668;&#x5DF2;&#x7ECF;&#x8FD0;&#x884C;&#x8D77;&#x6765;&#x4E86;&#xFF0C;&#x5B83;&#x5C31;&#x4E00;&#x76F4;&#x76D1;&#x542C;&#x7AEF;&#x53E3;&#xFF0C;&#x6839;&#x636E;&#x7AEF;&#x53E3;&#x7684;&#x8BF7;&#x6C42;&#x6765;&#x6267;&#x884C;&#x64CD;&#x4F5C;&#x3002;&#x8FD9;&#x4E2A;&#x8BF7;&#x6C42;&#x662F;&#x7531;&#x5BA2;&#x6237;&#x7AEF;&#x5B8C;&#x6210;&#x7684;&#x3002;</p>
+<h3 id="&#x5BA2;&#x6237;&#x7AEF;&#x8BF7;&#x6C42;">&#x5BA2;&#x6237;&#x7AEF;&#x8BF7;&#x6C42;</h3>
 <p>&#x73B0;&#x5728;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x7684;&#x5BA2;&#x6237;&#x7AEF;&#x8BF7;&#x6C42;&#x662F;&#xFF0C;&#x4E00;&#x4E2A;</p>
 <pre><code>GET /
 </code></pre><p>&#x540C;&#x65F6;&#x8FD9;&#x4E2A;&#x8BF7;&#x6C42;&#xFF0C;&#x5FC5;&#x987B;&#x6765;&#x81EA;3000&#x7AEF;&#x53E3;&#x3002;</p>
 <p>&#x53EF;&#x4EE5;&#x53D1;&#x8BF7;&#x6C42;&#x7684;&#x65B9;&#x5F0F;&#x4E0D;&#x552F;&#x4E00;&#xFF0C;&#x53EF;&#x4EE5;&#x7528;&#x6D4F;&#x89C8;&#x5668;&#x5730;&#x5740;&#x680F;&#xFF0C;&#x53EF;&#x4EE5;&#x7528;&#x9875;&#x9762;&#x7684; form &#x53D1;&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x7528; axios &#x53D1;&#xFF0C;&#x540E;&#x8005;&#x4F7F;&#x7528;&#x4E13;&#x95E8;&#x7684; API &#x8C03;&#x8BD5;&#x5DE5;&#x5177; curl/postman&#x6765;&#x53D1;&#x3002;</p>
 <p>&#x73B0;&#x5728;&#xFF0C;&#x6211;&#x4EEC;&#x5C31;&#x7528;&#x6D4F;&#x89C8;&#x5668;&#x7684;&#x5730;&#x5740;&#x680F;&#x6765;&#x53D1;&#x8BF7;&#x6C42;&#x3002;&#x5730;&#x5740;&#x680F;&#x4E2D;&#x8F93;&#x5165;</p>
 <pre><code>http://localhost:3000/
-</code></pre><p>&#x6CE8;&#xFF1A; <code>localhost</code> &#x5C31;&#x662F;&#x6211;&#x4EEC;&#x81EA;&#x5DF1;&#x673A;&#x5668;&#x7684;&#x57DF;&#x540D;&#x3002;</p>
-<p>&#x4E0A;&#x9762;&#x7684;&#x8BF7;&#x6C42;&#xFF0C;&#x9ED8;&#x8BA4;&#x52A8;&#x8BCD;&#x5C31;&#x662F; GET &#xFF0C;&#x540C;&#x65F6; <code>:3000</code> &#x7528;&#x6765;&#x6307;&#x5B9A;&#x7AEF;&#x53E3;&#x53F7;&#x3002;</p>
+</code></pre><p>&#x6211;&#x4EEC;&#x5728;&#x4E0A;&#x9762;&#x7684; index.js &#x4E2D;&#xFF0C;app.listen &#x8BED;&#x53E5;&#x7684;&#x4E0A;&#x9762;&#xFF0C;&#x6DFB;&#x52A0;&#x5982;&#x4E0B;&#x4EE3;&#x7801;&#xFF1A;</p>
+<pre><code>app.get(&apos;/&apos;, () =&gt; {
+  console.log(&apos;request come in...&apos;);
+})
+</code></pre><ul>
+<li>get &#x662F;&#x4E00;&#x4E2A; http &#x8BF7;&#x6C42;&#x7684;&#x52A8;&#x8BCD; &#xFF0C;&#x7C7B;&#x4F3C;&#x7684;&#x8FD8;&#x6709; post/delete/put (&#x7B2C;&#x56DB;&#x8282;)</li>
+<li>/ &#x662F;&#x4E00;&#x4E2A;&#x8DEF;&#x5F84; &#xFF0C;&#x82F1;&#x6587; path</li>
+</ul>
+<p>&#x4E00;&#x4E2A;&#x52A8;&#x8BCD;&#x52A0;&#x4E00;&#x4E2A;&#x8DEF;&#x5F84;&#xFF0C;&#x8FD9;&#x6837;&#x5C31;&#x7EC4;&#x6210;&#x4E00;&#x4E2A; HTTP &#x8BF7;&#x6C42; &#xFF0C;&#x516C;&#x5F0F;&#x5982;&#x4E0B;</p>
+<pre><code>request = verb + path + data
+</code></pre><p>&#x8FD9;&#x91CC;&#x7684;&#x8BF7;&#x6C42;&#xFF0C;&#x662F;&#x670D;&#x52A1;&#x5668;&#x7AEF;&#x63A5;&#x6536;&#x8BF7;&#x6C42;</p>
 <p>&#x8BF7;&#x6C42;&#x4E4B;&#x540E;&#xFF0C;&#x4F1A;&#x53D1;&#x73B0;&#x6D4F;&#x89C8;&#x5668;&#x91CC;&#x6CA1;&#x6709;&#x4EFB;&#x4F55;&#x8F93;&#x51FA;&#xFF0C;&#x8FD9;&#x662F;&#x56E0;&#x4E3A;&#xFF0C;&#x6211;&#x4EEC;&#x7684; express &#x670D;&#x52A1;&#x5668;&#x6839;&#x672C;&#x5C31;&#x6CA1;&#x6709;&#x7ED9;&#x524D;&#x53F0;&#x8FD4;&#x56DE;&#x4EFB;&#x4F55;&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x56DE;&#x8C03;&#x51FD;&#x6570;&#x4E2D;&#x7684; <code>console.log()</code> &#x53EA;&#x80FD;&#x628A;&#x5B57;&#x7B26;&#x4E32;&#x6253;&#x5370;&#x5230;&#x540E;&#x53F0;&#x3002;</p>
 <h3 id="&#x7EE7;&#x7EED;&#x524D;&#x9762;&#x7684;&#x4EE3;&#x7801;&#xFF1A;&#x8FD4;&#x56DE;&#x5B57;&#x7B26;&#x4E32;">&#x7EE7;&#x7EED;&#x524D;&#x9762;&#x7684;&#x4EE3;&#x7801;&#xFF1A;&#x8FD4;&#x56DE;&#x5B57;&#x7B26;&#x4E32;</h3>
 <p>&#x524D;&#x9762;&#x7684;&#x56DE;&#x8C03;&#x51FD;&#x6570;&#x4E2D;&#xFF0C;console.log &#x6253;&#x5370;&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x53EA;&#x662F;&#x51FA;&#x73B0;&#x5728;&#x540E;&#x7AEF;&#xFF08;&#x670D;&#x52A1;&#x5668;&#x7AEF;&#xFF09;&#x3002;&#x524D;&#x7AEF;&#x5F97;&#x4E0D;&#x5230;&#x4EFB;&#x4F55;&#x53CD;&#x9988;&#x3002;&#x6240;&#x4EE5;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x628A;&#x4EE3;&#x7801;&#x505A;&#x5982;&#x4E0B;&#x4FEE;&#x6539;</p>
@@ -553,18 +542,60 @@ app.listen(<span class="hljs-number">3000</span>);
   res.send(<span class="hljs-string">&apos;Hello World&apos;</span>);
 })
 </code></pre>
-<p>req &#x662F; request<strong>&#x8BF7;&#x6C42;</strong>&#x7684;&#x7B80;&#x5199;&#xFF0C; res&#x662F; response<strong>&#x54CD;&#x5E94;</strong>&#x7684;&#x7B80;&#x5199;&#x3002;
-res.send(&apos;Hello World&apos;)&#x7684;&#x4F5C;&#x7528;&#x662F;&#x4ECE;&#x540E;&#x7AEF;&#x5411;&#x524D;&#x7AEF;&#x6D4F;&#x89C8;&#x5668;&#x8FD4;&#x56DE;&#x5B57;&#x7B26;&#x4E32; Hello World &#x3002;</p>
-<p>&#x8FD9;&#x65F6;localhost:5000/about  &#x9875;&#x9762;&#x4F1A;&#x663E;&#x793A;hello world</p>
-<p>&#x603B;&#x4F53;&#x7684;&#x6982;&#x62EC;&#x540E;&#x53F0;&#x7684;&#x804C;&#x8D23;: &#x5B9E;&#x73B0;API</p>
+<p><code>req</code> &#x662F; request<strong>&#x8BF7;&#x6C42;</strong>&#x7684;&#x7B80;&#x5199;&#xFF0C;<code>res</code>&#x662F; response<strong>&#x54CD;&#x5E94;</strong>&#x7684;&#x7B80;&#x5199;&#x3002;
+<code>res.send(&apos;Hello World&apos;)</code>&#x7684;&#x4F5C;&#x7528;&#x662F;&#x4ECE;&#x540E;&#x7AEF;&#x5411;&#x524D;&#x7AEF;&#x6D4F;&#x89C8;&#x5668;&#x8FD4;&#x56DE;&#x5B57;&#x7B26;&#x4E32; <code>Hello World</code> &#x3002;</p>
 <h3 id="nodemon&#x9AD8;&#x6548;&#x5F00;&#x53D1;">nodemon&#x9AD8;&#x6548;&#x5F00;&#x53D1;</h3>
+<p>&#x6BCF;&#x6B21;&#x4FEE;&#x6539;&#x4EE3;&#x7801;&#x6211;&#x4EEC;&#x90FD;&#x8981;&#x91CD;&#x542F;&#x4E00;&#x6B21;<code>node index.js</code>&#xFF0C;&#x5F88;&#x9EBB;&#x70E6;&#xFF0C;&#x4E8E;&#x662F;&#x6211;&#x4EEC;&#x6709;&#x9AD8;&#x6548;&#x7684;&#x5DE5;&#x5177;:<code>nodemon</code>&#x3002;&#x5B83;&#x53EF;&#x4EE5;&#x52A9;&#x529B; node &#x5E94;&#x7528;&#x7684;&#x5F00;&#x53D1;&#x6548;&#x7387;&#xFF0C;&#x56E0;&#x4E3A;&#x5B83;&#x80FD;&#x76D1;&#x6D4B; node &#x5E94;&#x7528;&#x76EE;&#x5F55;&#x4E2D;&#x7684;&#x5404;&#x4E2A;&#x6587;&#x4EF6;&#xFF0C;&#x82E5;&#x6587;&#x4EF6;&#x6709;&#x6539;&#x52A8;&#xFF0C;nodemon &#x4F1A;&#x81EA;&#x52A8;&#x91CD;&#x542F;&#x4F60;&#x7684; node &#x5E94;&#x7528;&#xFF0C;&#x518D;&#x4E5F;&#x4E0D;&#x7528;&#x624B;&#x52A8;&#x91CD;&#x542F;&#x4E86;&#x3002;</p>
+<p>&#x547D;&#x4EE4;:</p>
 <pre><code>npm i nodemon -g
 nodemon idnex.js
 </code></pre><hr>
-<h2 id="&#x5E38;&#x89C1;&#x9519;&#x8BEF;">&#x5E38;&#x89C1;&#x9519;&#x8BEF;</h2>
+<h3 id="&#x5E38;&#x89C1;&#x9519;&#x8BEF;">&#x5E38;&#x89C1;&#x9519;&#x8BEF;</h3>
 <pre><code>Error&#xFF1A;listen EADDRINUSE :::4000
 </code></pre><p>EADDRINUSE:&apos;&#x5730;&#x5740;&#x5DF2;&#x7ECF;&#x88AB;&#x5360;&#x7528;&apos;</p>
 <p>&#x539F;&#x56E0;:&#x672C;&#x5730;&#x5DF2;&#x7ECF;&#x6709;&#x4E00;&#x4E2A;&#x670D;&#x52A1;&#x8FD0;&#x884C;&#x5728;4000&#x7AEF;&#x53E3;&#x4E86;,&#x5730;&#x5740;&#x51B2;&#x7A81;&#xFF0C;&#x53EF;&#x4EE5;&#x4FEE;&#x6539;&#x7AEF;&#x53E3;&#x6216;&#x8005;&#x505C;&#x6389;&#x4E4B;&#x524D;&#x7684;&#x670D;&#x52A1;</p>
+<h1 id="&#x603B;&#x7ED3;">&#x603B;&#x7ED3;</h1>
+<p>&#x5230;&#x8FD9;&#x91CC;&#xFF0C;&#x6211;&#x4EEC;&#x4E00;&#x4E2A; Express &#x7684; Hello World API &#x5C31;&#x5236;&#x4F5C;&#x5B8C;&#x6BD5;&#x3002;&#x7531;&#x8FD9;&#x4E2A;&#x70B9;&#x7684;&#x5B66;&#x4E60;&#xFF0C;&#x6211;&#x4EEC;&#x4E5F;&#x53D1;&#x73B0;&#x4E86;&#x524D;&#x7AEF;&#x4E0E;&#x540E;&#x7AEF;&#x7684;&#x533A;&#x522B;:</p>
+<p>&#x524D;&#x7AEF;&#xFF0C;front-end&#xFF0C;&#x6216;&#x8005;&#x4E5F;&#x53EF;&#x4EE5;&#x53EB;&#x524D;&#x53F0;&#x3002;&#x540E;&#x7AEF;&#xFF0C;back-end &#x4E5F;&#x53EF;&#x53EB;&#x540E;&#x53F0;&#x3002;</p>
+<p>&#x524D;&#x7AEF;&#x4EE3;&#x7801;&#x8FD0;&#x884C;&#x73AF;&#x5883;&#x662F;&#x4EC0;&#x4E48;&#x5462;&#xFF1F;&#x5BF9;&#x4E8E;&#x6211;&#x4EEC; Web &#x5F00;&#x53D1;&#x8005;&#x6765;&#x8BF4;&#xFF0C;&#x5C31;&#x662F;&#x6D4F;&#x89C8;&#x5668;&#x3002;&#x6CE8;&#x610F;&#xFF0C;&#x6D4F;&#x89C8;&#x5668;&#x662F;&#x5B89;&#x88C5;&#x5728;&#x7528;&#x6237;&#x81EA;&#x5DF1;&#x7684;&#x673A;&#x5668;&#x4E0A;&#x7684;&#x3002;&#x4E5F;&#x5C31;&#x662F;&#x8BF4;&#x524D;&#x7AEF;&#x4EE3;&#x7801;&#x8FD0;&#x884C;&#x5728;&#x6211;&#x4EEC;&#x81EA;&#x5DF1;&#x7684;&#x7B14;&#x8BB0;&#x672C;&#x6216;&#x8005; ipad &#x4E0A;&#xFF0C;&#x5982;&#x679C;&#x524D;&#x7AEF;&#x4EE3;&#x7801;&#x5199;&#x7684;&#x70C2;&#xFF0C;&#x90A3;&#x4E48;&#x8003;&#x9A8C;&#x7684;&#x662F;&#x6211;&#x4EEC;&#x81EA;&#x5DF1;&#x8BBE;&#x5907;&#x7684;&#x5185;&#x5B58;&#x5927;&#x5C0F;&#x3002;</p>
+<p>&#x540E;&#x7AEF;&#x4EE3;&#x7801;&#x8FD0;&#x884C;&#x73AF;&#x5883;&#x662F;&#xFF1F;&#x662F;&#x4E00;&#x4E2A;&#x653E;&#x5728;&#x4EBA;&#x5BB6;&#x673A;&#x623F;&#x91CC;&#x7684;&#x5200;&#x7247;&#x673A;&#x3002;&#x4E0A;&#x9762;&#x4E00;&#x822C;&#x90FD;&#x8FD0;&#x884C; Linux &#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x3002;&#x5200;&#x7247;&#x673A;&#x6839;&#x672C;&#x5C31;&#x6CA1;&#x6709;&#x663E;&#x793A;&#x5668;&#xFF0C;&#x5F53;&#x7136;&#x4E5F;&#x4E0D;&#x80FD;&#x8DD1;&#x6D4F;&#x89C8;&#x5668;&#x3002;&#x6240;&#x4EE5;&#x540E;&#x7AEF;&#x4EE3;&#x7801;&#x7684;&#x8FD0;&#x884C;&#x662F;&#x8131;&#x79BB;&#x6D4F;&#x89C8;&#x5668;&#x7684;&#x3002;&#x5982;&#x679C;&#x540E;&#x7AEF;&#x5199;&#x7684;&#x70C2;&#xFF0C;&#x90A3;&#x4E48;&#x8003;&#x9A8C;&#x7684;&#x5C31;&#x662F;&#x5200;&#x7247;&#x673A;&#x7684;&#x5185;&#x5B58;&#x591F;&#x4E0D;&#x591F;&#x4E86;&#x3002;</p>
+<p>&#x7136;&#x540E;&#xFF0C;&#x518D;&#x4ECE; API &#x7684;&#x89D2;&#x5EA6;&#x6765;&#x804A;&#x804A;&#x3002;&#x524D;&#x7AEF;&#x662F; API &#x7684;&#x6D88;&#x8D39;&#x8005;&#xFF0C;&#x540E;&#x7AEF;&#x662F; API &#x7684;&#x751F;&#x4EA7;&#x8005;&#x3002;&#x540E;&#x53F0; API &#x5199;&#x597D;&#x4E4B;&#x540E;&#xFF0C;&#x9ED8;&#x8BA4;&#x4E0D;&#x8FD0;&#x884C;&#xFF0C;&#x53EA;&#x6709;&#x5F53;&#x524D;&#x7AEF;&#x53D1;&#x9001;&#x8FC7;&#x8BF7;&#x6C42;&#x6765;&#x7684;&#x65F6;&#x5019;&#x624D;&#x4F1A;&#x89E6;&#x53D1;&#x540E;&#x53F0; API &#x4EE3;&#x7801;&#x8FD0;&#x884C;&#x3002;</p>
+<p>&#x5F53;&#x7136;&#xFF0C;&#x5728;&#x5E73;&#x5E38;&#x5F00;&#x53D1;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x6211;&#x4EEC;&#x5E76;&#x6CA1;&#x8D2D;&#x4E70;&#x5200;&#x7247;&#x673A;&#xFF0C;&#x6240;&#x6709;&#x53EA;&#x80FD;&#x662F;&#x7528;&#x81EA;&#x5DF1;&#x7684;&#x7B14;&#x8BB0;&#x672C;&#x6765;&#x5F53;&#x5200;&#x7247;&#x673A;&#x7528;&#x4E86;&#x3002;&#x8FD9;&#x65F6;&#x5019;&#xFF0C;&#x57FA;&#x672C;&#x53EF;&#x4EE5;&#x8BA4;&#x4E3A; express &#x5199;&#x7684;&#x4EE3;&#x7801;&#x5C31;&#x662F;&#x540E;&#x7AEF;&#x4EE3;&#x7801;&#xFF0C;react &#x5199;&#x7684;&#x4EE3;&#x7801;&#x5C31;&#x662F;&#x524D;&#x7AEF;&#x4EE3;&#x7801;&#x3002;</p>
+<h3 id="&#x9644;hello-world&#x5168;&#x90E8;&#x4EE3;&#x7801;">&#x9644;:hello World&#x5168;&#x90E8;&#x4EE3;&#x7801;</h3>
+<p>package.json &#x5982;&#x4E0B;&#xFF1A;</p>
+<pre><code>{
+  &quot;name&quot;: &quot;express-hello&quot;,
+  &quot;version&quot;: &quot;1.0.0&quot;,
+  &quot;description&quot;: &quot;&quot;,
+  &quot;main&quot;: &quot;index.js&quot;,
+  &quot;scripts&quot;: {
+    &quot;test&quot;: &quot;echo \&quot;Error: no test specified\&quot; &amp;&amp; exit 1&quot;
+  },
+  &quot;keywords&quot;: [],
+  &quot;author&quot;: &quot;&quot;,
+  &quot;license&quot;: &quot;ISC&quot;,
+  &quot;dependencies&quot;: {
+    &quot;express&quot;: &quot;^4.14.0&quot;
+  }
+}
+</code></pre><p>index.js &#x4EE3;&#x7801;&#x5982;&#x4E0B;</p>
+<pre><code>const express =  require(&apos;express&apos;);
+const app = express();
+
+
+// &#x4E0B;&#x9762;&#x4E09;&#x884C;&#x5C31;&#x662F;&#x6211;&#x4EEC;&#x5B9E;&#x73B0;&#x7684;&#x4E00;&#x4E2A; API
+app.get(&apos;/&apos;, (req, res) =&gt; {
+  res.send(&apos;Hello World&apos;)
+})
+
+app.listen(3000, () =&gt; {
+  console.log(&apos;running on port 3000...&apos;)
+})
+</code></pre><p>&#x4E0A;&#x9762;&#x4E24;&#x4E2A;&#x6587;&#x4EF6;&#x90FD;&#x653E;&#x5728;&#x4E00;&#x4E2A; express-hello &#x6587;&#x4EF6;&#x5939;&#x4E2D;&#xFF0C;&#x7136;&#x540E;</p>
+<pre><code>cd express-hello
+npm install
+node index.js
+</code></pre><p>&#x4EE3;&#x7801;&#x5C31;&#x8FD0;&#x884C;&#x8D77;&#x6765;&#x4E86;</p>
 
                                 
                                 </section>
@@ -604,7 +635,7 @@ nodemon idnex.js
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Express","level":"1.6.1","depth":2,"next":{"title":"MongoDB","level":"1.6.2","depth":2,"path":"nodejs/2-mongodb.md","ref":"./nodejs/2-mongodb.md","articles":[]},"previous":{"title":"Node.js","level":"1.6","depth":1,"ref":"","articles":[{"title":"Express","level":"1.6.1","depth":2,"path":"nodejs/1-expess.md","ref":"./nodejs/1-expess.md","articles":[]},{"title":"MongoDB","level":"1.6.2","depth":2,"path":"nodejs/2-mongodb.md","ref":"./nodejs/2-mongodb.md","articles":[]},{"title":"Mongoose","level":"1.6.3","depth":2,"path":"nodejs/3-ex-mdb.md","ref":"./nodejs/3-ex-mdb.md","articles":[]},{"title":"客户端读写数据库","level":"1.6.4","depth":2,"path":"nodejs/4-客户端读写.md","ref":"./nodejs/4-客户端读写.md","articles":[]},{"title":"前台传递参数给后台","level":"1.6.5","depth":2,"path":"nodejs/5-前台传后台.md","ref":"./nodejs/5-前台传后台.md","articles":[]},{"title":"实现一整套API","level":"1.6.6","depth":2,"path":"nodejs/6-封装API.md","ref":"./nodejs/6-封装API.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"nodejs/1-expess.md","mtime":"2017-06-05T06:24:21.429Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-06-06T10:19:09.092Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Express","level":"1.6.1","depth":2,"next":{"title":"MongoDB","level":"1.6.2","depth":2,"path":"nodejs/2-mongodb.md","ref":"./nodejs/2-mongodb.md","articles":[]},"previous":{"title":"Node.js","level":"1.6","depth":1,"ref":"","articles":[{"title":"Express","level":"1.6.1","depth":2,"path":"nodejs/1-expess.md","ref":"./nodejs/1-expess.md","articles":[]},{"title":"MongoDB","level":"1.6.2","depth":2,"path":"nodejs/2-mongodb.md","ref":"./nodejs/2-mongodb.md","articles":[]},{"title":"Mongoose","level":"1.6.3","depth":2,"path":"nodejs/3-ex-mdb.md","ref":"./nodejs/3-ex-mdb.md","articles":[]},{"title":"实现一整套API","level":"1.6.4","depth":2,"path":"nodejs/４-封装API.md","ref":"./nodejs/４-封装API.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"nodejs/1-expess.md","mtime":"2017-06-06T10:53:41.620Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-06-06T11:17:14.216Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
