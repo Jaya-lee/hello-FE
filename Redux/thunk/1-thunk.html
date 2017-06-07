@@ -481,17 +481,20 @@
                                 <section class="normal markdown-section">
                                 
                                 <h1 id="hello-thunk">hello thunk</h1>
-<p>thunk:&#x6A21;&#x5F0F;&#x8F6C;&#x6362;</p>
-<p>&#x4E4B;&#x524D;&#x6211;&#x4EEC;&#x7684;action&#x5BF9;&#x8C61;&#x9EBB;&#x70E6;
-&#x4E3A;&#x4E86;&#x590D;&#x7528;&#x66F4;&#x6539;&#x5199;&#x6CD5; action.js&#x6587;&#x4EF6;&#x653E;&#x5168;&#x90E8;action</p>
-<pre><code>
-let addTodo = (data=&apos;default data&apos;) =&gt; {
-    return {
-        type: &apos;ADD_TODO&apos;,
-        data: data
-    }
+<p><code>thunk</code>:&#x6A21;&#x5F0F;&#x8F6C;&#x6362;</p>
+<h2 id="action-creator">Action Creator</h2>
+<p>Action Creator &#x4E0D;&#x662F; thunk &#x7684;&#x529F;&#x80FD;&#xFF0C;&#x662F; redux &#x81EA;&#x5E26;&#x529F;&#x80FD;&#xFF0C;&#x4F46;&#x662F; thunk &#x53D1;&#x6325;&#x4F5C;&#x7528;&#xFF0C;&#x5C31;&#x662F;&#x5728; action creator &#x91CC;&#x9762;&#x3002;&#x6240;&#x4EE5;&#x4ECB;&#x7ECD;&#x3000;thunk &#x4E4B;&#x524D;&#x5148;&#x5355;&#x7EAF;&#x7528;&#x4E00;&#x4E0B; Action Creator &#x3002;</p>
+<p>Action creator&#x662F;Flux&#x7684;&#x4EA7;&#x7269;&#xFF0C;&#x7528;&#x6765;&#x521B;&#x5EFA;Action&#x3002;&#x5B83;&#x662F;&#x4E00;&#x4E2A;&#x51FD;&#x6570;&#xFF0C;&#x8FD4;&#x56DE;&#x503C;&#x4E3A;Action&#x5BF9;&#x8C61;&#x3002;&#x6240;&#x4EE5;&#x5B83;&#x7684;&#x552F;&#x4E00;&#x529F;&#x80FD;&#x5C31;&#x662F;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;Action&#x4F9B; dispatch &#x8FDB;&#x884C;&#x8C03;&#x7528;&#x3002;</p>
+<blockquote>
+<p>functions that create actions</p>
+</blockquote>
+<p>&#x521B;&#x5EFA; Action &#x51FD;&#x6570; (&#x53EF;&#x4EE5;&#x590D;&#x7528;)</p>
+<pre><code>function addTodo(text) {
+  return {
+    type: ADD_TODO,
+    data: data
+  }
 }
-
 //&#x89E6;&#x53D1;action
 store.dispatch(addTodo());
 </code></pre><p>&#x8FD9;&#x6837;&#x5982;&#x679C;&#x6709;&#x591A;&#x4E2A;&#x884C;&#x4E3A;&#x89E6;&#x53D1;&#x540C;&#x4E00;&#x4E2A;Action&#xFF0C;&#x53EA;&#x8981;&#x8C03;&#x7528;&#x4E00;&#x4E0B;&#x51FD;&#x6570; addTodo &#x5C31;&#x884C;&#xFF0C;&#x5E76;&#x5C06;Action&#x8981;&#x643A;&#x5E26;&#x7684;&#x6570;&#x636E;&#x4F20;&#x9012;&#x7ED9;&#x8BE5;&#x51FD;&#x6570;&#x3002;&#x7C7B;&#x4F3C; addTodo &#x8FD9;&#x6837;&#x7684;&#x51FD;&#x6570;&#xFF0C;&#x79F0;&#x4E4B;&#x4E3A; Action Creator&#x3002;</p>
@@ -506,9 +509,6 @@ store.dispatch(addTodo());
     }
 }
 </code></pre><p>payload&#x4E3A;&#x4E00;&#x4E2A;&#x5BF9;&#x8C61;</p>
-<h2 id="action-creator">Action Creator</h2>
-<p>Action creator&#x662F;Flux&#x7684;&#x4EA7;&#x7269;&#xFF0C;&#x7528;&#x6765;&#x521B;&#x5EFA;Action&#x3002;&#x5B83;&#x662F;&#x4E00;&#x4E2A;&#x51FD;&#x6570;&#xFF0C;&#x8FD4;&#x56DE;&#x503C;&#x4E3A;Action&#x5BF9;&#x8C61;&#x3002;&#x4F46;&#x662F;&#x5728;&#x8FD4;&#x56DE;action&#x4E4B;&#x524D;&#x53EF;&#x4EE5;&#x5BF9;&#x6240;&#x9700;&#x7684;&#x6570;&#x636E;&#x8FDB;&#x884C;&#x4E00;&#x5B9A;&#x7684;&#x5904;&#x7406;&#x3002;</p>
-<p>Action Creator &#x7684;&#x552F;&#x4E00;&#x529F;&#x80FD;&#x5C31;&#x662F;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;Action&#x4F9B; dispatch &#x8FDB;&#x884C;&#x8C03;&#x7528;&#x3002;</p>
 <h2 id="&#x5F15;&#x5165;redux-thunk">&#x5F15;&#x5165;redux-thunk</h2>
 <p><a href="https://github.com/gaearon/redux-thunk" target="_blank">&#x5B98;&#x7F51;</a>&#x662F;&#x8FD9;&#x6837;&#x8BF4;&#x7684;</p>
 <blockquote>
@@ -529,8 +529,8 @@ store.dispatch(addTodo());
 <pre><code>npm i redux-thunk --save
 </code></pre><p>&#x4E2D;&#x95F4;&#x4EF6;middleware</p>
 <h3 id="&#x4EC0;&#x4E48;&#x662F;&#x4E2D;&#x95F4;&#x4EF6;">&#x4EC0;&#x4E48;&#x662F;&#x4E2D;&#x95F4;&#x4EF6;</h3>
-<p>&#x4E2D;&#x95F4;&#x4EF6;&#x5C31;&#x662F;&#x4E00;&#x4E2A;&#x51FD;&#x6570;&#xFF0C;&#x5BF9;store.dispatch&#x65B9;&#x6CD5;&#x8FDB;&#x884C;&#x4E86;&#x6539;&#x9020;&#xFF0C;&#x5728;&#x53D1;&#x51FA; Action &#x548C;&#x6267;&#x884C; Reducer &#x8FD9;&#x4E24;&#x6B65;&#x4E4B;&#x95F4;&#xFF0C;&#x6DFB;&#x52A0;&#x4E86;&#x5176;&#x4ED6;&#x529F;&#x80FD;&#x3002;</p>
-<p>applyMiddleware &#x4F1A;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x51FD;&#x6570;&#xFF0C;&#x8BE5;&#x51FD;&#x6570;&#x63A5;&#x6536;&#x539F;&#x6765;&#x7684; creatStore &#x4F5C;&#x4E3A;&#x53C2;&#x6570;&#xFF0C;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x5E94;&#x7528;&#x4E86; middlewares &#x7684;&#x589E;&#x5F3A;&#x540E;&#x7684; creatStore&#x3002;</p>
+<p>&#x4E2D;&#x95F4;&#x4EF6;&#x5C31;&#x662F;&#x4E00;&#x4E2A;&#x51FD;&#x6570;&#xFF0C;&#x5BF9;<code>store.dispatch</code>&#x65B9;&#x6CD5;&#x8FDB;&#x884C;&#x4E86;&#x6539;&#x9020;&#xFF0C;&#x5728;&#x53D1;&#x51FA; <code>Action</code> &#x548C;&#x6267;&#x884C; <code>Reducer</code> &#x8FD9;&#x4E24;&#x6B65;&#x4E4B;&#x95F4;&#xFF0C;&#x6DFB;&#x52A0;&#x4E86;&#x5176;&#x4ED6;&#x529F;&#x80FD;&#x3002;</p>
+<p><code>applyMiddleware</code>&#x4F1A;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x51FD;&#x6570;&#xFF0C;&#x8BE5;&#x51FD;&#x6570;&#x63A5;&#x6536;&#x539F;&#x6765;&#x7684; <code>creatStore</code>&#x4F5C;&#x4E3A;&#x53C2;&#x6570;&#xFF0C;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x5E94;&#x7528;&#x4E86; applymiddlewares &#x7684;&#x589E;&#x5F3A;&#x540E;&#x7684; creatStore&#x3002;</p>
 <p>&#x4E4B;&#x524D;&#x53EA;&#x80FD;dispath action&#x7EAF;&#x5BF9;&#x8C61;</p>
 <p>redux-thunk&#x53EF;&#x4EE5;&#x4F7F;dispath&#x4E00;&#x4E2A;&#x65B9;&#x6CD5;,&#x8FD9;&#x4E2A;&#x65B9;&#x6CD5;&#x6709;&#x4E24;&#x4E2A;&#x53C2;&#x6570;(dispath,state)</p>
 <p>&#x5C24;&#x5176;&#x662F;&#x6211;&#x4EEC;&#x60F3;&#x8981;&#x53D1;ajax&#x8BF7;&#x6C42;&#x62FF;&#x5230;&#x6570;&#x636E;&#x65F6;&#xFF0C;&#x975E;&#x5E38;&#x9700;&#x8981;&#x8FD9;&#x79CD;&#x4E2D;&#x95F4;&#x4EF6;</p>
@@ -573,7 +573,7 @@ store.dispatch(addTodo());
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"thunk的初步介绍","level":"1.5.5.1","depth":3,"next":{"title":"为什么使用thunk","level":"1.5.5.2","depth":3,"path":"Redux/thunk/2-thunk.md","ref":"./Redux/thunk/2-thunk.md","articles":[]},"previous":{"title":"thunk","level":"1.5.5","depth":2,"ref":"","articles":[{"title":"thunk的初步介绍","level":"1.5.5.1","depth":3,"path":"Redux/thunk/1-thunk.md","ref":"./Redux/thunk/1-thunk.md","articles":[]},{"title":"为什么使用thunk","level":"1.5.5.2","depth":3,"path":"Redux/thunk/2-thunk.md","ref":"./Redux/thunk/2-thunk.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Redux/thunk/1-thunk.md","mtime":"2017-06-03T17:07:53.276Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-06-07T15:50:12.835Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"thunk的初步介绍","level":"1.5.5.1","depth":3,"next":{"title":"为什么使用thunk","level":"1.5.5.2","depth":3,"path":"Redux/thunk/2-thunk.md","ref":"./Redux/thunk/2-thunk.md","articles":[]},"previous":{"title":"thunk","level":"1.5.5","depth":2,"ref":"","articles":[{"title":"thunk的初步介绍","level":"1.5.5.1","depth":3,"path":"Redux/thunk/1-thunk.md","ref":"./Redux/thunk/1-thunk.md","articles":[]},{"title":"为什么使用thunk","level":"1.5.5.2","depth":3,"path":"Redux/thunk/2-thunk.md","ref":"./Redux/thunk/2-thunk.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Redux/thunk/1-thunk.md","mtime":"2017-06-07T15:59:10.175Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-06-07T15:59:35.343Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
