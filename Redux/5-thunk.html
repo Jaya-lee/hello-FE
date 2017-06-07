@@ -1,0 +1,665 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>react-thunk · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.2">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    
+    <link rel="prev" href="4-注意事项.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" >
+            
+                <span>
+            
+                    
+                    写在最前
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../front/1-author.html">
+            
+                <a href="../front/1-author.html">
+            
+                    
+                    作者介绍
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../front/2-目的.html">
+            
+                <a href="../front/2-目的.html">
+            
+                    
+                    写作目的
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" >
+            
+                <span>
+            
+                    
+                    Hello Git
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../git/1-git.html">
+            
+                <a href="../git/1-git.html">
+            
+                    
+                    git
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../git/2-github.html">
+            
+                <a href="../git/2-github.html">
+            
+                    
+                    github
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../git/3-gitbook.html">
+            
+                <a href="../git/3-gitbook.html">
+            
+                    
+                    gitbook
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" >
+            
+                <span>
+            
+                    
+                    React
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../React/1-react.html">
+            
+                <a href="../React/1-react.html">
+            
+                    
+                    helloReact
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" >
+            
+                <span>
+            
+                    
+                    Redux
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="1-hello.html">
+            
+                <a href="1-hello.html">
+            
+                    
+                    hello redux
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="2-三大核心.html">
+            
+                <a href="2-三大核心.html">
+            
+                    
+                    redux三大概念
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="3-connect.html">
+            
+                <a href="3-connect.html">
+            
+                    
+                    connect:react-redux
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4" data-path="4-注意事项.html">
+            
+                <a href="4-注意事项.html">
+            
+                    
+                    小结:redux注意事项
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.5.5" data-path="5-thunk.html">
+            
+                <a href="5-thunk.html">
+            
+                    
+                    react-thunk
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" >
+            
+                <span>
+            
+                    
+                    Node.js
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="../nodejs/1-expess.html">
+            
+                <a href="../nodejs/1-expess.html">
+            
+                    
+                    Express
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="../nodejs/2-mongodb.html">
+            
+                <a href="../nodejs/2-mongodb.html">
+            
+                    
+                    MongoDB
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3" data-path="../nodejs/3-ex-mdb.html">
+            
+                <a href="../nodejs/3-ex-mdb.html">
+            
+                    
+                    Mongoose
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.4" data-path="../nodejs/４-封装API.html">
+            
+                <a href="../nodejs/４-封装API.html">
+            
+                    
+                    实现一整套API
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.5" data-path="../nodejs/5-解决跨域.html">
+            
+                <a href="../nodejs/5-解决跨域.html">
+            
+                    
+                    解决跨越问题
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >react-thunk</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="hello-react-thunk">hello react-thunk</h1>
+<p><code>thunk</code>:&#x6A21;&#x5F0F;&#x8F6C;&#x6362;</p>
+<h2 id="action-creator">Action Creator</h2>
+<p>Action Creator &#x4E0D;&#x662F; thunk &#x7684;&#x529F;&#x80FD;&#xFF0C;&#x662F; redux &#x81EA;&#x5E26;&#x529F;&#x80FD;&#xFF0C;&#x4F46;&#x662F; thunk &#x53D1;&#x6325;&#x4F5C;&#x7528;&#xFF0C;&#x5C31;&#x662F;&#x5728; action creator &#x91CC;&#x9762;&#x3002;&#x6240;&#x4EE5;&#x4ECB;&#x7ECD;&#x3000;thunk &#x4E4B;&#x524D;&#x5148;&#x5355;&#x7EAF;&#x7528;&#x4E00;&#x4E0B; Action Creator &#x3002;</p>
+<p>Action creator&#x662F;Flux&#x7684;&#x4EA7;&#x7269;&#xFF0C;&#x7528;&#x6765;&#x521B;&#x5EFA;Action&#x3002;&#x5B83;&#x662F;&#x4E00;&#x4E2A;&#x51FD;&#x6570;&#xFF0C;&#x8FD4;&#x56DE;&#x503C;&#x4E3A;Action&#x5BF9;&#x8C61;&#x3002;&#x6240;&#x4EE5;&#x5B83;&#x7684;&#x552F;&#x4E00;&#x529F;&#x80FD;&#x5C31;&#x662F;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;Action&#x4F9B; dispatch &#x8FDB;&#x884C;&#x8C03;&#x7528;&#x3002;</p>
+<blockquote>
+<p>functions that create actions</p>
+</blockquote>
+<p>&#x521B;&#x5EFA; Action &#x51FD;&#x6570; (&#x53EF;&#x4EE5;&#x590D;&#x7528;)</p>
+<pre><code>let addTodo = (data=&apos;default data&apos;) =&gt; {
+  return {
+    type: ADD_TODO,
+    data: data
+  }
+}
+//&#x89E6;&#x53D1;action
+store.dispatch(addTodo());
+</code></pre><p>&#x8FD9;&#x6837;&#x5982;&#x679C;&#x6709;&#x591A;&#x4E2A;&#x884C;&#x4E3A;&#x89E6;&#x53D1;&#x540C;&#x4E00;&#x4E2A;Action&#xFF0C;&#x53EA;&#x8981;&#x8C03;&#x7528;&#x4E00;&#x4E0B;&#x51FD;&#x6570; addTodo &#x5C31;&#x884C;&#xFF0C;&#x5E76;&#x5C06;Action&#x8981;&#x643A;&#x5E26;&#x7684;&#x6570;&#x636E;&#x4F20;&#x9012;&#x7ED9;&#x8BE5;&#x51FD;&#x6570;&#x3002;&#x7C7B;&#x4F3C; addTodo &#x8FD9;&#x6837;&#x7684;&#x51FD;&#x6570;&#xFF0C;&#x79F0;&#x4E4B;&#x4E3A; <code>Action Creator</code>&#x3002;</p>
+<p>&#x8FD9;&#x6837;&#x7684;Action Creator &#x8FD4;&#x56DE;&#x7684;Action &#x5E76;&#x4E0D;&#x662F;&#x4E00;&#x4E2A;&#x6807;&#x51C6;&#x7684;Action&#x3002;</p>
+<p>&#x6539;&#x4E3A;:</p>
+<pre><code>let addTodo = (data=&apos;default data&apos;) =&gt; {
+    return {
+        type: ADD_TODO,
+        payload: {
+            data
+        }
+    }
+}
+</code></pre><p>tips:payload&#x4E3A;&#x4E00;&#x4E2A;&#x5BF9;&#x8C61;</p>
+<h2 id="&#x5F15;&#x5165;redux-thunk">&#x5F15;&#x5165;redux-thunk</h2>
+<p>&#x6709;&#x4E86; redux-thunk &#xFF0C;redux &#x7684;&#x5DE5;&#x4F5C;&#x6A21;&#x5F0F;&#x5C31;&#x4F1A;&#x53D1;&#x751F;&#x4E00;&#x5B9A;&#x7684;&#x201C;&#x8F6C;&#x6362;&#x201D;<a href="https://github.com/gaearon/redux-thunk" target="_blank">&#x5B98;&#x7F51;</a>&#x662F;&#x8FD9;&#x6837;&#x8BF4;&#x7684;</p>
+<blockquote>
+<p>Redux Thunk middleware allows you to write action creators that return a function instead of an action.</p>
+</blockquote>
+<p>&#x8BF4;&#x660E;:Redux-thunk &#x4E2D;&#x95F4;&#x4EF6;&#x5141;&#x8BB8;&#x6211;&#x4EEC;&#x7684; action creator &#x4E0D;&#x76F4;&#x63A5;&#x8FD4;&#x56DE; action &#xFF0C;&#x800C;&#x662F;&#x53BB;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x51FD;&#x6570;&#x3002;</p>
+<p>&#x8FD9;&#x6837;&#x505A;&#x7684;&#x597D;&#x5904;&#x662F;&#xFF1A;(&#x540E;&#x9762;&#x4F1A;&#x6839;&#x636E;&#x8FD9;&#x4E24;&#x70B9;&#x4F7F;&#x7528;thunk)</p>
+<ul>
+<li><p>&#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x5728;Action Creator&#x91CC;&#x8FD0;&#x884C;dispath</p>
+</li>
+<li><p>&#x6700;&#x91CD;&#x8981;&#x7684;&#x662F;&#x5B9E;&#x73B0;<strong>&#x5F02;&#x6B65;&#x64CD;&#x4F5C;</strong></p>
+</li>
+</ul>
+<p>ok,&#x5927;&#x6982;&#x4E86;&#x89E3;&#x4E86;&#x4E00;&#x4E0B;&#x540E;&#xFF0C;&#x6211;&#x4EEC;&#x5B89;&#x88C5;&#x6765;&#x4F7F;&#x7528;&#x4E00;&#x4E0B;&#xFF0C;&#x611F;&#x53D7;&#x5B83;&#x7684;&#x9B45;&#x529B;&#x3002;</p>
+<h2 id="&#x5B89;&#x88C5;">&#x5B89;&#x88C5;</h2>
+<pre><code>npm i redux-thunk --save
+</code></pre><p>&#x5728;store.js&#x4E2D;:</p>
+<pre><code>import { createStore, applyMiddleware } from &apos;redux&apos;;
+import thunk from &apos;redux-thunk&apos;
+</code></pre><p>tips:applyMiddleware &#x4F7F;&#x7528;&#x4E2D;&#x95F4;&#x4EF6;</p>
+<h2 id="&#x4EC0;&#x4E48;&#x662F;&#x4E2D;&#x95F4;&#x4EF6;">&#x4EC0;&#x4E48;&#x662F;&#x4E2D;&#x95F4;&#x4EF6;</h2>
+<p>&#x4E2D;&#x95F4;&#x4EF6;&#x5C31;&#x662F;&#x4E00;&#x4E2A;&#x51FD;&#x6570;&#xFF0C;&#x5BF9;<code>store.dispatch</code>&#x65B9;&#x6CD5;&#x8FDB;&#x884C;&#x4E86;&#x6539;&#x9020;&#xFF0C;&#x5728;&#x53D1;&#x51FA; <code>Action</code> &#x548C;&#x6267;&#x884C; <code>Reducer</code> &#x8FD9;&#x4E24;&#x6B65;&#x4E4B;&#x95F4;&#xFF0C;&#x6DFB;&#x52A0;&#x4E86;&#x5176;&#x4ED6;&#x529F;&#x80FD;&#x3002;</p>
+<p><code>applyMiddleware</code>&#x4F1A;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x51FD;&#x6570;&#xFF0C;&#x8BE5;&#x51FD;&#x6570;&#x63A5;&#x6536;&#x539F;&#x6765;&#x7684; <code>creatStore</code>&#x4F5C;&#x4E3A;&#x53C2;&#x6570;&#xFF0C;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x5E94;&#x7528;&#x4E86; applymiddlewares &#x7684;&#x589E;&#x5F3A;&#x540E;&#x7684; creatStore&#x3002;</p>
+<pre><code>const store = createStore(rootReducer, applyMiddleware(thunk))
+</code></pre><h2 id="&#x4F7F;&#x7528;-dispatch">&#x4F7F;&#x7528; dispatch</h2>
+<p>&#x524D;&#x9762;&#x63D0;&#x8FC7;&#x7684;&#x7B2C;&#x4E00;&#x4E2A;&#x597D;&#x5904;:&#x76F4;&#x63A5;&#x5728;Action Creator&#x91CC;&#x8FD0;&#x884C;dispath&#x3002;&#x8FD9;&#x6837;&#x5B50;&#x7EC4;&#x4EF6;<code>commentBox</code>&#x5C31;&#x4E0D;&#x9700;&#x8981;&#x5BFC;&#x5165; store &#xFF0C;&#x4E5F;&#x4E0D;&#x7528; store.dispatch &#x4E86;&#x3002;</p>
+<p>&#x5728;actions/commentActions.js &#x4E2D;&#xFF0C;&#x5C31;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x4E0B;&#x9762;&#x7684;&#x8BED;&#x6CD5;</p>
+<pre><code>export function addComment() {
+  return dispatch =&gt; {
+    dispatch({type: &apos;ADD_COMMENT&apos;})
+  }
+}
+</code></pre><p>&#x4E0A;&#x9762;&#x7684; action creator &#x4E2D;&#xFF0C;&#x4E0D;&#x4EC5;&#x4EC5;&#x6709; action &#xFF0C;&#x800C;&#x4E14;&#x76F4;&#x63A5; dispatch &#x4E86;&#x8FD9;&#x4E2A; action &#x3002;</p>
+<p>&#x5230; <code>commentBox</code> &#x7EC4;&#x4EF6;&#x4E2D;&#xFF0C;&#x6211;&#x4EEC;&#x76F4;&#x63A5;&#x5BFC;&#x5165; addComment &#x4F7F;&#x7528;&#xFF0C;Action Creator &#x4E2D;&#x7684; dispatch &#x8BED;&#x53E5;&#x662F;&#x4E0D;&#x4F1A;&#x6267;&#x884C;&#x7684;&#x3002;</p>
+<p>&#x89E3;&#x51B3;&#x65B9;&#x6CD5;&#x5C31;&#x662F;&#x8FDB;&#x884C; connect &#xFF0C;&#x628A;&#x8FD9;&#x4E2A;&#x51FD;&#x6570;&#x8DDF; redux &#x7684; store &#x8FDE;&#x63A5;&#x8D77;&#x6765;,&#x8FD9;&#x6837;&#x5C31;&#x4F1A;&#x88AB;&#x6CE8;&#x5165;&#x8FDB;props&#x91CC;</p>
+<pre><code>`commentBox.js` &#x4E2D;
+export default connect(mapStateToProps, {addComment})(CommentBox);
+</code></pre><p>&#x7136;&#x540E;&#xFF0C;&#x540E;&#x9762;&#x4F7F;&#x7528; this.props.addComment() &#x6765;&#x547C;&#x53EB;&#x6267;&#x884C; Action Creator &#x3002;&#x8FD9;&#x6837; dispatch &#x5C31;&#x5DE5;&#x4F5C;&#x4E86;&#xFF0C;action &#x5C31;&#x88AB;&#x53D1;&#x51FA;&#x4E86;&#x3002;</p>
+<h2 id="&#x5F02;&#x6B65;&#x64CD;&#x4F5C;">&#x5F02;&#x6B65;&#x64CD;&#x4F5C;</h2>
+<p>Action Creator &#x4E2D;&#x8FD0;&#x884C; dispatch &#xFF0C;&#x76EE;&#x7684;&#x4E3B;&#x8981;&#x5C31;&#x662F;&#x670D;&#x52A1;&#x5F02;&#x6B65;&#x64CD;&#x4F5C;&#x3002;</p>
+<p>&#x6CE8;:&#x5B9E;&#x73B0;&#x5F02;&#x6B65;&#x64CD;&#x4F5C;&#x7684;&#x4E3B;&#x8981;&#x5F62;&#x5F0F; ?&#x4E3B;&#x8981;&#x5F62;&#x5F0F;&#x662F;&#x56DE;&#x8C03;&#x51FD;&#x6570;(call back) &#x66F4;&#x4E3A;&#x6D41;&#x884C;&#x7684;&#x662F;promise(axios) .&#x5F02;&#x6B65;&#x64CD;&#x4F5C;&#x6700;&#x5927;&#x7279;&#x70B9;:&#x975E;&#x963B;&#x585E;(no-blocking)</p>
+<p>&#x6CA1;&#x6709;thunk&#xFF0C;redux&#x7684;&#x9ED8;&#x8BA4;&#x5DE5;&#x4F5C;&#x673A;&#x5236;&#x662F;:&#x4E00;&#x65E6;&#x7528;&#x6237;&#x89E6;&#x53D1;&#x4E8B;&#x4EF6;&#xFF0C;action&#x7ACB;&#x5373;&#x53D1;&#x51FA;&#xFF0C;reducer&#x7ACB;&#x5373;&#x6267;&#x884C;&#xFF0C;store&#x7ACB;&#x5373;&#x6539;&#x53D8;&#x3002;&#x8FD9;&#x79CD;&#x673A;&#x5236;&#x5728;&#x5F88;&#x591A;&#x60C5;&#x51B5;&#x4E0B;&#x662F;&#x4E0D;&#x80FD;&#x6EE1;&#x8DB3;&#x8981;&#x6C42;&#x7684;&#xFF0C;&#x901A;&#x5E38;&#x6211;&#x4EEC;&#x8981;&#x5728;action&#x4E2D;&#x7528;axios&#x8BF7;&#x6C42;&#x6570;&#x636E;&#x65F6;&#x9700;&#x8981;&#x8BF7;&#x6C42;&#x4E00;&#x5B9A;&#x7684;&#x65F6;&#x95F4;&#xFF0C;&#x800C;&#x4E0D;&#x662F;&#x7ACB;&#x5373;&#x53D1;&#x51FA;action&#x3002;&#x6709;&#x4E86; thunk &#x4E4B;&#x540E;&#xFF0C;&#x5373;&#x4F7F;&#x8981;&#x7B49;&#x5F88;&#x957F;&#x65F6;&#x95F4;&#x4E5F;&#x6CA1;&#x6709;&#x95EE;&#x9898;&#xFF0C;&#x56E0;&#x4E3A; dispatch &#x64CD;&#x4F5C;&#x53EF;&#x4EE5;<strong>&#x7B49;&#x5F85;</strong>&#x7F51;&#x7EDC;&#x8BF7;&#x6C42;&#x7ED3;&#x675F;&#x4E4B;&#x540E;&#x518D;&#x53BB;&#x6267;&#x884C;&#x3002;</p>
+<h3 id="&#x5206;&#x6790;&#x4E00;&#x4E0B;&#x4E0A;&#x9762;&#x8FD9;&#x79CD;&#x60C5;&#x51B5;&#x7684;&#x6D41;&#x7A0B;">&#x5206;&#x6790;&#x4E00;&#x4E0B;&#x4E0A;&#x9762;&#x8FD9;&#x79CD;&#x60C5;&#x51B5;&#x7684;&#x6D41;&#x7A0B;:</h3>
+<p>&#x5148;&#x629B;&#x5F00; thunk &#xFF0C;&#x53EA;&#x8981;&#x6211;&#x7528; redux &#xFF0C;&#x90A3;&#x4E48;&#x4E8B;&#x60C5;&#x7684;&#x8D77;&#x70B9;&#x5C31;&#x662F;&#xFF1A;&#x6D4F;&#x89C8;&#x5668;&#x7684;&#x4E00;&#x4E2A;&#x4E8B;&#x4EF6;&#x3002;&#x4E8B;&#x4EF6;&#x89E6;&#x53D1; dispatch(action) &#x3002;</p>
+<p>&#x7528;&#x4E86; thunk &#x4E4B;&#x540E;&#xFF0C;&#x601D;&#x8DEF;&#x4E5F;&#x662F;&#x76F8;&#x540C;&#x7684;&#x3002;&#x5C31;&#x662F;&#x5728;&#x9875;&#x9762;&#x52A0;&#x8F7D;&#x8FD9;&#x4E2A;&#x4E8B;&#x4EF6;&#x4E2D;&#x89E6;&#x53D1; dispatch &#x64CD;&#x4F5C;&#x3002;</p>
+<p>&#x5177;&#x4F53;&#x6765;&#x8BF4;&#xFF1A;&#x5728; componentWillMount() &#x4E2D;&#xFF0C;&#x53BB;&#x547C;&#x53EB; Action Creator &#xFF0C;&#x7136;&#x540E;&#xFF0C;Action Creator &#x4E2D;&#x9996;&#x5148;&#x53D1;&#x8D77;&#x7F51;&#x7EDC;&#x8BF7;&#x6C42;&#xFF0C;&#x8BF7;&#x6C42;&#x62FF;&#x5230;&#x6570;&#x636E;&#x4E4B;&#x540E;&#xFF0C;&#x53BB; dispatch &#x3002;&#x63A5;&#x4E0B;&#x6765;&#x89E6;&#x53D1; reducer &#xFF0C;&#x4FEE;&#x6539; state ... &#x8FD9;&#x4E9B;&#x90FD;&#x548C; redux &#x7684;&#x666E;&#x901A;&#x601D;&#x8DEF;&#x76F8;&#x7B26;&#x4E86;&#x3002;</p>
+<p>OK,&#x6D41;&#x7A0B;&#x641E;&#x6E05;&#x695A;&#x540E;&#xFF0C;&#x5C31;&#x5F88;&#x597D;&#x5B9E;&#x73B0;&#x4E86;&#x3002;</p>
+<h1 id="&#x603B;&#x7ED3;">&#x603B;&#x7ED3;</h1>
+<p>&#x9996;&#x5148;&#x8BF4;&#x660E;&#x4E00;&#x70B9;:thunk&#x4E0D;&#x662F;&#x5FC5;&#x987B;&#x7684;&#xFF0C;&#x6CA1;&#x6709;&#x5B83;&#x6211;&#x4EEC;&#x4E5F;&#x540C;&#x6837;&#x53EF;&#x4EE5;&#x5B9E;&#x73B0;&#x4F60;&#x60F3;&#x5B8C;&#x6210;&#x7684;&#x4E8B;&#x60C5;&#xFF0C;&#x5982;&#x679C;&#x4F60;&#x662F;&#x4E00;&#x4E2A;&#x5C0F;&#x5E94;&#x7528;&#x5927;&#x53EF;&#x4E0D;&#x5FC5;&#x4F7F;&#x7528;&#xFF0C;&#x5982;&#x679C;&#x5927;&#x5E94;&#x7528;&#x8FD8;&#x662F;&#x8981;&#x4F7F;&#x7528;thunk.&#x56E0;&#x4E3A;redux-thunk &#x5E2E;&#x52A9;&#x4F60;<strong>&#x7EDF;&#x4E00;&#x4E86;&#x5F02;&#x6B65;&#x548C;&#x540C;&#x6B65; action &#x7684;&#x8C03;&#x7528;&#x65B9;&#x5F0F;&#xFF0C;&#x628A;&#x5F02;&#x6B65;&#x8FC7;&#x7A0B;&#x653E;&#x5728; action &#x7EA7;&#x522B;&#x89E3;&#x51B3;&#xFF0C;&#x5BF9; component &#x6CA1;&#x6709;&#x5F71;&#x54CD;&#x3002;</strong></p>
+<p>&#x521A;&#x521A;&#x63A5;&#x89E6;&#x65B0;&#x7684;&#x6982;&#x5FF5;&#x80AF;&#x5B9A;&#x4F1A;&#x4E91;&#x91CC;&#x96FE;&#x91CC;&#xFF0C;&#x6211;&#x901A;&#x5E38;&#x5C31;&#x662F;&#x7ED3;&#x5408;&#x4E0A;&#x4EE3;&#x7801;&#x6765;&#x53CD;&#x590D;&#x4F53;&#x9A8C;&#x4E00;&#x4E0B;&#x6D41;&#x7A0B;&#xFF0C;&#x8FD9;&#x6837;&#x5BF9;&#x7406;&#x89E3;&#x8FD9;&#x4E2A;API&#x7684;&#x673A;&#x5236;&#xFF0C;&#x719F;&#x7EC3;&#x7684;&#x8FD0;&#x7528;&#x5B83;&#x662F;&#x975E;&#x5E38;&#x6709;&#x5E2E;&#x52A9;&#x7684;&#x3002;&#x6211;&#x5F00;&#x59CB;&#x5199;&#x4E5F;&#x603B;&#x5FD8;&#x8BB0;&#x8FD9;&#x4E2A;&#x4EE3;&#x7801;&#x7684;&#x683C;&#x5F0F;&#x662F;&#x600E;&#x4E48;&#x5199;&#x7684;&#xFF0C;&#x5148;&#x603B;&#x7ED3;&#x4E00;&#x4E0B;&#xFF0C;&#x4EE5;&#x4FBF;&#x6765;&#x56DE;&#x67E5;&#x9605;&#xFF0C;&#x7406;&#x89E3;&#x3002;</p>
+<p>&#x4EE3;&#x7801;&#x4E66;&#x5199;&#x603B;&#x7ED3;:</p>
+<p>&#x5728;<code>store.js</code>&#x4E2D;&#xFF1A;(&#x88C5;&#x5305;redux-thunk)</p>
+<pre><code>import {createStore,applyMiddleware} from &apos;redux&apos;
+import thunk from &apos;redux-thunk&apos;
+
+import rootReducer from &apos;./reducer&apos;
+
+const store = createStore(rootReducer, applyMiddleware(thunk))
+export default store
+</code></pre><p>&#x5728;&#x5B50;&#x7EC4;&#x4EF6;<code>commentBox.js</code>&#x4E2D;(&#x5728;&#x89E6;&#x53D1;&#x7684;&#x4E8B;&#x4EF6;&#x4E2D;&#x547C;&#x53EB;&#x5BF9;&#x5E94;&#x7684;Action Creator)</p>
+<pre><code>import { connect } from &apos;react-redux&apos;
+
+import {fetchComments,addComment} from &apos;./actions/commentAction&apos; //&#x5BFC;&#x5165;&#x8981;&#x7528;&#x5230;&#x7684;action
+
+...
+
+//&#x9996;&#x6B21;&#x6302;&#x8F7D;&#x7EC4;&#x4EF6;&#x547C;&#x53EB;fetchComments&#xFF1A;
+
+componentWillMount(){
+
+    this.props.fetchComments()
+  }
+
+//&#x70B9;&#x51FB;&#x63D0;&#x4EA4;&#x6309;&#x94AE;&#x65F6;&#x547C;&#x53EB;addComment&#xFF1A;
+
+handleSubmit(e) {
+  e.preventDefault()
+
+  const content = this.textInput.value
+  this.props.addComment(content,this.props.id)&#x3000;//addComment&#x662F;&#x53EF;&#x4EE5;&#x4F20;&#x503C;&#x7ED9;action&#x91CC;&#x7684;
+
+  this.refs.commentForm.reset()
+}
+
+export default connect(mapStateToProps,{fetchComments,addComment})(CommentBox)
+//connect&#x540E;&#x624D;&#x4F1A;&#x4F7F;props&#x4E2D;&#x6709;fetchComments&#x548C;addComment
+</code></pre><p>&#x5728;<code>action.js</code>&#x4E2D;&#xFF1A;(Action Creator&#x88AB;&#x547C;&#x53EB;&#x540E;&#x5C31;&#x4F1A;&#x6267;&#x884C;)</p>
+<pre><code>const fetchComments =()=&gt;(
+    dispatch =&gt;{
+        axios.get(&apos;http://redux-hello.haoduoshipin.com/comments&apos;)
+        .then( res =&gt; dispatch({type:&apos;COMMENT&apos;,comments:res.data.comments}))
+    }
+)
+
+//&#x7EC4;&#x4EF6;&#x9996;&#x6B21;&#x6302;&#x8F7D;&#x65F6;&#x8981;&#x6E32;&#x67D3;:get&#x8BF7;&#x6C42;&#x5B8C;&#x62FF;&#x5230;&#x6570;&#x636E;&#x540E;&#xFF0C;&#x518D;dispatch
+
+ const addComment = (comment,postId) =&gt;(
+     dispatch =&gt;{
+        const data={
+            commentBody:comment,
+            postId
+        }
+        axios.post(&apos;http://redux-hello.haoduoshipin.com/comments&apos;,data).then(
+        dispatch({type:&apos;ADD_COMMENT&apos;,comment,postId}))
+    }
+)
+
+//&#x70B9;&#x51FB;&#x63D0;&#x4EA4;&#x6309;&#x94AE;&#x540E;&#x7ED9;&#x6DFB;&#x52A0;&#x8BC4;&#x8BBA;:&#x5148;&#x628A;&#x6DFB;&#x52A0;&#x7684;&#x6570;&#x636E;&#x5B9A;&#x4E49;&#x597D;&#xFF0C;&#x518D;post&#x8BF7;&#x6C42;&#x6DFB;&#x52A0;&#x6570;&#x636E;&#xFF0C;&#x8BF7;&#x6C42;&#x540E;&#x518D;dispatch
+
+export {fetchComments,addComment}   //&#x547D;&#x540D;&#x5BFC;&#x51FA;
+</code></pre>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="4-注意事项.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: 小结:redux注意事项">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"react-thunk","level":"1.5.5","depth":2,"next":{"title":"Node.js","level":"1.6","depth":1,"ref":"","articles":[{"title":"Express","level":"1.6.1","depth":2,"path":"nodejs/1-expess.md","ref":"./nodejs/1-expess.md","articles":[]},{"title":"MongoDB","level":"1.6.2","depth":2,"path":"nodejs/2-mongodb.md","ref":"./nodejs/2-mongodb.md","articles":[]},{"title":"Mongoose","level":"1.6.3","depth":2,"path":"nodejs/3-ex-mdb.md","ref":"./nodejs/3-ex-mdb.md","articles":[]},{"title":"实现一整套API","level":"1.6.4","depth":2,"path":"nodejs/４-封装API.md","ref":"./nodejs/４-封装API.md","articles":[]},{"title":"解决跨越问题","level":"1.6.5","depth":2,"path":"nodejs/5-解决跨域.md","ref":"./nodejs/5-解决跨域.md","articles":[]}]},"previous":{"title":"小结:redux注意事项","level":"1.5.4","depth":2,"path":"Redux/4-注意事项.md","ref":"./Redux/4-注意事项.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Redux/5-thunk.md","mtime":"2017-06-07T17:01:58.275Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-06-07T17:02:22.347Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
