@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>AntDesign · GitBook</title>
+        <title>聊一个完整的请求 · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.2">
@@ -58,7 +58,7 @@
 
     
     
-    <link rel="prev" href="./" />
+    <link rel="prev" href="1-http.html" />
     
 
     </head>
@@ -416,26 +416,84 @@
             
         </li>
     
-        <li class="chapter " data-level="1.7" data-path="./">
+        <li class="chapter " data-level="1.7" >
             
-                <a href="./">
+                <span>
             
                     
                     UI库
             
-                </a>
+                </span>
             
 
             
             <ul class="articles">
                 
     
-        <li class="chapter active" data-level="1.7.1" data-path="1-antd.html">
+        <li class="chapter " data-level="1.7.1" data-path="../ui/1-ui.html">
             
-                <a href="1-antd.html">
+                <a href="../ui/1-ui.html">
+            
+                    
+                    常用UI库
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2" data-path="../ui/2-ui.html">
+            
+                <a href="../ui/2-ui.html">
             
                     
                     AntDesign
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" >
+            
+                <span>
+            
+                    
+                    HTTP
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.1" data-path="1-http.html">
+            
+                <a href="1-http.html">
+            
+                    
+                    http简介
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.8.2" data-path="2-http.html">
+            
+                <a href="2-http.html">
+            
+                    
+                    聊一个完整的请求
             
                 </a>
             
@@ -478,7 +536,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >AntDesign</a>
+        <a href=".." >聊一个完整的请求</a>
     </h1>
 </div>
 
@@ -493,14 +551,62 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="antdesign">AntDesign</h1>
-<p>&#x5B98;&#x7F51;&#xFF1A; <a href="https://ant.design/index-cn" target="_blank">https://ant.design/index-cn</a></p>
-<blockquote>
-<p>ANT DESIGN &#x662F;&#x8682;&#x8681;&#x91D1;&#x670D;&#x4F53;&#x9A8C;&#x6280;&#x672F;&#x90E8;&#x51FA;&#x54C1;&#x7684;&#x4E00;&#x4E2A;&#x8BBE;&#x8BA1;&amp;&#x524D;&#x7AEF;&#x6846;&#x67B6;,&#x57FA;&#x4E8E; React &#x6846;&#x67B6;</p>
+                                <p>&#x672C;&#x8282;&#x6765;&#x804A;&#x804A;&#x53D1;&#x8D77; HTTP &#x8BF7;&#x6C42;&#x4E4B;&#x540E;&#xFF0C;&#x8868;&#x9762;&#x90A3;&#x4E9B;&#x4E8B;&#xFF08;&#x7528;&#x6D4F;&#x89C8;&#x5668;&#x53D1;&#x8D77;&#x8BF7;&#x6C42;&#xFF09;&#xFF0C;&#x548C;&#x5E95;&#x5C42;&#x90A3;&#x4E9B;&#x4E8B;&#xFF08;&#x7528; curl &#x5DE5;&#x5177;&#x53D1;&#x8D77;&#x8BF7;&#x6C42;&#xFF09;&#x3002;&#x8FD9;&#x4E9B;&#x6211;&#x4EEC;&#x89C2;&#x5BDF;&#x5230;&#x7684;&#x73B0;&#x8C61;&#x5C31;&#x4F1A;&#x662F;&#x540E;&#x7EED;&#x6211;&#x4EEC;&#x8FDB;&#x884C;&#x6DF1;&#x5165;&#x7684; HTTP &#x77E5;&#x8BC6;&#x8BA8;&#x8BBA;&#x7684;&#x8D77;&#x70B9;&#x3002;</p>
+<p>&#x8D44;&#x6E90;&#x548C; URL</p>
+<p>HTTP &#x6545;&#x4E8B;&#x7684;&#x5F00;&#x59CB;&#x662F;&#x6D4F;&#x89C8;&#x5668;&#x53D1;&#x51FA;&#x8BF7;&#x6C42;&#x3002;&#x4F46;&#x662F;&#x8BF7;&#x6C42;&#x7684;&#x662F;&#x4EC0;&#x4E48;&#x5462;&#xFF1F;&#x662F;&#x670D;&#x52A1;&#x5668;&#x4E0A;&#x7684;&#x8D44;&#x6E90;&#xFF0C;&#x82F1;&#x6587;&#x53EB; Resource &#x3002;</p>
+<p>&#x5BF9;&#x5E94;&#x7684;&#x6BCF;&#x4E00;&#x4E2A;&#x8D44;&#x6E90;&#xFF0C;&#x90FD;&#x6709;&#x4E00;&#x4E2A; URL &#xFF0C;&#x4E5F;&#x5C31;&#x662F;&#x7EDF;&#x4E00;&#x8D44;&#x6E90;&#x5B9A;&#x4F4D;&#x5730;&#x5740;&#xFF0C;&#x6307;&#x5411;&#x8FD9;&#x4E2A;&#x8D44;&#x6E90;&#x3002;&#x4E0D;&#x8FC7;&#x8D44;&#x6E90;&#x5206;&#x4E24;&#x79CD;&#xFF1A;</p>
+<p>&#x4E00;&#x79CD;&#x662F;&#x9759;&#x6001;&#x8D44;&#x6E90;&#xFF0C;&#x4E5F;&#x5C31;&#x662F;&#x5404;&#x79CD;&#x6587;&#x4EF6;&#x4E86;&#xFF0C;&#x6700;&#x5E38;&#x89C1;&#x7684;&#x5C31;&#x662F;&#x9759;&#x6001; HTML &#xFF0C;&#x4F46;&#x662F;&#x4E5F;&#x53EF;&#x4EE5;&#x662F; PDF &#xFF0C;json &#x6587;&#x4EF6;&#x7B49;&#x7B49;&#x3002;
+&#x53E6;&#x5916;&#x4E00;&#x79CD;&#xFF0C;&#x5C31;&#x662F;&#x52A8;&#x6001;&#x8D44;&#x6E90;&#xFF0C;&#x4E5F;&#x5C31;&#x662F; URL &#x6307;&#x5411;&#x7684;&#x5730;&#x65B9;&#x4E0D;&#x662F;&#x4E00;&#x4E2A;&#x6587;&#x4EF6;&#xFF0C;&#x800C;&#x662F;&#x4E00;&#x6BB5;&#x4EE3;&#x7801;&#x7684;&#x5165;&#x53E3;&#xFF0C;&#x670D;&#x52A1;&#x5668;&#x7ECF;&#x8FC7;&#x8FD0;&#x7B97;&#x540E;&#xFF0C;&#x624D;&#x8FD4;&#x56DE;&#x8FD0;&#x7B97;&#x7ED3;&#x679C;&#x7ED9;&#x5BA2;&#x6237;&#x7AEF;&#x3002;
+&#x6240;&#x4EE5;&#xFF0C; &#x6211;&#x4EEC;&#x6709; <a href="http://haoqicat.com/peter.txt" target="_blank">http://haoqicat.com/peter.txt</a> &#xFF0C;&#x8FD9;&#x4E2A; URL &#x5C31;&#x662F;&#x6307;&#x5411;&#x4E00;&#x4E2A;&#x9759;&#x6001;&#x8D44;&#x6E90;&#x7684;&#x3002;&#x5982;&#x679C;&#x662F; <a href="http://haoqicat.com/username" target="_blank">http://haoqicat.com/username</a> &#x8FD9;&#x4E2A;&#x53EF;&#x80FD;&#x5C31;&#x662F;&#x6307;&#x5411;&#x52A8;&#x6001;&#x8D44;&#x6E90;&#x7684;&#xFF0C;&#x540E;&#x53F0;&#x5BF9;&#x5E94;&#x7684;&#x53EF;&#x80FD;&#x5C31;&#x662F;&#x4E00;&#x4E2A; API &#x3002;</p>
+<p>&#x6D4F;&#x89C8;&#x5668;&#x7684; HTTP &#x8BF7;&#x6C42;</p>
+<p>&#x53D1;&#x8D77;&#x4E00;&#x4E2A; HTTP &#x8BF7;&#x6C42;&#x5F88;&#x5BB9;&#x6613;&#x3002;&#x6BD4;&#x5982;&#x4F60;&#x8BF4;&#x4F60;&#x60F3;&#x7528;&#x6D4F;&#x89C8;&#x5668;&#x8BBF;&#x95EE; haoqicat.com &#x3002;&#x4F60;&#x6240;&#x9700;&#x8981;&#x505A;&#x7684;&#x4EC5;&#x4EC5;&#x662F;&#x542F;&#x52A8;&#x6D4F;&#x89C8;&#x5668;&#x7136;&#x540E;&#x5728;&#x5730;&#x5740;&#x680F;&#x8F93;&#x5165; <a href="http://haoqicat.com" target="_blank">http://haoqicat.com</a> &#xFF0C;&#x7136;&#x540E;&#x4F60;&#x5C31;&#x53EF;&#x4EE5;&#x5728;&#x9875;&#x9762;&#x4E2D;&#x770B;&#x5230;&#x597D;&#x5947;&#x732B;&#x7F51;&#x7AD9;&#x7684;&#x9996;&#x9875;&#x4E86;&#x3002;</p>
+<p>&#x90A3;&#x4E48;&#x5E95;&#x5C42;&#x53D1;&#x751F;&#x4E86;&#x4EC0;&#x4E48;&#x5462;&#xFF1F;&#x9996;&#x5148;&#xFF0C;&#x6211;&#x4EEC;&#x7684;&#x6D4F;&#x89C8;&#x5668;&#x4F5C;&#x4E3A; HTTP Client &#xFF0C;&#x53D1;&#x51FA;&#x4E86;&#x4E00;&#x4E2A;&#x8BF7;&#x6C42;&#x7ED9;&#x670D;&#x52A1;&#x5668;</p>
+<p>GET <a href="http://haoqicat.com/" target="_blank">http://haoqicat.com/</a>
+&#x4E0A;&#x9762;&#x7684; GET &#x662F; HTTP &#x65B9;&#x6CD5;&#xFF08;&#x6216;&#x8005;&#x53EB; HTTP &#x52A8;&#x8BCD;&#xFF09;&#xFF0C;&#x8FD9;&#x4E2A;&#x540E;&#x9762;&#x6211;&#x4EEC;&#x4F1A;&#x8BE6;&#x7EC6;&#x4ECB;&#x7ECD;&#x7684;&#x3002;</p>
+<p>haoqicat.com &#x7684;&#x670D;&#x52A1;&#x5668;&#x6536;&#x5230;&#x8BF7;&#x6C42;&#x540E;&#xFF0C;&#x7ED9;&#x51FA;&#x54CD;&#x5E94;&#x3002;&#x54CD;&#x5E94;&#x4E2D;&#x5E26;&#x6709;&#x5404;&#x79CD;&#x6570;&#x636E;&#xFF0C;html/css/&#x56FE;&#x7247; &#x7B49;&#x7B49;&#xFF0C;&#x8FD4;&#x56DE;&#x5230;&#x6D4F;&#x89C8;&#x5668;&#x3002; &#x6D4F;&#x89C8;&#x5668;&#x662F;&#x7406;&#x89E3;&#x8FD9;&#x4E9B;&#x6587;&#x4EF6;&#x683C;&#x5F0F;&#x7684;&#xFF0C;&#x6240;&#x4EE5;&#x53EF;&#x4EE5;&#x6700;&#x7EC8;&#x5C55;&#x793A;&#x4E00;&#x4E2A;&#x7F8E;&#x89C2;&#x7684;&#x7F51;&#x9875;&#x7ED9;&#x7528;&#x6237;&#x3002;</p>
+<p>&#x4F7F;&#x7528; curl &#x53D1;&#x8D77;&#x8BF7;&#x6C42;</p>
+<p>&#x56E0;&#x4E3A;&#x6D4F;&#x89C8;&#x5668;&#x7ED9;&#x6211;&#x4EEC;&#x5C55;&#x793A;&#x7684;&#x662F;&#x5904;&#x7406;&#x8FC7;&#x7684;&#x670D;&#x52A1;&#x5668;&#x54CD;&#x5E94;&#xFF0C;&#x6211;&#x4EEC;&#x770B;&#x4E0D;&#x5230;&#x670D;&#x52A1;&#x5668;&#x53D1;&#x7ED9;&#x6211;&#x4EEC;&#x7684;&#x54CD;&#x5E94;&#x7684;&#x672C;&#x6765;&#x9762;&#x76EE;&#x3002;&#x600E;&#x4E48;&#x6837;&#x624D;&#x80FD;&#x770B;&#x5230;&#x539F;&#x59CB;&#x7684; HTTP &#x54CD;&#x5E94;&#x6570;&#x636E;&#x5462;&#xFF1F;</p>
+<p>&#x4E3A;&#x6B64;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x4E00;&#x4E2A; HTTP &#x5DE5;&#x5177;&#xFF0C;&#x5C31;&#x50CF;&#x7528;&#x6D4F;&#x89C8;&#x5668;&#x7684;&#x65F6;&#x5019;&#x6211;&#x4EEC;&#x8F93;&#x5165;&#x7F51;&#x5740;&#x4E00;&#x6837;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x7528; HTTP &#x5DE5;&#x5177;&#x53D1;&#x9001;&#x4E00;&#x4E2A;&#x8BF7;&#x6C42;&#x5230; haoqicat.com&#x3002;&#x6211;&#x4EEC;&#x7684; HTTP &#x5DE5;&#x5177;&#xFF0C;curl &#xFF0C;&#x4E0D;&#x4F1A;&#x5904;&#x7406;&#x54CD;&#x5E94;&#x6570;&#x636E;&#xFF0C;&#x8FD9;&#x6837;&#x80FD;&#x8BA9;&#x6211;&#x4EEC;&#x770B;&#x5230;&#x539F;&#x59CB;&#x7684;&#x8BF7;&#x6C42;&#x548C;&#x54CD;&#x5E94;&#x6570;&#x636E;&#xFF0C;&#x5927;&#x6982;&#x957F;&#x8FD9;&#x6837;&#xFF1A;</p>
+<p>$ curl -X GET &quot;<a href="http://haoqicat.com" target="_blank">http://haoqicat.com</a>&quot; -v</p>
+<ul>
+<li>Rebuilt URL to: <a href="http://haoqicat.com/" target="_blank">http://haoqicat.com/</a></li>
+<li>Trying 182.92.203.18...</li>
+<li>Connected to haoqicat.com (182.92.203.18) port 80 (#0)<blockquote>
+<p>GET / HTTP/1.1
+Host: haoqicat.com
+User-Agent: curl/7.43.0
+Accept: <em>/</em></p>
+<p>&lt; HTTP/1.1 200 OK
+&lt; Server: nginx/1.4.6 (Ubuntu)
+&lt; Date: Fri, 09 Dec 2016 09:23:59 GMT
+&lt; Content-Type: text/html; charset=utf-8
+&lt; Transfer-Encoding: chunked
+&lt; Connection: keep-alive
+&lt; Vary: Accept-Encoding
+&lt;
+&lt;!DOCTYPE html&gt;
+<html>
+<head>
+<title>haoqicat</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+...
+</head>
+<body>
+...</body></html></p>
 </blockquote>
-<p>&#x5148;&#x8BF4;&#x70B9;&#x9898;&#x5916;&#x8BDD;&#xFF1A;&#x4ECA;&#x5929;&#x53C8;&#x770B;&#x5230;&#x4E86;&#x77E5;&#x4E4E;&#x4E0A;&#x5173;&#x4E8E;&#x8BE5;&#x9009;&#x62E9;&#x524D;&#x7AEF;&#x7684;&#x90A3;&#x4E09;&#x5927;&#x6846;&#x67B6;&#x8FD9;&#x79CD;&#x8BDD;&#x9898;&#xFF0C;&#x5927;&#x5BB6;&#x636E;&#x7406;&#x529B;&#x4E89;&#xFF0C;&#x5404;&#x6709;&#x9053;&#x7406;&#x3002;&#x6211;&#x4E5F;&#x662F;&#x9ED8;&#x9ED8;&#x7684;&#x7FFB;&#x4E86;&#x7FFB;&#x8BC4;&#x8BBA;&#x7136;&#x540E;&#x4E00;&#x7B11;&#x800C;&#x8FC7;&#xFF0C;&#x600E;&#x6837;&#xFF0C;&#x6211;&#x5C31;&#x662F;&#x9009;react&#x4F60;&#x54AC;&#x6211;&#x554A;&#x3002;&#x8BB2;&#x9053;&#x7406;&#x6211;&#x4E5F;&#x662F;<code>&#x5C24;&#x5C0F;&#x53F3;</code>&#x7684;&#x5C0F;&#x8FF7;&#x59B9;&#xFF0C;vue&#x6211;&#x521A;&#x4E0A;&#x624B;&#x65F6;&#x4E00;&#x8138;&#x61F5;&#xFF1A;&#x8FD9;&#x5C31;&#x53EF;&#x4EE5;&#x4E86;&#xFF1F;&#x8FD9;&#x4E48;&#x7B80;&#x5355;&#xFF1F;&#x8FD9;&#x903B;&#x8F91;&#x5206;&#x6790;&#x90FD;&#x4E0D;&#x9700;&#x8981;&#x6211;&#x4E86;&#xFF1F;&#x786E;&#x5B9E;&#xFF0C;&#x6211;&#x4E5F;&#x89C9;&#x5F97;&#x7B80;&#x5355;&#x5C31;&#x662F;&#x738B;&#x9053;&#x554A;&#xFF0C;&#x6709;&#x6377;&#x5F84;&#x5E72;&#x561B;&#x4E0D;&#x8D70;&#xFF0C;&#x53C8;&#x4E0D;&#x662F;&#x4F60;&#x7528;&#x4E86;&#x4E00;&#x5806;props&#x6765;&#x4FEE;&#x6539;state(react&#x6846;&#x67B6;)&#x5C31;&#x611F;&#x89C9;&#x81EA;&#x5DF1;&#x725B;&#x903C;&#x5230;&#x4E0D;&#x884C;&#xFF0C;&#x8D76;&#x5FEB;&#x6D17;&#x6D17;&#x7761;&#x5427;&#x3002;</p>
-<p>&#x6211;&#x7528;react&#x7684;&#x611F;&#x60F3;&#x662F;&#xFF1A;&#x8FD9;&#x624D;&#x662F;&#x4E00;&#x4E2A;&#x751F;&#x6001;&#x4F53;&#x7CFB;&#x3002;&#x629B;&#x5F00;&#x5168;&#x5BB6;&#x6876;&#x4EE5;&#x53CA;&#x884D;&#x751F;&#x51FA;&#x6765;&#x7684;&#x4E00;&#x5806;&#x65C1;&#x652F;&#xFF0C;&#x5C31;UI&#x5E93;&#x6765;&#x8BF4;&#x5C31;&#x6709;material-ui,AntDesign&#x8FD9;&#x4E24;&#x5927;&#x5E93;&#x6765;&#x652F;&#x6301;react&#xFF0C;&#x771F;&#x5FC3;&#x8D5E;&#x3002;</p>
-<p>&#x56DE;&#x5F52;&#x8BDD;&#x9898;&#xFF1A;&#x90A3;&#x4E48;&#x672C;&#x8282;jaya&#x7ED9;&#x5927;&#x5BB6;&#x603B;&#x7ED3;&#x4E86;&#x4E00;&#x4E0B;&#x5B83;&#x7684;&#x4F7F;&#x7528;&#x65B9;&#x6CD5;&#xFF0C;&#x56E0;&#x4E3A;&#x6CA1;&#x6709;<code>bootstrap</code>&#x90A3;&#x4E48;&#x7B80;&#x5355;&#x7684;&#x76F4;&#x63A5;&#x4E00;&#x4E2A;class&#x5C31;&#x53EF;&#x4EE5;&#x89E3;&#x51B3;&#xFF0C;&#x4E0D;&#x8FC7;&#x4E0D;&#x7528;&#x62C5;&#x5FC3;&#xFF0C;&#x8DDF;jaya&#x4E00;&#x6B65;&#x6B65;&#x6765;&#x5F00;&#x59CB;&#x4F60;&#x7684;AntDesign</p>
+</li>
+</ul>
+<p>&lt;/body&gt;
+&lt;/html&gt;</p>
+<ul>
+<li>Connection #0 to host haoqicat.com left intact
+&#x7A0D;&#x5FAE;&#x89E3;&#x91CA;&#x4E00;&#x4E0B;&#x4E0A;&#x9762;&#x90FD;&#x53D1;&#x751F;&#x4E86;&#x4EC0;&#x4E48;&#x3002;&#x9996;&#x5148;&#x6211;&#x4EEC;&#x8F93;&#x5165;&#x4E86;&#x4E00;&#x4E2A;&#x547D;&#x4EE4;</li>
+</ul>
+<p>$ curl  <a href="https://haoqicat.com" target="_blank">https://haoqicat.com</a> -v
+&#x4F7F;&#x7528; curl &#x5DE5;&#x5177;&#xFF0C;&#x5411; haoqicat.com &#x53D1;&#x8D77;&#x4E86;&#x4E00;&#x4E2A; HTTP &#x8BF7;&#x6C42;&#x3002;&#x8BF7;&#x6C42;&#x65B9;&#x6CD5;&#x4E3A; GET &#x3002;&#x5982;&#x679C;&#x770B;&#x4E00;&#x4E0B; man curl &#x4E5F;&#x5C31;&#x662F;&#x67E5;&#x770B; curl &#x7684;&#x624B;&#x518C;&#xFF0C;&#x53EF;&#x4EE5;&#x770B;&#x5230; -X &#x9009;&#x9879;&#x540E;&#x9762;&#x662F;&#x4E13;&#x95E8;&#x7528;&#x6765;&#x6307;&#x5B9A; HTTP &#x65B9;&#x6CD5;&#x7684;&#x3002;&#x6700;&#x540E;&#x7684; -v &#x7528;&#x6765;&#x663E;&#x793A;&#x8BE6;&#x60C5;&#x3002;&#x6240;&#x4EE5;&#x6211;&#x4EEC;&#x624D;&#x80FD;&#x770B;&#x5230;&#x6BD4;&#x8F83;&#x8BE6;&#x5C3D;&#x7684;&#x540E;&#x7EED;&#x8F93;&#x51FA;&#x5185;&#x5BB9;&#x3002;</p>
+<p>&#x603B;&#x7ED3;</p>
+<p>&#x4E0B;&#x9762;&#x6211;&#x4EEC;&#x8981;&#x6765;&#x8BE6;&#x7EC6;&#x4ECB;&#x7ECD;&#x4E00;&#x4E0B;&#xFF0C;&#x8BF7;&#x6C42;&#x7684;&#x5934;&#x90E8;&#x7684;&#x6BCF;&#x4E2A;&#x5934;&#xFF08; header &#xFF09;&#x7684;&#x610F;&#x601D;&#x3002;</p>
 
                                 
                                 </section>
@@ -528,7 +634,7 @@
 
             
                 
-                <a href="./" class="navigation navigation-prev navigation-unique" aria-label="Previous page: UI库">
+                <a href="1-http.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: http简介">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
@@ -540,7 +646,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"AntDesign","level":"1.7.1","depth":2,"previous":{"title":"UI库","level":"1.7","depth":1,"path":"ui/README.md","ref":"./ui/README.md","articles":[{"title":"AntDesign","level":"1.7.1","depth":2,"path":"ui/1-antd.md","ref":"./ui/1-antd.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"ui/1-antd.md","mtime":"2017-06-12T17:54:01.658Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-06-12T17:54:11.717Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"聊一个完整的请求","level":"1.8.2","depth":2,"previous":{"title":"http简介","level":"1.8.1","depth":2,"path":"http/1-http.md","ref":"./http/1-http.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"http/2-http.md","mtime":"2017-06-13T06:52:18.559Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-06-14T15:20:43.454Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
