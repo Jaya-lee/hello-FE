@@ -1,3 +1,7 @@
+
+# [github官网](https://github.com/)
+
+
 # 部署React
 
 
@@ -44,10 +48,32 @@ For example, add this to build it for GitHub Pages:
  "homepage" : "http://jaya-lee.github.io/TODO-redux",
 ```
 
-第四步
-```
-npm install --save-dev gh-pages
+第四步，运行：
 
+```
+npm run build
+```
+
+第五步，安装这个工具，自动创建gh-pages
+
+```
+  npm install --save-dev gh-pages
+```
+
+第六步，在package.json文件添加如下代码（自动化脚本）
+
+```
+    "scripts": {
+      // ...
+      "predeploy": "npm run build",
+      "deploy": "gh-pages -d build"
+    }
+```
+
+第七步,运行：
+
+```
+  npm run deploy
 ```
 
 ## 部署完成

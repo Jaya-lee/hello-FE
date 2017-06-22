@@ -4,12 +4,12 @@
   "description": "my book",
   "main": "index.js",
   "scripts": {
-   "start": "gitbook serve ./content ./gh-pages",
-   "build": "gitbook build ./content ./gh-pages",
-   "deploy": "node ./scripts/deploy-gh-pages.js",
-   "publish": "npm run build && npm run deploy",
-   "port": "lsof -i :35729"
- },
+    "start": "gitbook serve ./content ./gh-pages",
+    "build": "gitbook build ./content ./gh-pages",
+    "deploy": "node ./scripts/deploy-gh-pages.js",
+    "publish": "npm run build && npm run deploy",
+    "port": "lsof -i :35729"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Jaya-lee/hello-FE.git"
@@ -19,5 +19,8 @@
   "bugs": {
     "url": "https://github.com/Jaya-lee/hello-FE/issues"
   },
-  "homepage": "https://github.com/Jaya-lee/hello-FE#readme"
+  "homepage": "https://github.com/Jaya-lee/hello-FE#readme",
+  "dependencies": {
+    "mybook": "file:gh-pages"
+  }
 }
