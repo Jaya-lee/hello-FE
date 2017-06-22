@@ -1,6 +1,3 @@
----
-title: GitBook
----
 
 # 什么是gitbook
 

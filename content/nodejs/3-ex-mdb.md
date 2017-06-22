@@ -1,6 +1,4 @@
----
-title: 使用 Mongoose 连接 JS 和 MongoDB
----
+
 上节我们说到如何使Express 应用和 MongoDB 数据库之间进行通信，即如何用js操作数据库，本节我们就来解决这个问题。
 
 # Mongoose

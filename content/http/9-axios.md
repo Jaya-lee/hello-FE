@@ -1,6 +1,3 @@
----
-title: 用 POST 传复杂数据到服务器（ axios 篇）
----
 
 在 React 应用中，比较少会用到 form 直接提交数据的形式，而更多是采用更为灵活的一种方式，
 那就通过 axios/fetch 这样的 http 客户端来发 POST 请求。
