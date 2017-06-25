@@ -689,6 +689,19 @@
             
         </li>
     
+        <li class="chapter " data-level="1.9.3" data-path="3-vuex.html">
+            
+                <a href="3-vuex.html">
+            
+                    
+                    vuex
+            
+                </a>
+            
+
+            
+        </li>
+    
 
             </ul>
             
@@ -741,6 +754,7 @@
                                 
                                 <h1 id="vue">vue</h1>
 <p>&#x5B98;&#x7F51;:<a href="https://cn.vuejs.org/" target="_blank">https://cn.vuejs.org/</a></p>
+<p>&#x5B66;&#x4E60;vue&#x6211;&#x4F1A;&#x7C7B;&#x6BD4;react,&#x8FD9;&#x6837;&#x53EF;&#x4EE5;&#x65B9;&#x4FBF;&#x7406;&#x89E3;,&#x66F4;&#x597D;&#x7684;&#x638C;&#x63E1;.</p>
 <p>&#x8FD9;&#x91CC;&#x6211;&#x4EEC;&#x4F7F;&#x7528;&#x5DE5;&#x5177;&#x6765;&#x76F4;&#x63A5;&#x6784;&#x5EFA;&#x4E00;&#x4E2A;vue&#x7684;&#x811A;&#x624B;&#x67B6;</p>
 <h2 id="&#x5B89;&#x88C5;">&#x5B89;&#x88C5;</h2>
 <p>&#x5168;&#x5C40;&#x5B89;&#x88C5; vue-cli</p>
@@ -768,11 +782,14 @@ Vue.config.productionTip = false
 new Vue({
   el: &apos;#app&apos;,
   template: &apos;&lt;App/&gt;&apos;,
-  components: { App }
+  components: { App } //&#x4F7F;&#x7528;&#x7EC4;&#x4EF6;App&#x8981;&#x6CE8;&#x518C;&#x4E00;&#x4E0B;
 })
-</code></pre><p>&#x540C;react&#x4E2D;&#x7684;index.js&#xFF0C;&#x5728;&#x6587;&#x4EF6;&#x4E2D;&#x5B9E;&#x4F8B;&#x8BDD;vue&#x9879;&#x76EE;(new Vue)&#xFF0C;&#x6302;&#x8F7D;&#x4E86;&#x603B;&#x7684;&#x7EC4;&#x4EF6;APP</p>
-<pre><code>template: &apos;&lt;App/&gt;&apos; &#x4E5F;&#x53EF;&#x4EE5;&#x5199;&#x4E3A;&#x3000;render: x=&gt;x(App)
-</code></pre><p>&#x603B;&#x7684;&#x7236;&#x7EC4;&#x4EF6;App.vue</p>
+</code></pre><p>main.js&#x76F8;&#x5F53;&#x4E8E;react&#x4E2D;&#x7684;index.js,&#x5BFC;&#x5165;&#x90E8;&#x5206;&#x5C31;&#x4E0D;&#x8BF4;&#x4E86;&#x5F88;&#x76F4;&#x89C2;,&#x770B;&#x4E00;&#x4E0B;&#x5B9E;&#x4F8B;&#x5316;new Vue&#x90E8;&#x5206;.&#x5B83;&#x4E5F;&#x662F;&#x4E00;&#x4E2A;&#x5BF9;&#x8C61;,</p>
+<p><code>el</code>&#x4F5C;&#x7528;&#x662F;&#x8BF4;&#x660E;&#x7EC4;&#x4EF6;&#x6302;&#x8F7D;&#x5230;&#x54EA;&#x91CC;,&#x6211;&#x4EEC;&#x53D1;&#x73B0;&#x6A21;&#x677F;&#x4E2D;&#x6700;&#x5927;&#x7684;div&#x7684;id &#x4E3A;app(index.html),&#x6240;&#x4EE5;&#x5C06;&#x6240;&#x6709;&#x7684;&#x7EC4;&#x4EF6;&#x6302;&#x8F7D;&#x5230;&#x8FD9;&#x91CC;,react&#x662F;&#x6302;&#x8F7D;&#x5230;#root&#x91CC;.</p>
+<p><code>template</code>&#x8FD9;&#x662F;&#x6E32;&#x67D3;&#x7EC4;&#x4EF6;&#x5230;dom&#x4E2D;,reacr&#x4E2D;&#x662F;ReactDom.render&#x65B9;&#x6CD5;,&#x5176;&#x4E2D;&#x8FD9;&#x53E5;&#x4E5F;&#x53EF;&#x4EE5;&#x5199;&#x6210;&#x5982;&#x4E0B;&#x4EE3;&#x7801;</p>
+<pre><code>&#x3000;render: x=&gt;x(App) //&#x6E32;&#x67D3;
+</code></pre><p><code>components</code>&#x8FD9;&#x91CC;&#x4E0D;&#x540C;react,&#x4E00;&#x822C;&#x6211;&#x4EEC;&#x5728;react&#x5F15;&#x5165;&#x5B50;&#x7EC4;&#x4EF6;,&#x7136;&#x540E;&#x5728;dom&#x91CC;&#x6302;&#x8F7D;&#x5C31;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x4E86;,&#x5728;vue&#x4E2D;&#x4F7F;&#x7528;&#x5B50;&#x7EC4;&#x4EF6;&#x8FD8;&#x5FC5;&#x987B;&#x6CE8;&#x518C;&#x4E00;&#x4E0B;&#x624D;&#x53EF;&#x4EE5;</p>
+<p>&#x603B;&#x7684;&#x7236;&#x7EC4;&#x4EF6;App.vue</p>
 <pre><code>&lt;template&gt;
   &lt;div id=&quot;app&quot;&gt;
     &lt;img src=&quot;./assets/logo.png&quot;&gt;
@@ -802,13 +819,13 @@ export default {
   margin-top: 60px;
 }
 &lt;/style&gt;
-</code></pre><p>&#x6240;&#x6709;&#x7684;vue&#x6587;&#x4EF6;&#x90FD;&#x662F;&#x7531;<code>&lt;template&gt;</code>,<code>&lt;script&gt;</code>,<code>&lt;style&gt;</code>&#x90E8;&#x5206;&#x7EC4;&#x6210;&#xFF0C;&#x4E5F;&#x5C31;&#x662F;html,js,css
-&#x5728;html&#x90E8;&#x5206;&#xFF1A;&#x4EE5;&#x6807;&#x7B7E;&#x7684;&#x5F62;&#x5F0F;(&#x5C0F;&#x5199;)&#x5199;&#x5B50;&#x7EC4;&#x4EF6;&#xFF0C;
-js&#x90E8;&#x5206;&#xFF1A;&#x5BFC;&#x5165;&#x5B50;&#x7EC4;&#x4EF6;&#xFF0C;&#x9ED8;&#x8BA4;&#x5BFC;&#x51FA;&#x4E00;&#x4E2A;&#x5BF9;&#x8C61;&#xFF0C;name&#x5C31;&#x662F;&#x8BA9;&#x522B;&#x4EBA;&#x5F15;&#x5165;&#x65F6;&#x7684;&#x6807;&#x7B7E;&#x540D;&#xFF0C;data&#x4E2D;&#x5199;state.</p>
+</code></pre><p>react&#x4E2D;&#x8FD9;&#x4E2A;&#x6587;&#x4EF6;&#x662F;App.js</p>
+<p>&#x9996;&#x5148;&#x53D1;&#x73B0;vue&#x6240;&#x6709;&#x7EC4;&#x4EF6;&#x6587;&#x4EF6;&#x5747;&#x4E3A;.vue&#x6587;&#x4EF6;,&#x8FD9;&#x4E5F;&#x662F;&#x5B83;&#x7684;&#x7279;&#x522B;&#x4E4B;&#x5904;.&#x6240;&#x6709;&#x7684;vue&#x6587;&#x4EF6;&#x90FD;&#x662F;&#x7531;<code>&lt;template&gt;</code>,<code>&lt;script&gt;</code>,<code>&lt;style&gt;</code>&#x90E8;&#x5206;&#x7EC4;&#x6210;</p>
+<p><code>template</code>&#xFF1A;&#x8FD9;&#x91CC;&#x5C31;&#x662F;&#x7EC4;&#x4EF6;&#x91CC;&#x9762;&#x7684;&#x5185;&#x5BB9;,&#x76F8;&#x5F53;&#x4E8E;react&#x4E2D;return&#x90E8;&#x5206;,&#x9700;&#x6CE8;&#x610F;&#x8FD9;&#x91CC;&#x548C;react&#x4E00;&#x6837;&#x90FD;&#x9700;&#x8981;&#x95ED;&#x5408;&#x6807;&#x7B7E;&#x5305;&#x88F9;.</p>
+<p><code>script</code>:&#x8FD9;&#x91CC;&#x53EF;&#x4EE5;&#x5BFC;&#x5165;&#x5B50;&#x7EC4;&#x4EF6;,&#x5BFC;&#x51FA;&#x81EA;&#x5DF1;&#x7684;&#x7EC4;&#x4EF6;,&#x5BFC;&#x51FA;&#x7684;&#x65F6;&#x5019;&#x4E3A;&#x4E00;&#x4E2A;&#x5BF9;&#x8C61;,&#x6240;&#x4EE5;data&#x5FC5;&#x987B;&#x5199;&#x4E3A;&#x4E00;&#x4E2A;function,&#x7136;&#x540E;return&#x4E00;&#x4E2A;&#x5BF9;&#x8C61;,&#x8FD9;&#x70B9;&#x9700;&#x8981;&#x6CE8;&#x610F;.&#x5F53;&#x7136;&#x522B;&#x5FD8;&#x8BB0;&#x6CE8;&#x518C;&#x5B50;&#x7EC4;&#x4EF6;.</p>
 <p>&#x6CE8;&#x610F;&#xFF1A;</p>
 <p>&#x7236;&#x7EC4;&#x4EF6;&#x91CC;&#x7684;data &#x662F;&#x4E00;&#x4E2A;&#x5BF9;&#x8C61;&#xFF0E;&#x800C;&#x5B50;&#x7EC4;&#x4EF6;data&#x8981;&#x5199;&#x6210;&#x4E00;&#x4E2A;&#x65B9;&#x6CD5;return&#x4E00;&#x4E2A;&#x5BF9;&#x8C61;&#xFF0E;</p>
 <p>css&#x90E8;&#x5206;&#xFF1A;scoped&#x907F;&#x514D;&#x4E86;css&#x6C61;&#x67D3;&#xFF0C;&#x6D4F;&#x89C8;&#x5668;&#x89E3;&#x6790;&#x4E3A;&#x5728;&#x6807;&#x7B7E;&#x52A0;&#x4E86;data&#x5C5E;&#x6027;.css-moule&#x3000;&#x6D4F;&#x89C8;&#x5668;&#x89E3;&#x6790;&#x65F6;&#x5C06;class&#x53D8;&#x4E3A;&#x54C8;&#x5E0C;&#x503C;&#xFF0E;</p>
-<p>&#x7236;&#x7EC4;&#x4EF6;&#x4E2D;&#x4F20;props&#x65F6;&#xFF0C;&#x5B50;&#x7EC4;&#x4EF6;&#x4E2D;&#x8981;&#x5728;js&#x91CC;&#x6CE8;&#x518C;</p>
 
                                 
                                 </section>
@@ -848,7 +865,7 @@ js&#x90E8;&#x5206;&#xFF1A;&#x5BFC;&#x5165;&#x5B50;&#x7EC4;&#x4EF6;&#xFF0C;&#x9ED
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"vue安装与说明","level":"1.9.1","depth":2,"next":{"title":"vue-router","level":"1.9.2","depth":2,"path":"vue/2-router.md","ref":"./vue/2-router.md","articles":[]},"previous":{"title":"vue","level":"1.9","depth":1,"ref":"","articles":[{"title":"vue安装与说明","level":"1.9.1","depth":2,"path":"vue/1-安装.md","ref":"./vue/1-安装.md","articles":[]},{"title":"vue-router","level":"1.9.2","depth":2,"path":"vue/2-router.md","ref":"./vue/2-router.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"vue/1-安装.md","mtime":"2017-06-24T07:18:21.053Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-06-24T11:30:18.749Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"vue安装与说明","level":"1.9.1","depth":2,"next":{"title":"vue-router","level":"1.9.2","depth":2,"path":"vue/2-router.md","ref":"./vue/2-router.md","articles":[]},"previous":{"title":"vue","level":"1.9","depth":1,"ref":"","articles":[{"title":"vue安装与说明","level":"1.9.1","depth":2,"path":"vue/1-安装.md","ref":"./vue/1-安装.md","articles":[]},{"title":"vue-router","level":"1.9.2","depth":2,"path":"vue/2-router.md","ref":"./vue/2-router.md","articles":[]},{"title":"vuex","level":"1.9.3","depth":2,"path":"vue/3-vuex.md","ref":"./vue/3-vuex.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"vue/1-安装.md","mtime":"2017-06-25T02:34:00.099Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-06-25T11:09:33.697Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
