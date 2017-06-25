@@ -43,4 +43,5 @@
 * vue
     * [vue安装与说明](./vue/1-安装.md)
     * [vue-router](./vue/2-router.md)
+    * [vuex](./vue/3-vuex.md)
 
