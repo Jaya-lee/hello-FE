@@ -4,10 +4,10 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>vue安装与说明 · GitBook</title>
+        <title>vue与react Angular比较 · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
-        <meta name="generator" content="GitBook 3.2.2">
+        <meta name="generator" content="GitBook 3.2.3">
         
         
         
@@ -57,7 +57,7 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="2-router.html" />
+    <link rel="next" href="2-vue.html" />
     
     
 
@@ -668,7 +668,7 @@
                 <a href="1-安装.html">
             
                     
-                    vue安装与说明
+                    vue与react Angular比较
             
                 </a>
             
@@ -676,7 +676,20 @@
             
         </li>
     
-        <li class="chapter " data-level="1.9.2" data-path="2-router.html">
+        <li class="chapter " data-level="1.9.2" data-path="2-vue.html">
+            
+                <a href="2-vue.html">
+            
+                    
+                    vue语法学习
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.3" data-path="2-router.html">
             
                 <a href="2-router.html">
             
@@ -689,7 +702,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.9.3" data-path="3-vuex.html">
+        <li class="chapter " data-level="1.9.4" data-path="3-vuex.html">
             
                 <a href="3-vuex.html">
             
@@ -769,7 +782,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >vue安装与说明</a>
+        <a href=".." >vue与react Angular比较</a>
     </h1>
 </div>
 
@@ -786,9 +799,41 @@
                                 
                                 <h1 id="vue">vue</h1>
 <p>&#x5B98;&#x7F51;:<a href="https://cn.vuejs.org/" target="_blank">https://cn.vuejs.org/</a></p>
-<p>&#x5B66;&#x4E60;vue&#x6211;&#x4F1A;&#x7C7B;&#x6BD4;react,&#x8FD9;&#x6837;&#x53EF;&#x4EE5;&#x65B9;&#x4FBF;&#x7406;&#x89E3;,&#x66F4;&#x597D;&#x7684;&#x638C;&#x63E1;.</p>
-<p>&#x8FD9;&#x91CC;&#x6211;&#x4EEC;&#x4F7F;&#x7528;&#x5DE5;&#x5177;&#x6765;&#x76F4;&#x63A5;&#x6784;&#x5EFA;&#x4E00;&#x4E2A;vue&#x7684;&#x811A;&#x624B;&#x67B6;</p>
+<p>&#x5728;&#x6DF1;&#x5EA6;&#x5B66;&#x4E60;vue&#x4E4B;&#x524D;&#xFF0C;&#x6211;&#x5DF2;&#x7ECF;&#x62E5;&#x6709;&#x4E86;react&#x548C;angularjs&#x7684;&#x5F00;&#x53D1;&#x7ECF;&#x9A8C;&#xFF0C;&#x6240;&#x4EE5;&#x6211;&#x5C06;vue&#x4E0E;&#x8FD9;&#x4E24;&#x4E2A;&#x4E3B;&#x6D41;&#x6846;&#x67B6;&#x7684;&#x5BF9;&#x6BD4;&#x4F5C;&#x4E3A;&#x7B2C;&#x4E00;&#x8282;&#x5185;&#x5BB9;&#x5C55;&#x5F00;&#x4ECB;&#x7ECD;&#x3002;&#x65B0;&#x624B;&#x5C0F;&#x4F19;&#x4F34;&#x53EF;&#x4EE5;&#x7ED5;&#x8FC7;&#x7B2C;&#x4E00;&#x8282;&#x4ECE;&#x7B2C;&#x4E8C;&#x8282;&#x5F00;&#x59CB;&#x5B66;&#x4E60;&#x3002;</p>
+<h2 id="vue&#x5BF9;&#x6BD4;&#x5176;&#x4ED6;&#x6846;&#x67B6;">vue&#x5BF9;&#x6BD4;&#x5176;&#x4ED6;&#x6846;&#x67B6;</h2>
+<h2 id="&#x5BF9;&#x6BD4;react">&#x5BF9;&#x6BD4;React:</h2>
+<ul>
+<li>&#x865A;&#x62DF;dom</li>
+<li>&#x54CD;&#x5E94;&#x5F0F;&#x4E0E;&#x7EC4;&#x4EF6;&#x5316;view&#x7EC4;&#x4EF6;</li>
+<li>&#x5168;&#x5BB6;&#x6876;&#xFF08;&#x6CE8;&#x610F;&#x529B;&#x96C6;&#x4E2D;&#x5728;&#x6838;&#x5FC3;&#x5E93;&#xFF0C;&#x8DEF;&#x7531;&#x548C;&#x5168;&#x5C40;&#x72B6;&#x6001;&#x7BA1;&#x7406;&#x4EA4;&#x7ED9;&#x76F8;&#x5173;&#x7684;&#x5E93;&#xFF09;
+&#x9700;&#x8981;&#x627F;&#x8BA4;react&#x6709;&#x66F4;&#x4E30;&#x5BCC;&#x7684;&#x751F;&#x6001;&#x7CFB;&#x7EDF;</li>
+</ul>
+<h3 id="&#x6027;&#x80FD;">&#x6027;&#x80FD;</h3>
+<ul>
+<li>vue&#x7684;virtual dom&#x66F4;&#x52A0;&#x8F7B;&#x91CF;</li>
+<li>&#x7CFB;&#x7EDF;&#x53EF;&#x4EE5;&#x7CBE;&#x786E;&#x5230;&#x9700;&#x8981;&#x91CD;&#x65B0;&#x6E32;&#x67D3;&#x7684;&#x7EC4;&#x4EF6;</li>
+</ul>
+<h3 id="htmlcssjsx-vs-templates">html&amp;&amp;css(jsx vs templates)</h3>
+<p>jsx &#x4F7F;&#x7528;xml&#x8BED;&#x6CD5;&#x7F16;&#x5199;&#x7684;js&#x7684;&#x4E00;&#x79CD;&#x8BED;&#x6CD5;&#x7CD6;&#xFF0C;&#x66F4;&#x52A0;&#x5148;&#x8FDB;&#xFF0C;&#x540C;&#x65F6;&#x4E5F;&#x9700;&#x8981;&#x4E00;&#x5B9A;&#x7684;&#x5B66;&#x4E60;&#x6210;&#x672C;&#x3002;</p>
+<p>&#x7EC4;&#x4EF6;&#x5212;&#x5206;&#x4E3A;&#x4E24;&#x7C7B;&#xFF0C;&#x4E00;&#x7C7B;&#x662F;&#x504F;&#x89C6;&#x56FE;&#x8868;&#x73B0;&#xFF0C;&#x7528;templates;&#x4E00;&#x7C7B;&#x504F;&#x903B;&#x8F91;&#xFF0C;&#x7528;jsx.</p>
+<h3 id="&#x89C4;&#x6A21;">&#x89C4;&#x6A21;</h3>
+<p>&#x72B6;&#x6001;&#x7BA1;&#x7406;&#x5E93;&#xFF0C;react&#x6709;redux,flux,&#x8FD9;&#x4E9B;&#x4E5F;&#x652F;&#x6301;vue&#x3002;&#x4F46;&#x662F;vue&#x6709;&#x81EA;&#x8EAB;&#x96C6;&#x6210;&#x7684;&#x72B6;&#x6001;&#x89E3;&#x51B3;&#x65B9;&#x6848;vuex</p>
+<h2 id="&#x5BF9;&#x6BD4;angularjs&#xFF08;ng-1&#xFF09;">&#x5BF9;&#x6BD4;Angularjs&#xFF08;ng 1*&#xFF09;</h2>
+<p>&#x8BED;&#x6CD5;&#x7C7B;&#x4F3C;&#xFF08;ng-if vs v-if&#xFF09;</p>
+<h3 id="&#x590D;&#x6742;&#x6027;">&#x590D;&#x6742;&#x6027;</h3>
+<p>vue.js&#x8BBE;&#x8BA1;&#x4E0E;API&#x66F4;&#x7B80;&#x5355;&#xFF0C;&#x5BB9;&#x6613;&#x638C;&#x63E1;</p>
+<h3 id="&#x7075;&#x6D3B;&#x6027;&#x548C;&#x6A21;&#x5757;&#x5316;">&#x7075;&#x6D3B;&#x6027;&#x548C;&#x6A21;&#x5757;&#x5316;</h3>
+<p>&#x66F4;&#x52A0;&#x7075;&#x6D3B;&#xFF0C;<code>webpack template</code>&#x51E0;&#x5206;&#x949F;&#x542F;&#x7528;&#x9AD8;&#x7EA7;&#x7279;&#x6027;&#xFF0C;&#x6BD4;&#x5982;&#x70ED;&#x6A21;&#x5757;&#x52A0;&#x8F7D;&#x3001;linting&#x3001;css&#x63D0;&#x53D6;&#x7B49;</p>
+<h3 id="&#x6570;&#x636E;&#x7ED1;&#x5B9A;">&#x6570;&#x636E;&#x7ED1;&#x5B9A;</h3>
+<p>ng&#x4F7F;&#x7528;&#x53CC;&#x5411;&#x7ED1;&#x5B9A;</p>
+<p>vue&#x5728;&#x4E0D;&#x540C;&#x7EC4;&#x4EF6;&#x4E4B;&#x95F4;&#x5F3A;&#x5236;&#x5355;&#x9879;&#x6570;&#x636E;&#x6D41;&#xFF0C;&#x8FD9;&#x70B9;&#x4E0E;react&#x4E00;&#x6837;&#xFF0C;&#x4F7F;&#x5E94;&#x7528;&#x4E2D;&#x6570;&#x636E;&#x6D41;&#x66F4;&#x52A0;&#x6E05;&#x6670;&#x6613;&#x61C2;</p>
+<h3 id="&#x6307;&#x4EE4;&#x4E0E;&#x7EC4;&#x4EF6;">&#x6307;&#x4EE4;&#x4E0E;&#x7EC4;&#x4EF6;</h3>
+<p>vue&#x4E2D;&#x4E24;&#x8005;&#x533A;&#x5206;&#x6E05;&#x6670;&#xFF0C;&#x6307;&#x4EE4;&#x53EA;&#x8D1F;&#x8D23;&#x5C01;&#x88C5;dom&#x64CD;&#x4F5C;&#xFF0C;&#x7EC4;&#x4EF6;&#x662F;&#x72EC;&#x7ACB;&#x7684;&#x89C6;&#x56FE;&#x548C;&#x903B;&#x8F91;&#x3002;ng&#x4E2D;&#x5BB9;&#x6613;&#x6DF7;&#x6DC6;&#x3002;</p>
+<h2 id="&#x5BF9;&#x6BD4;angularng-2">&#x5BF9;&#x6BD4;Angular(ng 2)</h2>
+<h3 id="typescript">typescript</h3>
+<hr>
 <h2 id="&#x5B89;&#x88C5;">&#x5B89;&#x88C5;</h2>
+<p>&#x8FD9;&#x91CC;&#x6211;&#x4EEC;&#x4F7F;&#x7528;&#x5DE5;&#x5177;&#x6765;&#x76F4;&#x63A5;&#x6784;&#x5EFA;&#x4E00;&#x4E2A;vue&#x7684;&#x811A;&#x624B;&#x67B6;</p>
 <p>&#x5168;&#x5C40;&#x5B89;&#x88C5; vue-cli</p>
 <pre><code>$ npm install --global vue-cli
 </code></pre><p>&#x521B;&#x5EFA;&#x65B0;&#x9879;&#x76EE;</p>
@@ -886,7 +931,7 @@ export default {
             
                 
                 
-                <a href="2-router.html" class="navigation navigation-next navigation-unique" aria-label="Next page: vue-router">
+                <a href="2-vue.html" class="navigation navigation-next navigation-unique" aria-label="Next page: vue语法学习">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -897,7 +942,7 @@ export default {
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"vue安装与说明","level":"1.9.1","depth":2,"next":{"title":"vue-router","level":"1.9.2","depth":2,"path":"vue/2-router.md","ref":"./vue/2-router.md","articles":[]},"previous":{"title":"vue","level":"1.9","depth":1,"ref":"","articles":[{"title":"vue安装与说明","level":"1.9.1","depth":2,"path":"vue/1-安装.md","ref":"./vue/1-安装.md","articles":[]},{"title":"vue-router","level":"1.9.2","depth":2,"path":"vue/2-router.md","ref":"./vue/2-router.md","articles":[]},{"title":"vuex","level":"1.9.3","depth":2,"path":"vue/3-vuex.md","ref":"./vue/3-vuex.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"vue/1-安装.md","mtime":"2017-06-25T02:34:00.099Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-07-10T02:58:25.993Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"vue与react Angular比较","level":"1.9.1","depth":2,"next":{"title":"vue语法学习","level":"1.9.2","depth":2,"path":"vue/2-vue.md","ref":"./vue/2-vue.md","articles":[]},"previous":{"title":"vue","level":"1.9","depth":1,"ref":"","articles":[{"title":"vue与react Angular比较","level":"1.9.1","depth":2,"path":"vue/1-安装.md","ref":"./vue/1-安装.md","articles":[]},{"title":"vue语法学习","level":"1.9.2","depth":2,"path":"vue/2-vue.md","ref":"./vue/2-vue.md","articles":[]},{"title":"vue-router","level":"1.9.3","depth":2,"path":"vue/2-router.md","ref":"./vue/2-router.md","articles":[]},{"title":"vuex","level":"1.9.4","depth":2,"path":"vue/3-vuex.md","ref":"./vue/3-vuex.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"vue/1-安装.md","mtime":"2017-10-11T06:34:06.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-10-13T03:27:48.193Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

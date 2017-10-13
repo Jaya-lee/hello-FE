@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>vuex · GitBook</title>
+        <title>vue语法学习 · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -57,8 +57,10 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
+    <link rel="next" href="2-router.html" />
     
-    <link rel="prev" href="2-router.html" />
+    
+    <link rel="prev" href="1-安装.html" />
     
 
     </head>
@@ -676,7 +678,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.9.2" data-path="2-vue.html">
+        <li class="chapter active" data-level="1.9.2" data-path="2-vue.html">
             
                 <a href="2-vue.html">
             
@@ -702,7 +704,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.9.4" data-path="3-vuex.html">
+        <li class="chapter " data-level="1.9.4" data-path="3-vuex.html">
             
                 <a href="3-vuex.html">
             
@@ -782,7 +784,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >vuex</a>
+        <a href=".." >vue语法学习</a>
     </h1>
 </div>
 
@@ -797,62 +799,25 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="vuex">vuex</h1>
-<p>&#x6587;&#x6863;:<a href="https://vuex.vuejs.org/zh-cn/" target="_blank">https://vuex.vuejs.org/zh-cn/</a></p>
-<h2 id="&#x5B89;&#x88C5;">&#x5B89;&#x88C5;</h2>
-<pre><code>npm install vuex --save
-</code></pre><p>&#x5728;&#x4E00;&#x4E2A;&#x6A21;&#x5757;&#x5316;&#x7684;&#x6253;&#x5305;&#x7CFB;&#x7EDF;&#x4E2D;&#xFF0C;&#x60A8;&#x5FC5;&#x987B;&#x663E;&#x5F0F;&#x5730;&#x901A;&#x8FC7; Vue.use() &#x6765;&#x5B89;&#x88C5; Vuex&#xFF1A;</p>
-<pre><code>import Vue from &apos;vue&apos;
-import Vuex from &apos;vuex&apos;
-
-Vue.use(Vuex)
-</code></pre><p>&#x5F53;&#x4F7F;&#x7528;&#x5168;&#x5C40; script &#x6807;&#x7B7E;&#x5F15;&#x7528; Vuex &#x65F6;&#xFF0C;&#x4E0D;&#x9700;&#x8981;&#x4EE5;&#x4E0A;&#x5B89;&#x88C5;&#x8FC7;&#x7A0B;&#x3002;</p>
-<h2 id="&#x8BF4;&#x660E;">&#x8BF4;&#x660E;</h2>
-<p>Vuex &#x662F;&#x4E00;&#x4E2A;&#x4E13;&#x4E3A; Vue.js &#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x5F00;&#x53D1;&#x7684;&#x72B6;&#x6001;&#x7BA1;&#x7406;&#x6A21;&#x5F0F;,&#x5B83;&#x91C7;&#x7528;&#x96C6;&#x4E2D;&#x5F0F;&#x5B58;&#x50A8;&#x7BA1;&#x7406;&#x5E94;&#x7528;&#x7684;&#x6240;&#x6709;&#x7EC4;&#x4EF6;&#x7684;&#x72B6;&#x6001;&#xFF0C;&#x5E76;&#x4EE5;&#x76F8;&#x5E94;&#x7684;&#x89C4;&#x5219;&#x4FDD;&#x8BC1;&#x72B6;&#x6001;&#x4EE5;&#x4E00;&#x79CD;&#x53EF;&#x9884;&#x6D4B;&#x7684;&#x65B9;&#x5F0F;&#x53D1;&#x751F;&#x53D8;&#x5316;&#x3002;&#x8FD9;&#x70B9;&#x548C;redux&#x4E0D;&#x540C;,redux&#x5E76;&#x4E0D;&#x53EA;&#x670D;&#x52A1;react,&#x5B83;&#x53EF;&#x4EE5;&#x8FD0;&#x7528;&#x5230;&#x4EFB;&#x4F55;&#x6846;&#x67B6;,&#x5305;&#x62EC;&#x539F;&#x751F;.</p>
-<h2 id="&#x4E66;&#x5199;">&#x4E66;&#x5199;</h2>
-<pre><code>const store=new Vuex.Store({
-  state:{
-    count:0
+                                <h2 id="&#x6838;&#x5FC3;">&#x6838;&#x5FC3;</h2>
+<h3 id="&#x8BED;&#x6CD5;&#x6A21;&#x677F;">&#x8BED;&#x6CD5;&#x6A21;&#x677F;</h3>
+<pre><code>&lt;div id=&quot;app&quot;&gt;
+  &lt;p&gt;{{ message }}&lt;/p&gt;
+  &lt;span v-on:click=&apos;add&apos;&gt;&lt;/span&gt;
+&lt;/div&gt;
+</code></pre><pre><code>var app = new Vue({
+  el: &apos;#app&apos;,
+  data: {
+    message: &apos;Hello Vue!&apos;
   },
-  mutations:{
-    increment (state){
-      state.count++
+  methods: {
+    add: function() {
+      this.message = this.message + &apos;add&apos;
     }
   }
 })
-store.commit(&apos;increment&apos;) //&#x63D0;&#x4EA4;
-</code></pre><p><code>state</code>&#x662F;&#x539F;&#x59CB;&#x7684;state&#x503C;,&#x540C;redux&#x7684;state</p>
-<p><code>mutations</code>&#x662F;&#x4FEE;&#x6539;state&#x7684;&#x64CD;&#x4F5C;,&#x540C;redux&#x91CC;&#x7684;reducer</p>
-<p>&#x6211;&#x4EEC;&#x50CF;redux&#x91CC;&#x90A3;&#x6837;&#x5C06;store&#x5199;&#x5728;&#x4E00;&#x4E2A;&#x5355;&#x72EC;&#x7684;&#x6587;&#x4EF6;store.js&#x4E2D;</p>
-<pre><code>import Vue from &apos;vue&apos;
-import Vuex from &apos;vuex&apos;
-Vue.use(Vuex)
-
-let state={
-  count:0
-}
-let mutations={
-  increment (state){
-    state.count++
-  }
-}
-const store=new Vuex.Store({
-  state,
-  mutations
-})
-
-export default store
-</code></pre><p>&#x5728;<code>main.js</code>&#x91CC;&#x6CE8;&#x518C;&#x4E00;&#x4E0B;,&#x5168;&#x5C40;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;store,&#x8FD9;&#x4E2A;&#x64CD;&#x4F5C;&#x76F8;&#x5F53;&#x4E8E;react-redux&#x91CC;&#x7684;provider&#x63A5;&#x53E3;,&#x8FD9;&#x6837;&#x5B50;&#x7EC4;&#x4EF6;&#x5C31;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;<code>this.$store</code>&#x8BBF;&#x95EE;&#x5230;</p>
-<p>&#x5176;&#x4ED6;&#x6838;&#x5FC3;&#x6982;&#x5FF5;&#x5728;&#x6587;&#x6863;&#x4E2D;&#x90FD;&#x6709;&#x975E;&#x5E38;&#x8BE6;&#x7EC6;&#x7684;&#x8BF4;&#x660E;,&#x5927;&#x5BB6;&#x53EF;&#x4EE5;&#x6309;demo&#x8DD1;&#x4E00;&#x4E0B;&#x4EE3;&#x7801;&#x5C31;&#x719F;&#x7EC3;&#x4E86;</p>
-<p><a href="https://vuex.vuejs.org/zh-cn/getters.html" target="_blank">Getters</a>:&#x53EF;&#x4EE5;&#x8BA4;&#x4E3A;&#x662F; store &#x7684;&#x8BA1;&#x7B97;&#x5C5E;&#x6027;</p>
-<p><a href="https://vuex.vuejs.org/zh-cn/mutations.html" target="_blank">Mutations</a>:&#x66F4;&#x6539; Vuex &#x7684; store &#x4E2D;&#x7684;&#x72B6;&#x6001;&#x7684;&#x552F;&#x4E00;&#x65B9;&#x6CD5;&#x662F;&#x63D0;&#x4EA4; mutation. mutation&#x5FC5;&#x987B;&#x662F;&#x540C;&#x6B65;&#x51FD;&#x6570;</p>
-<p><a href="https://vuex.vuejs.org/zh-cn/actions.html" target="_blank">Actions</a></p>
-<p>Action &#x7C7B;&#x4F3C;&#x4E8E; mutation&#xFF0C;&#x4E0D;&#x540C;&#x5728;&#x4E8E;&#xFF1A;(&#x540C;react)</p>
-<ul>
-<li>Action &#x63D0;&#x4EA4;&#x7684;&#x662F; mutation&#xFF0C;&#x800C;&#x4E0D;&#x662F;&#x76F4;&#x63A5;&#x53D8;&#x66F4;&#x72B6;&#x6001;&#x3002;</li>
-<li>Action &#x53EF;&#x4EE5;&#x5305;&#x542B;&#x4EFB;&#x610F;&#x5F02;&#x6B65;&#x64CD;&#x4F5C;&#x3002;</li>
-</ul>
-<p><a href="https://vuex.vuejs.org/zh-cn/modules.html" target="_blank">modules</a>:Vuex &#x5141;&#x8BB8;&#x6211;&#x4EEC;&#x5C06; store &#x5206;&#x5272;&#x6210;&#x6A21;&#x5757;&#xFF08;module),&#x4F7F;state&#x4E0D;&#x90A3;&#x4E48;&#x81C3;&#x80BF;.</p>
+</code></pre><h3 id="&#x6307;&#x4EE4;">&#x6307;&#x4EE4;</h3>
+<p>v-</p>
 
                                 
                                 </section>
@@ -880,10 +845,14 @@ export default store
 
             
                 
-                <a href="2-router.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: vue-router">
+                <a href="1-安装.html" class="navigation navigation-prev " aria-label="Previous page: vue与react Angular比较">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
+                
+                <a href="2-router.html" class="navigation navigation-next " aria-label="Next page: vue-router">
+                    <i class="fa fa-angle-right"></i>
+                </a>
                 
             
         
@@ -892,7 +861,7 @@ export default store
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"vuex","level":"1.9.4","depth":2,"next":{"title":"面试","level":"1.10","depth":1,"ref":"","articles":[{"title":"面试","level":"1.10.1","depth":2,"path":"mianshi/1.md","ref":"./mianshi/1.md","articles":[]}]},"previous":{"title":"vue-router","level":"1.9.3","depth":2,"path":"vue/2-router.md","ref":"./vue/2-router.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"vue/3-vuex.md","mtime":"2017-10-10T09:56:24.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-10-13T03:27:48.193Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"vue语法学习","level":"1.9.2","depth":2,"next":{"title":"vue-router","level":"1.9.3","depth":2,"path":"vue/2-router.md","ref":"./vue/2-router.md","articles":[]},"previous":{"title":"vue与react Angular比较","level":"1.9.1","depth":2,"path":"vue/1-安装.md","ref":"./vue/1-安装.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"vue/2-vue.md","mtime":"2017-10-11T11:35:41.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-10-13T03:27:48.193Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
